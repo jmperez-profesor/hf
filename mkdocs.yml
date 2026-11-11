@@ -1,0 +1,110 @@
+site_name: Hugging Face — Apuntes y prácticas (CE IA&BD)
+site_description: Materiales docentes sobre el ecosistema Hugging Face (Transformers, Datasets, Hub, Tokenizers, pipelines y fine-tuning) para el Curso de Especialización en IA y Big Data (Comunitat Valenciana, 2026-2027). Cubre RA1, RA2 y RA5 de MIA (5071) y RA3 de PIA (5072).
+site_author: José Manuel Pérez Torres
+repo_url: https://github.com/jmperez-profesor/hf
+site_url: https://jmperez-profesor.github.io/hf/
+
+edit_uri: edit/main/docs
+use_directory_urls: false
+
+# Ocultar los cuadernos de soluciones mientras duran las clases.
+# Para volver a mostrarlos, comenta o elimina las líneas siguientes.
+exclude_docs: |
+  bloques/MIA_RA1/*_soluciones.ipynb
+  bloques/MIA_RA2/*_soluciones.ipynb
+  bloques/MIA_RA5/*_soluciones.ipynb
+  bloques/PIA_RA3/*_soluciones.ipynb
+
+theme:
+  name: material
+  language: es
+  palette:
+    - scheme: default
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Modo claro
+    - scheme: slate
+      primary: deep orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Modo oscuro
+  features:
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - header.autohide
+
+extra:
+  colab:
+    user: jmperez-profesor
+    repo: hf
+    branch: main
+  raw_base: https://raw.githubusercontent.com/jmperez-profesor/hf/main
+
+plugins:
+  - search
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      zoomable: true
+  - minify:
+      minify_html: true
+  - redirects
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+  - mkdocs-jupyter:
+      include_source: true
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true
+
+extra_javascript:
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - assets/js/init.js
+
+extra_css:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.css
+
+hooks:
+  - hooks.py
+
+nav:
+  - Inicio: index.md
+  - "MIA · Modelos de IA (5071)":
+      - "RA1 · Caracterización de sistemas IA": bloques/MIA_RA1/index.md
+      - "RA2 · Utiliza modelos de IA": bloques/MIA_RA2/index.md
+      - "RA5 · Sistemas expertos": bloques/MIA_RA5/index.md
+  - "PIA · Programación de IA (5072)":
+      - "RA3 · Procesamiento de lenguaje natural": bloques/PIA_RA3/index.md
+  - Evaluación:
+      - Índice: evaluacion/index.md
+      - "MIA · RA1": evaluacion/MIA_RA1.md
+      - "MIA · RA2": evaluacion/MIA_RA2.md
+      - "MIA · RA5": evaluacion/MIA_RA5.md
+      - "PIA · RA3": evaluacion/PIA_RA3.md
