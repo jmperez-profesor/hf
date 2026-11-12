@@ -112,10 +112,9 @@ Entrena un **tokenizador pequeño con `tokenizers`** sobre un corpus propio (una
 
 ## 🎬 Vídeos de la sesión
 
-- [Curso oficial HF — Capítulo 6: la librería Tokenizers](https://huggingface.co/learn/nlp-course/chapter6/1) — gratuito (inglés): BPE, WordPiece, subpalabras y entrenamiento de tokenizadores.
-- [Documentación de la librería `tokenizers`](https://huggingface.co/docs/tokenizers/index) — referencia oficial.
-
-> 🔎 *Pendiente:* añadir un vídeo específico en español sobre tokenización (BPE/WordPiece).
+- [¿Cómo funcionan los TOKENS en los Grandes Modelos de Lenguaje?](https://www.youtube.com/watch?v=6bKdKTIf09Y) — Codificando Bits, ~35 min — tokens y subpalabras, `AutoTokenizer.from_pretrained()`, texto → token IDs y ventana de contexto.
+- [Tokenización en Transformers: WordPiece, `input_ids`, `attention_mask`](https://www.youtube.com/watch?v=iKVU5b4bj30) — OCW UC3M, ~10 min — padding y truncation, al nivel exacto del temario.
+- [BPE y SentencePiece a fondo](https://huggingface.co/learn/llm-course/es/chapter6/5) — LLM Course oficial de HF (en español).
 
 ## Observaciones
 

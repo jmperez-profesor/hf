@@ -139,10 +139,8 @@ Afina un modelo de **NER** o de **clasificación multietiqueta**.
 
 ## 🎬 Vídeos de la sesión
 
-- [Curso oficial HF — Capítulo 5: la librería Datasets](https://huggingface.co/learn/nlp-course/chapter5/1) — gratuito (inglés): carga, transformación y preparación de datos.
-- [Documentación de `datasets`](https://huggingface.co/docs/datasets/index) — referencia oficial.
-
-> 🔎 *Pendiente:* añadir un vídeo específico en español sobre la librería `datasets`.
+- [Hugging Face: tu puerta de entrada a la IA — Parte 1](https://www.youtube.com/watch?v=49vPqhGO0GY) — DevHack, ~22 min — datasets en Colab: `load_dataset()`, splits, `features`, `map` por batches.
+- [Capítulo 5 del LLM Course oficial de HF en español](https://huggingface.co/learn/llm-course/es/chapter5/1) — carga, `map`/`filter`, `train_test_split` y subida al Hub.
 
 ## Observaciones
 

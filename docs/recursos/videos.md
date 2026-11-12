@@ -61,7 +61,57 @@ Referencia en español para entender la **arquitectura Transformer** que hay deb
 
 ---
 
-## 4. Alternativas complementarias en español
+## 4. Fichas de vídeos por tema (tokenizadores, datasets, visión y audio)
+
+### Ficha 4.1 — Tokenizadores
+
+| Campo | Detalle |
+|---|---|
+| **Título** | Tutorial: ¿Cómo funcionan los TOKENS en los Grandes Modelos de Lenguaje? |
+| **Canal** | Codificando Bits (Miguel Sotaquirá) |
+| **Duración** | 34:41, con capítulos marcados (noviembre de 2025) |
+| **URL** | <https://www.youtube.com/watch?v=6bKdKTIf09Y> |
+
+**Por qué es útil:** explica en español, de forma práctica y sin matemáticas, qué son tokens y subpalabras, cómo cargar el tokenizador de cualquier modelo con `AutoTokenizer.from_pretrained()`, la conversión texto → tokens → token IDs, y el papel de la ventana de contexto, todo sobre modelos reales del Hub de HF en Google Colab.
+
+**Complementos:**
+- Serie OCW Universidad Carlos III (Isabel Segura Bedmar, 2024): vídeos de ~10 min sobre tokenización en transformers, WordPiece, `input_ids` y `attention_mask`, y padding y truncation en dos partes. Material universitario gratuito, en español y al nivel exacto del temario: <https://ocw.uc3m.es/mod/page/view.php?id=6240> · <https://www.youtube.com/watch?v=iKVU5b4bj30>
+- BPE y SentencePiece a fondo: capítulo 6 del LLM Course oficial de HF en español: <https://huggingface.co/learn/llm-course/es/chapter6/5>
+
+### Ficha 4.2 — La librería datasets
+
+| Campo | Detalle |
+|---|---|
+| **Título** | Hugging Face: Tu puerta de entrada al mundo de la IA - Parte 1 |
+| **Canal** | DevHack |
+| **Duración** | 22:25 (13 de diciembre de 2024) |
+| **URL** | <https://www.youtube.com/watch?v=49vPqhGO0GY> |
+
+**Por qué es útil:** dedica más de la mitad del vídeo a los datasets con ejemplos prácticos en Colab: explorar y filtrar datasets en el Hub, autenticación con tokens, `load_dataset()`, splits de entrenamiento/test, `features` (columnas), acceso por filas y por columnas, y cuándo usar `datasets` frente a pandas, incluyendo `map` y procesamiento en batches paralelo. Nivel principiante perfecto para FP.
+
+**Complementos:**
+- Para `map`/`filter`/`train_test_split` en detalle: capítulo 5 del LLM Course oficial de HF en español (gratuito) — carga desde el Hub, ficheros locales o remotos, `Dataset.map()`, `Dataset.filter()`, cambio de formato a Pandas/NumPy y subida de tu propio dataset al Hub: <https://huggingface.co/learn/llm-course/es/chapter5/1>
+
+### Ficha 4.3 — Visión por computador y audio
+
+| Campo | Detalle |
+|---|---|
+| **Título** | Tutorial: CLASIFICACIÓN DE IMÁGENES con el VISION TRANSFORMER |
+| **Canal** | Codificando Bits (Miguel Sotaquirá) |
+| **Duración** | 27:02, con capítulos marcados y notebook de Colab (24 de febrero de 2025) |
+| **URL** | <https://www.youtube.com/watch?v=iPQRqNEJiz0> |
+
+**Por qué es útil:** explica la arquitectura ViT (patches de 16×16, 1000 categorías de ImageNet, ~86M de parámetros) sin matemáticas pesadas, y luego carga el modelo pre-entrenado con `ViTForImageClassification` y `ViTImageProcessor`, preprocesa imágenes reales, interpreta los logits y predice. Ejecutable en CPU, ideal para aula.
+
+**Qué no cubre en español y alternativas oficiales:**
+
+- **Zero-shot con CLIP:** no hay vídeo en español de calidad con HF. Alternativa: el Computer Vision Course de Hugging Face (<https://huggingface.co/learn>), cuyo capítulo de zero-shot image classification usa CLIP desde Transformers; también la guía de clasificación de imágenes en español: <https://huggingface.co/docs/transformers/es/tasks/image_classification>
+- **Whisper:** hay tutoriales en español (p. ej. [De Audio a Texto con Whisper](https://www.youtube.com/watch?v=cwNRJZBhpPs), oct 2025), pero usan el CLI de OpenAI, no el pipeline de HF. Para usar Whisper desde Transformers, la referencia es el Audio Course oficial de Hugging Face (<https://huggingface.co/learn>).
+- **Ampliación muy recomendable:** vídeo hermano del mismo canal, *Tutorial: AFINACIÓN DEL VISION TRANSFORMER* (13 de marzo de 2025, 50:20, con capítulos, notebook y dataset descargable, <https://www.youtube.com/watch?v=cbb6Z2VOU9Q>): crea datasets propios con `load_dataset`, aplica `with_transform`, monta el `Trainer` y afina el ViT con datos propios. Une los temas de datasets y visión: perfecto como proyecto práctico del curso.
+
+---
+
+## 5. Alternativas complementarias en español
 
 - [Arquitectura Transformer: la base revolucionaria](https://canal.uned.es/video/68e8e10e40a56ea69b0e8206) — Canal UNED (2025, 4 min): pieza breve de un MOOC oficial de la UNED, con subtítulos y descarga del vídeo disponible. Útil como cierre o repaso de 5 minutos antes de un examen.
 - [Dot CSV Lab](https://www.youtube.com/@DotCSVLab): canal hermano de DotCSV con recortes prácticos y tutoriales extraídos de sus directos de Twitch, útil para sesiones hands-on.
@@ -70,7 +120,7 @@ Referencia en español para entender la **arquitectura Transformer** que hay deb
 
 ---
 
-## 5. Propuesta de secuencia didáctica
+## 6. Propuesta de secuencia didáctica
 
 | Sesión | Contenido | Duración estimada |
 |---|---|---|
@@ -79,9 +129,13 @@ Referencia en español para entender la **arquitectura Transformer** que hay deb
 | 3 | Vídeo práctico de `pipeline` (playlist Transformers y LLM) + notebook Colab | 45 min |
 | 4 | "Un recorrido por el Hub de Hugging Face" (Education Toolkit, en español) | 20-40 min |
 | 5 | Tutorial de las cuatro formas de ejecutar modelos de HF | 25-30 min |
+| 6 | Tokenizadores (Ficha 4.1) + serie UC3M de padding y attention mask | 45-60 min |
+| 7 | Librería datasets (Ficha 4.2) + capítulo 5 del LLM Course en español | 45-60 min |
+| 8 | ViT y clasificación de imágenes (Ficha 4.3) + práctica en Colab | 60 min |
+| 9 | Proyecto integrador: afinación de ViT con dataset propio (Ficha 4.3, ampliación) | 90-120 min |
 
-**Secuencia resumida:** Partes 1-2 de DotCSV como introducción al PLN → Partes 3-4 para la arquitectura Transformer → tutorial de ejecución de modelos de HF como puente hacia la práctica con Transformers y el Hub.
+**Secuencia resumida:** Partes 1-2 de DotCSV como introducción al PLN → Partes 3-4 para la arquitectura Transformer → tutorial de ejecución de modelos de HF como puente hacia la práctica con Transformers y el Hub → tokenizadores → datasets → visión y audio con el proyecto final de fine-tuning de ViT.
 
 ---
 
-*Fuentes: búsquedas web realizadas el 12/11/2026 (YouTube, huggingface.co, github.com, canal.uned.es, mediateca.educa.madrid.org, iaconclase.com).*
+*Fuentes: búsquedas web realizadas el 12/11/2026 (YouTube, huggingface.co, github.com, canal.uned.es, mediateca.educa.madrid.org, iaconclase.com, ocw.uc3m.es).*

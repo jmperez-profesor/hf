@@ -104,10 +104,10 @@ Clasificador de imágenes **zero-shot con CLIP** para categorías propias (p. ej
 
 ## 🎬 Vídeos de la sesión
 
-- [Audio Course oficial de Hugging Face](https://huggingface.co/learn/audio-course) — gratuito (inglés): Whisper, clasificación de audio.
-- [Documentación de tareas de visión de Transformers](https://huggingface.co/docs/transformers/tasks/image_classification) — referencia oficial (ViT, CLIP, detección).
-
-> 🔎 *Pendiente:* añadir vídeos en español de visión (ViT/CLIP) y audio (Whisper).
+- [Clasificación de imágenes con Vision Transformer](https://www.youtube.com/watch?v=iPQRqNEJiz0) — Codificando Bits, ~27 min — arquitectura ViT, `ViTForImageClassification` y `ViTImageProcessor`.
+- [Afinación del Vision Transformer](https://www.youtube.com/watch?v=cbb6Z2VOU9Q) — Codificando Bits, ~50 min — fine-tuning de ViT con `datasets` y `Trainer` (ampliación; une S4 y S6).
+- [De audio a texto con Whisper](https://www.youtube.com/watch?v=cwNRJZBhpPs) — 2025 — transcripción (usa el CLI; en clase usamos el pipeline de HF).
+- [Audio Course oficial de HF](https://huggingface.co/learn/audio-course) — Whisper desde Transformers (inglés).
 
 ## Observaciones
 
