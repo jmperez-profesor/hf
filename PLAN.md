@@ -62,3 +62,13 @@ hf/
 2. ~~Cobertura de RA5.~~ **Decidido:** fuera de alcance (se imparte en `mia`).
 3. ~~Evaluación ↔ Orden 8/2025.~~ **Decidido:** retos 40 % + Space 60 %.
 4. Calendario/festivos del centro.
+
+## 9. Roadmap · sesiones futuras dedicadas a LLMs
+
+Pendientes de planificar en sesiones posteriores (identificados al revisar *Hugging Face in Action*, Manning 2025):
+
+- **RAG** — consultar datos propios (cap. 12 del libro).
+- **LLMs en local** con GPT4All — privacidad y velocidad sin cloud (cap. 11).
+- **LangChain / LlamaIndex** — frameworks para aplicaciones LLM (cap. 7).
+
+> Fuera de alcance (decisión del docente): agentes (cap. 9) y MCP (cap. 13).
