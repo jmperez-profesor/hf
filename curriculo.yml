@@ -96,10 +96,9 @@ calendario:
   dias_clase: [lunes, miércoles]
   duracion_sesion: 2h
 
-# Evaluación (Orden 8/2025, CV): escala 1–10 sin decimales, nota mínima por RA = 5.
+# Evaluación del curso HF (acordada): retos semanales 40% + Space final 60%.
 evaluacion:
-  peso_actividades: 40
-  peso_prueba_escrita: 60
-  nota_minima_por_ra: 5
-  escala_calificacion: 1 a 10, sin decimales
-  # Nota: el curso HF propone "retos 40% + Space 60%"; pendiente de reconciliar con lo anterior.
+  retos_semanales: 40
+  space_final: 60
+  # Referencia oficial (Orden 8/2025, CV) para la evaluación del CE completo:
+  # escala 1-10 sin decimales, nota mínima 5 por RA, 40% actividades / 60% prueba escrita.

@@ -61,9 +61,9 @@ docs/
 
 ## Pendientes (para la revisión)
 
-1. ~~Verificar enunciado/CE de los RA (RD 279/2021).~~ **Hecho** (transcritos en `curriculo.yml`). Corrección: **PIA = 5073** (no 5072); `RAPIA.3` = convergencia tecnológica, no PLN (el PLN es MIA RA3).
-2. Cobertura de **MIA · RA5** (sistemas expertos): hoy solo tangencial vía zero-shot en S1.
-3. Reconciliar la **evaluación** con la Orden 8/2025 (escala 1–10, ≥5 por RA, prueba escrita).
+1. ~~Verificar enunciado/CE de los RA (RD 279/2021).~~ **Hecho** (PIA = 5073; `RAPIA.3` = convergencia tecnológica).
+2. ~~Cobertura de MIA · RA5.~~ **Decidido:** fuera de alcance (se imparte en `mia`).
+3. ~~Reconciliar evaluación con la Orden 8/2025.~~ **Decidido:** retos 40 % + Space 60 % (guía de Manuel Quinto).
 4. Confirmar fechas/calendario del centro.
 
 ## Session history
@@ -72,3 +72,4 @@ docs/
 - **2026-11-12:** redactados los 4 bloques por módulo/RA (7 sesiones + 8 notebooks).
 - **2026-11-12:** tras revisar `GUIA.md`, **reestructurado a 7 sesiones temáticas** (nav por sesiones + `relacion_ra.md`), fusionando Datasets+Fine-tuning, sin agentes, con evaluación de la guía.
 - **2026-11-12:** integrado el material de **Aitor Medrano** (CC BY-NC-SA 4.0) como referencia: enriquecidas S1 (plataforma/CLI), S4 (crear/persistir/publicar datasets) y S7 (Blocks/disposición), y corregido `relacion_ra.md` con los códigos oficiales `RAPIA.3`/`CEPIA.3*` y `RAMIA.1`/`CEMIA.1*`.
+- **2026-11-12:** verificado el **RD 279/2021** (BOE-A-2021-7686): corregida la numeración (**PIA = 5073**, 5072 = ML) y transcritos los RA/CE oficiales de MIA y PIA en `curriculo.yml`. Decisiones de revisión: **RA5 fuera de alcance** y **evaluación = retos 40 % + Space 60 %**.

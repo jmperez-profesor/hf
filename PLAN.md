@@ -59,6 +59,6 @@ hf/
 ## 8. Pendientes (revisión)
 
 1. ~~Enunciado/CE de los RA.~~ **Hecho** (PIA = 5073; `RAPIA.3` = convergencia tecnológica).
-2. Cobertura formal de RA5.
-3. Evaluación ↔ Orden 8/2025.
+2. ~~Cobertura de RA5.~~ **Decidido:** fuera de alcance (se imparte en `mia`).
+3. ~~Evaluación ↔ Orden 8/2025.~~ **Decidido:** retos 40 % + Space 60 %.
 4. Calendario/festivos del centro.

@@ -32,11 +32,13 @@ Este curso de Hugging Face se imparte en paralelo a **ML** (Manuel Quinto) y **D
 - **RA1** — Caracteriza sistemas de IA relacionándolos con la mejora de la eficiencia operativa. → **S1, S7**
 - **RA2** — Utiliza modelos de sistemas de IA implementando sistemas de resolución de problemas. → **S1–S7** (hilo central)
 - **RA3** — Relaciona el PLN con sus aplicaciones determinando su potencial y sus limitaciones. → **S1, S3, S5**
-- **RA5** — Aplica sistemas expertos evaluando la influencia de los controladores inteligentes. → ⚠️ **tangencial** (zero-shot en S1)
+- **RA5** — Aplica sistemas expertos. → **Fuera de alcance** de este curso (se imparte en el módulo MIA; ver el proyecto `mia`).
 
 ### PIA (5073) · Programación de Inteligencia Artificial
 
 - **RA2** — Desarrolla aplicaciones de IA utilizando entornos de modelado. → **S4, S7**
 - **RA3** (`RAPIA.3`) — Evalúa las mejoras en los negocios integrando convergencia tecnológica. → **S1, S7** (Hub/Spaces como plataforma que unifica herramientas)
 
-> **Nota para revisar:** la cobertura de **MIA · RA5** (sistemas expertos) sigue siendo débil; no hay sesión dedicada. Y queda pendiente reconciliar la evaluación del curso con la **Orden 8/2025** (prueba escrita, ≥5 por RA).
+## Evaluación
+
+- **Retos semanales (40 %)** + **Space final (60 %)**, según la guía de Manuel Quinto.
