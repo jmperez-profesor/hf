@@ -110,6 +110,8 @@ Prepara un **dataset de reseñas en español** (tokenizado y particionado) y **a
 
 Afina un modelo de **NER** o de **clasificación multietiqueta**.
 
+> 🔗 Enlaza con el [**proyecto integrador de visión**](../../recursos/proyecto_vision.md): aplica lo aprendido aquí (datasets + `Trainer`) a un modelo de imágenes.
+
 ## Ejercicios de autoevaluación
 
 **1.** ¿Qué devuelve `load_dataset("imdb")` y qué son los *splits*?

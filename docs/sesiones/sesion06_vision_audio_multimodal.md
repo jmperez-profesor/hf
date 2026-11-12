@@ -75,6 +75,8 @@ Transcribe un **audio en español con Whisper** y clasifica el texto resultante 
 
 Clasificador de imágenes **zero-shot con CLIP** para categorías propias (p. ej. productos de una tienda).
 
+> 🔗 Para un proyecto más completo, haz el [**proyecto integrador de visión**](../../recursos/proyecto_vision.md): afina un ViT con tu dataset y publícalo en el Hub.
+
 ## Ejercicios de autoevaluación
 
 **1.** ¿Qué es el equivalente del tokenizador en visión/audio?
