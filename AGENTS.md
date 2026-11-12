@@ -61,8 +61,8 @@ docs/
 
 ## Pendientes (para la revisión)
 
-1. Verificar enunciado/CE del **RA3 de PIA (5072)** (RD 279/2021).
-2. Cobertura de **RA5** (sistemas expertos): hoy solo tangencial vía zero-shot en S1.
+1. ~~Verificar enunciado/CE de los RA (RD 279/2021).~~ **Hecho** (transcritos en `curriculo.yml`). Corrección: **PIA = 5073** (no 5072); `RAPIA.3` = convergencia tecnológica, no PLN (el PLN es MIA RA3).
+2. Cobertura de **MIA · RA5** (sistemas expertos): hoy solo tangencial vía zero-shot en S1.
 3. Reconciliar la **evaluación** con la Orden 8/2025 (escala 1–10, ≥5 por RA, prueba escrita).
 4. Confirmar fechas/calendario del centro.
 

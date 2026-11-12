@@ -1,56 +1,93 @@
 # curriculo.yml — FUENTE ÚNICA de datos curriculares del proyecto Hugging Face.
 #
-# Hugging Face es TRANSVERSAL: se imparte en dos módulos del CE IA&BD (Comunitat
-# Valenciana, 2026-2027):
-#   - MIA (5071) «Modelos de Inteligencia Artificial»  -> RA1, RA2, RA5
-#   - PIA (5072) «Programación de Inteligencia Artificial» -> RA3
+# Datos verificados contra el RD 279/2021 (BOE-A-2021-7686, Anexo I):
+# módulos del CE «Inteligencia Artificial y Big Data» (600 h, 36 ECTS).
 #
-# Nota: el enunciado exacto del RA3 de PIA (5072) está PENDIENTE de verificar
-# contra el RD 279/2021 (Anexo del módulo 5072).
+# Hugging Face se imparte de forma TRANSVERSAL, principalmente en:
+#   - MIA (5071) «Modelos de Inteligencia Artificial» -> RA1, RA2 (y tangencialmente RA3/RA5)
+#   - PIA (5073) «Programación de Inteligencia Artificial» -> RA2, RA3 (etiquetado RAPIA.3)
 
 contexto:
   curso_especializacion: Inteligencia Artificial y Big Data (Grado E)
   centro: "I.E.S. Severo Ochoa de Elche"
   curso_academico: "2026-2027"
   profesor: "José Manuel Pérez Torres"
-  herramienta: "Hugging Face (Transformers, Datasets, Hub, Tokenizers)"
+  herramienta: "Hugging Face (Transformers, Datasets, Hub, Tokenizers, Gradio)"
 
+# Módulos del CE (RD 279/2021 art. 9 y Anexo I)
 modulos:
   - codigo: "5071"
     nombre: Modelos de Inteligencia Artificial (MIA)
-    ra_impartidos_por_este_docente: [RA1, RA2, RA5]
-    ra_huggingface:
-      - id: RA1
-        ce: 4
-        enunciado: >-
-          Caracteriza sistemas de Inteligencia Artificial relacionándolos con la mejora de la
-          eficiencia operativa de las organizaciones y empresas.
-        uso_hf: >-
-          Introducción al ecosistema HF: Hub, modelos y datasets como catálogo de sistemas de IA.
-      - id: RA2
-        ce: 6
-        enunciado: >-
-          Utiliza modelos de sistemas de Inteligencia Artificial implementando sistemas de
-          resolución de problemas.
-        uso_hf: >-
-          Núcleo del curso: pipelines, tokenizers, modelos preentrenados, inferencia y fine-tuning.
-      - id: RA5
-        ce: 5
-        enunciado: >-
-          Aplica sistemas expertos evaluando la influencia de los controladores inteligentes en el
-          comportamiento del sistema.
-        uso_hf: >-
-          Uso de modelos como componente de sistemas expertos híbridos y guardarraíles de LLM.
+    horas: 40
+    ects: 4
   - codigo: "5072"
+    nombre: Sistemas de Aprendizaje Automático (SAA / ML)  # lo imparte Manuel Quinto
+    horas: 50
+    ects: 5
+  - codigo: "5073"
     nombre: Programación de Inteligencia Artificial (PIA)
-    ra_impartidos_por_este_docente: [RA3]
-    ra_huggingface:
-      - id: RA3
-        ce: null # PENDIENTE: verificar CE contra RD 279/2021
-        enunciado: null # PENDIENTE: verificar enunciado oficial
-        uso_hf: >-
-          Procesamiento de lenguaje natural con HF: clasificación de texto, NER, QA,
-          resumen, generación y transformers.
+    horas: 110
+    ects: 12
+  - codigo: "5074"
+    nombre: Sistemas de Big Data
+    horas: 55
+    ects: 6
+  - codigo: "5075"
+    nombre: Big Data aplicado
+    horas: 120
+    ects: 8
+
+# RA de MIA (5071) — texto oficial RD 279/2021
+mia:
+  resultados_aprendizaje:
+    - id: RA1
+      ce: 4
+      enunciado: >-
+        Caracteriza sistemas de Inteligencia Artificial relacionándolos con la mejora de la
+        eficiencia operativa de las organizaciones y empresas.
+    - id: RA2
+      ce: 6
+      enunciado: >-
+        Utiliza modelos de sistemas de Inteligencia Artificial implementando sistemas de
+        resolución de problemas.
+    - id: RA3
+      ce: 7
+      enunciado: >-
+        Relaciona el procesamiento de lenguaje natural con sus aplicaciones determinando su
+        potencial e identificando sus limitaciones.
+    - id: RA4
+      ce: 4
+      enunciado: Analiza sistemas robotizados, evaluando opciones de diseño e implementación.
+    - id: RA5
+      ce: 5
+      enunciado: >-
+        Aplica sistemas expertos evaluando la influencia de los controladores inteligentes en el
+        comportamiento del sistema.
+    - id: RA6
+      ce: 6
+      enunciado: >-
+        Aplica principios legales y éticos al desarrollo de la Inteligencia Artificial
+        integrándolos como parte del proceso.
+
+# RA de PIA (5073) — texto oficial RD 279/2021
+pia:
+  resultados_aprendizaje:
+    - id: RA1
+      ce: 6
+      enunciado: >-
+        Caracteriza lenguajes de programación valorando su idoneidad en el desarrollo de
+        Inteligencia Artificial.
+    - id: RA2
+      ce: 5
+      enunciado: Desarrolla aplicaciones de Inteligencia artificial utilizando entornos de modelado.
+    - id: RA3
+      ce: 5
+      enunciado: Evalúa las mejoras en los negocios integrando convergencia tecnológica.
+    - id: RA4
+      ce: 4
+      enunciado: >-
+        Evalúa modelos de automatización industrial y de negocio relacionándolos con los
+        resultados esperados por las empresas.
 
 # Calendario del curso 2026-2027 (referencia; verificar contra DOGV/Resolución SAE).
 calendario:
@@ -58,10 +95,6 @@ calendario:
   fin_maximo_legal: 2027-06-18
   dias_clase: [lunes, miércoles]
   duracion_sesion: 2h
-  vacaciones:
-    navidad: [2026-12-23, 2027-01-06]
-    pascua: [2027-03-24, 2027-04-05]
-  # Festivos que afectan a lun/mié: pendiente de concretar por centro.
 
 # Evaluación (Orden 8/2025, CV): escala 1–10 sin decimales, nota mínima por RA = 5.
 evaluacion:
@@ -69,3 +102,4 @@ evaluacion:
   peso_prueba_escrita: 60
   nota_minima_por_ra: 5
   escala_calificacion: 1 a 10, sin decimales
+  # Nota: el curso HF propone "retos 40% + Space 60%"; pendiente de reconciliar con lo anterior.

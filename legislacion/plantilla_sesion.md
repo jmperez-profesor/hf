@@ -1,6 +1,6 @@
 ---
 sesion: "XX"
-modulo: MIA   # MIA (5071) o PIA (5072)
+modulo: MIA   # MIA (5071) o PIA (5073)
 ra: RAy
 ce: [n]
 fecha_prevista: YYYY-MM-DD

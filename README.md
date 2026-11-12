@@ -4,7 +4,9 @@ Materiales docentes de un **curso práctico de 14 h (7 sesiones × 2 h)** sobre 
 
 Profesor: José Manuel Pérez Torres · Centro: I.E.S. Severo Ochoa (Elche) · Curso 2026-2027.
 
-Se imparte en paralelo a **Machine Learning** (Manuel Quinto) y **Deep Learning**, sin repetir sus contenidos.
+Se imparte en paralelo a **Machine Learning** (Manuel Quinto, módulo 5072) y **Deep Learning**, sin repetir sus contenidos.
+
+Se vincula a los RA oficiales del CE (RD 279/2021): **MIA (5071)** RA1/RA2/RA3 y **PIA (5073)** RA2/RA3.
 
 Generado con MkDocs (tema Material). Solo web + notebooks de Jupyter.
 

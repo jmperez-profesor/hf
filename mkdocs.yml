@@ -1,5 +1,5 @@
 site_name: Hugging Face — Apuntes y prácticas (CE IA&BD)
-site_description: Materiales docentes sobre el ecosistema Hugging Face (Transformers, Datasets, Hub, Tokenizers, pipelines y fine-tuning) para el Curso de Especialización en IA y Big Data (Comunitat Valenciana, 2026-2027). Cubre RA1, RA2 y RA5 de MIA (5071) y RA3 de PIA (5072).
+site_description: Materiales docentes sobre el ecosistema Hugging Face (Transformers, Datasets, Hub, Tokenizers, pipelines y fine-tuning) para el Curso de Especialización en IA y Big Data (Comunitat Valenciana, 2026-2027). Cubre RA1/RA2/RA3 de MIA (5071) y RA2/RA3 de PIA (5073).
 site_author: José Manuel Pérez Torres
 repo_url: https://github.com/jmperez-profesor/hf
 site_url: https://jmperez-profesor.github.io/hf/

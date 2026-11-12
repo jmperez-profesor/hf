@@ -7,8 +7,8 @@
 ### F1 · RD 279/2021, de 20 de abril
 - **BOE:** BOE-A-2021-7686, 10/05/2021.
 - **URL:** https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-7686
-- **Qué regula:** crea el CE «Inteligencia Artificial y Big Data» y fija los RA/CE de los módulos **5071 (MIA)** y **5072 (PIA)** en su Anexo.
-- **Uso:** backbone curricular de `curriculo.yml` y de la programación.
+- **Qué regula:** crea el CE «Inteligencia Artificial y Big Data» (600 h, 36 ECTS) y fija los RA/CE de sus módulos en el Anexo I: **5071 Modelos de IA (MIA)** · **5072 Sistemas de Aprendizaje Automático (ML)** · **5073 Programación de IA (PIA)** · 5074 Sistemas de Big Data · 5075 Big Data aplicado.
+- **Uso:** backbone curricular de `curriculo.yml` y de la programación. Los RA/CE de MIA (5071) y PIA (5073) están transcritos en `curriculo.yml`.
 
 ### F2 · RD 497/2024, de 21 de mayo
 - **URL:** https://www.boe.es/eli/es/rd/2024/05/21/497
@@ -46,5 +46,5 @@
 
 ## Pendiente
 
-- Verificar el enunciado oficial del **RA3 de PIA (5072)** en el RD 279/2021 y enlazarlo aquí.
+- ~~Verificar el enunciado oficial de los RA en el RD 279/2021.~~ **Hecho** (transcritos en `curriculo.yml`).
 - Descargar los PDFs oficiales de normativa y enlazarlos.

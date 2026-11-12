@@ -12,7 +12,7 @@
 
 ## 2. Normativa (fichas en `FUENTES.md`)
 
-- RD 279/2021 (RA/CE de MIA 5071 y PIA 5072) · RD 497/2024 · Decreto 95/2026 (CV) · Orden 8/2025 (CV, evaluación).
+- RD 279/2021 (RA/CE de MIA 5071 y PIA 5073) · RD 497/2024 · Decreto 95/2026 (CV) · Orden 8/2025 (CV, evaluación).
 
 ## 3. Estructura final: 7 sesiones temáticas
 
@@ -58,7 +58,7 @@ hf/
 
 ## 8. Pendientes (revisión)
 
-1. Enunciado/CE del RA3 de PIA (5072).
+1. ~~Enunciado/CE de los RA.~~ **Hecho** (PIA = 5073; `RAPIA.3` = convergencia tecnológica).
 2. Cobertura formal de RA5.
 3. Evaluación ↔ Orden 8/2025.
 4. Calendario/festivos del centro.
