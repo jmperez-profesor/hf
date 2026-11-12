@@ -2,19 +2,19 @@
 
 ## What this is
 
-MkDocs Material (tema Material, español) con apuntes y materiales docentes sobre el **ecosistema Hugging Face** (Transformers, Datasets, Hub, Tokenizers, pipelines, fine-tuning) para el Curso de Especialización en IA y Big Data (CE IA&BD), Comunitat Valenciana, curso 2026-2027. No es código de aplicación: es documentación + notebooks.
+MkDocs Material (español) con un **curso práctico de 14 h (7 sesiones × 2 h)** sobre Hugging Face, para el Curso de Especialización en IA y Big Data (CE IA&BD), Comunitat Valenciana, 2026-2027. No es código de aplicación: es documentación + notebooks.
 
-A diferencia de `mia` (que vive dentro de un único módulo, el 5071), este proyecto es **transversal**: Hugging Face se imparte en **dos módulos** — **MIA (5071)**, RA1/RA2/RA5, y **PIA (5072)**, RA3 —. Por eso la estructura se organiza **por módulo → RA → sesiones** y no solo por RA.
+Se imparte en paralelo a **ML** (Manuel Quinto) y **DL**, sin repetir sus contenidos. La base de diseño es `GUIA.md` (propuesta de Manuel Quinto, 29/10/2026), refinada y actualizada a 2026.
 
 ## Commands
 
 ```bash
-mkdocs serve          # servidor de desarrollo con live reload
-mkdocs build          # build estático del sitio
+mkdocs serve          # desarrollo con live reload
+mkdocs build          # build estático
 mkdocs build --clean  # build limpio
 ```
 
-O simplemente `./serve.sh` (crea venv, instala requirements y lanza `mkdocs serve`).
+O `./serve.sh` (crea venv, instala requirements y lanza `mkdocs serve`).
 
 ## Setup
 
@@ -26,44 +26,48 @@ pip install -r requirements.txt
 
 ## Key config
 
-- `mkdocs.yml` es la fuente de verdad para nav, tema, plugins y extensiones.
-- `use_directory_urls: false` → las URLs usan `.html`.
+- `mkdocs.yml` es la fuente de verdad (nav temático por sesiones).
+- `use_directory_urls: false` → URLs `.html`.
 - **No hay PDF**: solo web + notebooks.
-- Render de notebooks vía `mkdocs-jupyter` (`plugins: - mkdocs-jupyter`).
-- `hooks.py` inyecta en las páginas generadas desde `.ipynb` dos botones: **Abrir en Colab** y **Descargar .ipynb** (lee `extra.colab` y `extra.raw_base` de `mkdocs.yml`).
-- Matemáticas con MathJax; diagramas Mermaid vía `pymdownx.superfences` + `docs/assets/js/init.js`.
-- Idioma `es`; admonitions y paleta claro/oscuro (tema en tono `deep orange` para distinguirlo de `mia`).
+- Render de notebooks vía `mkdocs-jupyter`; `hooks.py` añade botones **Abrir en Colab** / **Descargar .ipynb**.
+- Matemáticas con MathJax; Mermaid vía `pymdownx.superfences` + `docs/assets/js/init.js`.
+- Tema `deep orange`, idioma `es`.
 
 ## Estructura
 
 ```
-PLAN.md          plan maestro (temporalización por sesiones 2h)
-AGENTS.md         este fichero
-FUENTES.md        fichas de fuentes (normativa + documentación de HF)
-curriculo.yml     datos curriculares (RA/CE, calendario, pesos)
-legislacion/      plantilla_sesion.md
-docs/             fuente markdown; index, bloques/MIA_*, bloques/PIA_*, evaluacion/, assets/
-practicas/        notebooks .ipynb por sesión/bloque
+PLAN.md, AGENTS.md, README.md, FUENTES.md, GUIA.md, curriculo.yml
+mkdocs.yml, hooks.py, requirements.txt, serve.sh
+docs/
+  index.md, relacion_ra.md
+  sesiones/    (7 × {sesionNN_*.md, sesionNN_*.ipynb})
+  evaluacion/  (index.md, retos.md, proyecto_final.md)
+  assets/js/init.js
 ```
 
 ## Convenciones de contenido
 
-- Carpeta de bloque: `docs/bloques/<MODULO>_<RA>/`, p. ej. `MIA_RA2/`, `PIA_RA3/`.
-- Cada sesión de 2h = un fichero `sesionNN_<tema>.md` siguiendo `legislacion/plantilla_sesion.md`.
-- Los notebooks viven en `practicas/` y se enlazan desde su sesión; también puede haber `.ipynb` dentro de `docs/bloques/.../` (como en `mia`) si se prefiere servirlos directamente.
-- Citar siempre la **documentación oficial de Hugging Face** como fuente (ver `FUENTES.md`).
+- Cada sesión = un `.md` (guía de clase: objetivo, apuntes, práctica, reto, autoevaluación) + un `.ipynb` (notebook Colab con celdas TODO).
+- Formato de sesión: ~30 min explicación · ~75 min notebook · ~15 min reto.
+- Citar la documentación oficial de HF como fuente (`FUENTES.md`).
 - Licencia prevista: CC BY-NC-SA 4.0.
 
-## Historial de decisiones (fechas)
+## Decisiones (2026-11-12)
 
-- 2026-11-11: se crea el esqueleto replicando la estructura de `mia` (MkDocs Material + notebooks Colab + gobernanza PLAN/AGENTS/FUENTES), organizado por módulo (MIA y PIA) porque Hugging Face es transversal. Solo esqueleto + plantillas; contenido pendiente.
+- **7 sesiones temáticas** (no 8): se fusiona Datasets + Fine-tuning en una sesión (S4).
+- **Sin agentes (`smolagents`)** por decisión del docente.
+- **Evaluación** según la guía (40 % retos + 60 % Space); pendiente de reconciliar con la Orden 8/2025.
+- **Nav temático** + página aparte `relacion_ra.md` para la documentación oficial de RA.
+
+## Pendientes (para la revisión)
+
+1. Verificar enunciado/CE del **RA3 de PIA (5072)** (RD 279/2021).
+2. Cobertura de **RA5** (sistemas expertos): hoy solo tangencial vía zero-shot en S1.
+3. Reconciliar la **evaluación** con la Orden 8/2025 (escala 1–10, ≥5 por RA, prueba escrita).
+4. Confirmar fechas/calendario del centro.
 
 ## Session history
 
-- **Sesión 1 (2026-11-11, modo SCAFFOLD):** creado el esqueleto completo (gobernanza, mkdocs.yml, hooks, plantilla de sesión, índices de bloque y evaluación). Sin contenido de sesiones todavía.
-
-## Pendientes
-
-- Rellenar el enunciado oficial del **RA3 de PIA (5072)** y su desglose de CE en `curriculo.yml` y `FUENTES.md` (verificar contra el RD 279/2021).
-- Redactar el contenido de cada sesión y crear sus notebooks.
-- Verificar `repo_url` / `extra.colab` / `extra.raw_base` cuando exista el repositorio `jmperez-profesor/hf`.
+- **2026-11-11:** esqueleto inicial (estructura por módulo/RA), repo `jmperez-profesor/hf`, CI a Pages.
+- **2026-11-12:** redactados los 4 bloques por módulo/RA (7 sesiones + 8 notebooks).
+- **2026-11-12:** tras revisar `GUIA.md`, **reestructurado a 7 sesiones temáticas** (nav por sesiones + `relacion_ra.md`), fusionando Datasets+Fine-tuning, sin agentes, con evaluación de la guía.

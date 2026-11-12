@@ -1,28 +1,31 @@
-# Hugging Face · Apuntes y prácticas (CE IA&BD)
+# Hugging Face · Curso práctico (CE IA&BD)
 
-Materiales docentes sobre el **ecosistema Hugging Face** (Transformers, Datasets, Hub, Tokenizers, pipelines y fine-tuning) para el Curso de Especialización en Inteligencia Artificial y Big Data (Grado E), **Comunitat Valenciana, curso 2026-2027**.
+Curso práctico de **14 h** (7 sesiones × 2 h) sobre el ecosistema **Hugging Face**, centrado en **usar y adaptar modelos preentrenados** (no en construir redes desde cero).
 
-Profesor: **José Manuel Pérez Torres** · Centro: **I.E.S. Severo Ochoa (Elche)**.
+Profesor: **José Manuel Pérez Torres** · Centro: **I.E.S. Severo Ochoa (Elche)** · Curso **2026-2027**.
 
-## Cómo está organizado
+> Se imparte en paralelo a los cursos de **Machine Learning** (Manuel Quinto) y **Deep Learning**, sin repetir sus contenidos.
 
-Hugging Face es una herramienta **transversal** que se imparte en dos módulos. El sitio se organiza por **módulo → RA → sesiones de 2 h**:
+## Sesiones
 
-| Módulo | Código | RA que toca Hugging Face |
-|--------|--------|---------------------------|
-| **Modelos de IA (MIA)** | 5071 | [RA1](bloques/MIA_RA1/index.md) · [RA2](bloques/MIA_RA2/index.md) · [RA5](bloques/MIA_RA5/index.md) |
-| **Programación de IA (PIA)** | 5072 | [RA3](bloques/PIA_RA3/index.md) |
+| # | Sesión | Fecha |
+|---|---|---|
+| [S1](sesiones/sesion01_ecosistema_pipelines.md) | Ecosistema y pipelines | 18/11 |
+| [S2](sesiones/sesion02_tokenizadores.md) | Tokenizadores | 23/11 |
+| [S3](sesiones/sesion03_transformers.md) | Transformers por dentro | 25/11 |
+| [S4](sesiones/sesion04_datasets_finetuning.md) | Datasets y fine-tuning | 30/11 |
+| [S5](sesiones/sesion05_llms.md) | LLMs: generación, cuantización y LoRA | 02/12 |
+| [S6](sesiones/sesion06_vision_audio_multimodal.md) | Visión, audio y multimodal | 09/12 |
+| [S7](sesiones/sesion07_despliegue_gradio_spaces.md) | Desplegar: Hub, Gradio y Spaces | 14/12 |
 
-## Qué encontrarás
+## Cómo funciona
 
-- **Apuntes** con teoría y código Python de `transformers`, `datasets` y `tokenizers`.
-- **Ejercicios guiados** (se resuelven en clase) y **ejercicios propuestos** (entregables).
-- **Cuadernos de Google Colab** para las prácticas, con botones **Abrir en Colab** y **Descargar .ipynb**.
-- **Miniproyectos y actividades** evaluables por RA.
+- Cada sesión: **~30 min** de explicación · **~75 min** de notebook guiado · **~15 min** de reto.
+- Cuadernos de Google Colab con botones **Abrir en Colab** / **Descargar .ipynb**.
+- **Evaluación:** retos semanales (40 %) + Space final (60 %).
 
 ## Enlaces
 
-- [Evaluación (por RA)](evaluacion/index.md)
-- Calendario y temporalización: `PLAN.md` en el repositorio.
-
-> Este proyecto replica la estructura del módulo [Modelos de IA (5071)](https://jmperez-profesor.github.io/mia/). El contenido se irá ampliando conforme avance el curso.
+- [Relación con los Resultados de Aprendizaje (RA)](relacion_ra.md)
+- [Evaluación y retos](evaluacion/index.md)
+- Calendario y decisiones: `PLAN.md` y `GUIA.md` en el repositorio.

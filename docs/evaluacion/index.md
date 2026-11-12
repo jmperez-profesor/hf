@@ -1,16 +1,13 @@
-# Evaluación · Hugging Face (por RA)
+# Evaluación
 
-Material de evaluación para los resultados de aprendizaje donde se imparte Hugging Face.
+La evaluación del curso de Hugging Face se basa en:
 
-- Criterios de la **Orden 8/2025** (CV): escala **1–10 sin decimales**, nota mínima por RA = **5**.
-- Ponderación: **40 % actividades** + **60 % prueba escrita**.
-- Cada RA tiene su **banco de pruebas** (tipo test + desarrollo) y su **rúbrica**.
+| Componente | Peso |
+|---|---|
+| **Retos semanales** (uno por sesión) | **40 %** |
+| **Space final** (proyecto) | **60 %** |
 
-| Módulo | RA | Banco y rúbrica |
-|--------|----|-----------------|
-| MIA (5071) | RA1 | [Caracterización de sistemas de IA](MIA_RA1.md) |
-| MIA (5071) | RA2 | [Utiliza modelos de IA](MIA_RA2.md) |
-| MIA (5071) | RA5 | [Sistemas expertos](MIA_RA5.md) |
-| PIA (5072) | RA3 | [Procesamiento de lenguaje natural](PIA_RA3.md) |
+> ⚠️ **Nota para revisar:** al ser un Curso de Especialización (FP), la evaluación formal debe alinearse con la **Orden 8/2025** (CV): escala 1–10 sin decimales, nota mínima 5 por RA, y ponderación 40 % actividades / 60 % prueba escrita. El esquema de retos + Space es la propuesta de Manuel Quinto; hay que **reconciliarlo con la normativa oficial** antes de cerrar la programación.
 
-> Los bancos de test pueden volcarse a Moodle (categoría por RA). El profesor puede generar varias pruebas combinando ítems.
+- [Retos semanales](retos.md)
+- [Proyecto final (Space)](proyecto_final.md)

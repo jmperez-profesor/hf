@@ -10,10 +10,7 @@ use_directory_urls: false
 # Ocultar los cuadernos de soluciones mientras duran las clases.
 # Para volver a mostrarlos, comenta o elimina las líneas siguientes.
 exclude_docs: |
-  bloques/MIA_RA1/*_soluciones.ipynb
-  bloques/MIA_RA2/*_soluciones.ipynb
-  bloques/MIA_RA5/*_soluciones.ipynb
-  bloques/PIA_RA3/*_soluciones.ipynb
+  sesiones/*_soluciones.ipynb
 
 theme:
   name: material
@@ -96,44 +93,30 @@ hooks:
 
 nav:
   - Inicio: index.md
-  - "MIA · Modelos de IA (5071)":
-      - "RA1 · Caracterización de sistemas IA":
-          - Introducción: bloques/MIA_RA1/index.md
-          - "Apuntes (RA1)": bloques/MIA_RA1/apuntes.md
-          - "S01 · El Hub como catálogo de sistemas de IA":
-              - "Guía de clase": bloques/MIA_RA1/sesion01_caracterizacion.md
-              - "Notebook": bloques/MIA_RA1/sesion01_caracterizacion.ipynb
-      - "RA2 · Utiliza modelos de IA":
-          - Introducción: bloques/MIA_RA2/index.md
-          - "Apuntes (RA2)": bloques/MIA_RA2/apuntes.md
-          - "S01 · Pipelines y modelos preentrenados":
-              - "Guía de clase": bloques/MIA_RA2/sesion01_pipelines.md
-              - "Notebook": bloques/MIA_RA2/sesion01_pipelines.ipynb
-          - "S02 · Tokenizers y Datasets":
-              - "Guía de clase": bloques/MIA_RA2/sesion02_tokenizers_datasets.md
-              - "Notebook": bloques/MIA_RA2/sesion02_tokenizers_datasets.ipynb
-          - "S03 · Fine-tuning y evaluación":
-              - "Guía de clase": bloques/MIA_RA2/sesion03_finetuning.md
-              - "Notebook": bloques/MIA_RA2/sesion03_finetuning.ipynb
-      - "RA5 · Sistemas expertos":
-          - Introducción: bloques/MIA_RA5/index.md
-          - "Apuntes (RA5)": bloques/MIA_RA5/apuntes.md
-          - "S01 · Modelos en sistemas híbridos y guardarraíles":
-              - "Guía de clase": bloques/MIA_RA5/sesion01_guardarrailes.md
-              - "Notebook": bloques/MIA_RA5/sesion01_guardarrailes.ipynb
-  - "PIA · Programación de IA (5072)":
-      - "RA3 · Procesamiento de lenguaje natural":
-          - Introducción: bloques/PIA_RA3/index.md
-          - "Apuntes (RA3)": bloques/PIA_RA3/apuntes.md
-          - "S01 · Clasificación de texto y NER":
-              - "Guía de clase": bloques/PIA_RA3/sesion01_clasificacion_ner.md
-              - "Notebook": bloques/PIA_RA3/sesion01_clasificacion_ner.ipynb
-          - "S02 · QA, resumen y generación":
-              - "Guía de clase": bloques/PIA_RA3/sesion02_qa_resumen_generacion.md
-              - "Notebook": bloques/PIA_RA3/sesion02_qa_resumen_generacion.ipynb
+  - Sesiones:
+      - "S1 · Ecosistema y pipelines":
+          - "Guía de clase": sesiones/sesion01_ecosistema_pipelines.md
+          - "Notebook": sesiones/sesion01_ecosistema_pipelines.ipynb
+      - "S2 · Tokenizadores":
+          - "Guía de clase": sesiones/sesion02_tokenizadores.md
+          - "Notebook": sesiones/sesion02_tokenizadores.ipynb
+      - "S3 · Transformers por dentro":
+          - "Guía de clase": sesiones/sesion03_transformers.md
+          - "Notebook": sesiones/sesion03_transformers.ipynb
+      - "S4 · Datasets y fine-tuning":
+          - "Guía de clase": sesiones/sesion04_datasets_finetuning.md
+          - "Notebook": sesiones/sesion04_datasets_finetuning.ipynb
+      - "S5 · LLMs: generación, cuantización y LoRA":
+          - "Guía de clase": sesiones/sesion05_llms.md
+          - "Notebook": sesiones/sesion05_llms.ipynb
+      - "S6 · Visión, audio y multimodal":
+          - "Guía de clase": sesiones/sesion06_vision_audio_multimodal.md
+          - "Notebook": sesiones/sesion06_vision_audio_multimodal.ipynb
+      - "S7 · Desplegar: Hub, Gradio y Spaces":
+          - "Guía de clase": sesiones/sesion07_despliegue_gradio_spaces.md
+          - "Notebook": sesiones/sesion07_despliegue_gradio_spaces.ipynb
+  - "Relación con los RA": relacion_ra.md
   - Evaluación:
       - Índice: evaluacion/index.md
-      - "MIA · RA1": evaluacion/MIA_RA1.md
-      - "MIA · RA2": evaluacion/MIA_RA2.md
-      - "MIA · RA5": evaluacion/MIA_RA5.md
-      - "PIA · RA3": evaluacion/PIA_RA3.md
+      - "Retos semanales": evaluacion/retos.md
+      - "Proyecto final (Space)": evaluacion/proyecto_final.md

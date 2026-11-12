@@ -1,98 +1,64 @@
 # PLAN.md — Proyecto Hugging Face (`hf`)
 
-> Plan maestro recuperable entre sesiones. Última actualización: 2026-11-11 (creación del esqueleto).
+> Plan maestro. Última actualización: 2026-11-12 (reestructuración a 7 sesiones temáticas tras revisar `GUIA.md`).
 
 ## 1. Contexto
 
-- **Tema transversal:** ecosistema **Hugging Face** (Transformers, Datasets, Hub, Tokenizers, pipelines, fine-tuning).
-- **Curso de especialización:** Inteligencia Artificial y Big Data (Grado E / FP Grado Superior).
-- **Comunidad:** Comunitat Valenciana · **Curso académico:** 2026-2027.
+- **Tema:** ecosistema Hugging Face (Transformers, Datasets, Hub, Tokenizers, pipelines, fine-tuning).
+- **Curso:** CE Inteligencia Artificial y Big Data (Grado E) · **Centro:** I.E.S. Severo Ochoa (Elche) · **Curso:** 2026-2027.
 - **Profesor:** José Manuel Pérez Torres.
-- **Unidad mínima de planificación:** **sesión de 2 horas**.
-- **Hilo transversal:** Hugging Face se imparte en **dos módulos** (ver §3).
+- **Duración:** 14 h (7 sesiones × 2 h), en paralelo a ML (Manuel Quinto) y DL.
+- **Base de diseño:** `GUIA.md` (Manuel Quinto, 29/10/2026), refinada a 2026.
 
-## 2. Normativa aplicable (resumen; fichas en `FUENTES.md`)
+## 2. Normativa (fichas en `FUENTES.md`)
 
-- **RD 279/2021, de 20 abril**: currículo básico; RA/CE de los módulos 5071 (MIA) y 5072 (PIA).
-- **RD 497/2024, de 21 mayo**: modifica enseñanzas mínimas de CE.
-- **DECRETO 95/2026, de 19 junio** (CV): currículos de los CE de FP en la CV.
-- **ORDEN 8/2025, de 22 abril** (CV): evaluación del proceso de enseñanza-aprendizaje.
+- RD 279/2021 (RA/CE de MIA 5071 y PIA 5072) · RD 497/2024 · Decreto 95/2026 (CV) · Orden 8/2025 (CV, evaluación).
 
-## 3. Alcance: Hugging Face por módulo y RA
+## 3. Estructura final: 7 sesiones temáticas
 
-| Módulo | Código | RA | Rol de Hugging Face |
-|--------|--------|----|----------------------|
-| Modelos de IA (MIA) | 5071 | **RA1** | El Hub como catálogo de sistemas de IA: caracterizar modelos y datasets. |
-| Modelos de IA (MIA) | 5071 | **RA2** | **Núcleo:** pipelines, tokenizers, modelos preentrenados, inferencia, fine-tuning. |
-| Modelos de IA (MIA) | 5071 | **RA5** | Modelos como componente de sistemas híbridos y guardarraíles de LLM. |
-| Programación de IA (PIA) | 5072 | **RA3** | Procesamiento de lenguaje natural con Transformers (clasificación, NER, QA, resumen, generación). |
+| # | Sesión | Fecha | Contenido |
+|---|---|---|---|
+| S1 | Ecosistema y pipelines | 18/11 | Hub, model cards, `pipeline`, elegir modelo |
+| S2 | Tokenizadores | 23/11 | BPE/WordPiece/SentencePiece, `AutoTokenizer`, chat templates |
+| S3 | Transformers por dentro | 25/11 | atención, 3 familias, logits/softmax, embeddings |
+| S4 | Datasets y fine-tuning | 30/11 | `datasets`, `Trainer`, `evaluate`, `push_to_hub` |
+| S5 | LLMs: generación, cuantización, LoRA | 02/12 | generación, bitsandbytes, PEFT/LoRA, SFT |
+| S6 | Visión, audio y multimodal | 09/12 | ViT, CLIP, Whisper, VLM, diffusers |
+| S7 | Despliegue: Hub, Gradio, Spaces | 14/12 | `huggingface_hub`, Gradio, Spaces, `InferenceClient` |
 
-> El enunciado exacto y los CE del **RA3 de PIA (5072)** están pendientes de verificar contra el RD 279/2021.
+**Fusión aplicada (8 → 7):** Datasets y Fine-tuning en una sola sesión (S4), por ser dos mitades del mismo flujo (preparar datos → entrenar).
 
-## 4. Calendario 26-27 (sesiones de 2h presenciales: lunes y miércoles)
+**Actualizaciones a 2026 aplicadas:** familias de Transformers + mención Mamba/SSM (S3), DPO/salida estructurada fuera de alcance por decisión (S5), nombres actualizados Whisper/FLUX (S6), Inference Providers (S7). **Agentes (`smolagents`) excluidos** por decisión del docente.
 
-- **Inicio docencia:** 2026-10-01.
-- **Vacaciones:** Navidad 2026-12-22 → 2027-01-06 · Pascua 2027-03-25 → 2027-04-05.
-- **Festivos que afectan a lun/mié:** pendiente de concretar por centro (mismo calendario que `mia`).
+## 4. Relación con los RA (detalle en `docs/relacion_ra.md`)
 
-## 5. Detalle de sesiones (contenido y ejercicios)
+- **RA1 (MIA):** S1 · **RA2 (MIA):** S1–S7 (central) · **RA5 (MIA):** tangencial (zero-shot, S1) ⚠️ · **RA3 (PIA):** S3 (+ S1, S5 aplicado).
 
-> Cada bloque está redactado: apuntes + guía(s) de clase + notebook(s). Enlaza al notebook
-> `sesionNN_<tema>.ipynb` de cada sesión cuando lo trabajes en clase.
+## 5. Evaluación
 
-### MIA · RA1 — Caracterización de sistemas de IA ✅ redactado
-- **S01 · El Hub como catálogo de sistemas de IA** — caracterizar modelos, model cards, ficha de caracterización. *(apuntes + guía + notebook)*
-
-### MIA · RA2 — Utiliza modelos de IA (núcleo) ✅ redactado
-- **S01 · Pipelines y modelos preentrenados** — ecosistema HF, Hub, `pipeline`, elegir modelo. *(apuntes + guía + notebook)*
-- **S02 · Tokenizers y Datasets** — `AutoTokenizer`, padding/truncation, `datasets`, `.map()`. *(apuntes + guía + notebook)*
-- **S03 · Fine-tuning y evaluación** — `Trainer`, métricas de `evaluate`, guardar/subir. *(apuntes + guía + notebook)*
-- Hilo conductor del bloque: **SentimentLab** (clasificación de reseñas).
-
-### MIA · RA5 — Sistemas expertos / guardarraíles ✅ redactado
-- **S01 · Modelos en sistemas híbridos y guardarraíles** — zero-shot, motor de reglas, guardarraíl de dominio y toxicidad. *(apuntes + guía + notebook)*
-
-### PIA · RA3 — Procesamiento de lenguaje natural ✅ redactado
-- **S01 · Clasificación de texto y NER** — tareas PLN, atención, clasificación, entidades. *(apuntes + guía + notebook)*
-- **S02 · QA, resumen y generación** — question answering, resumen, generación. *(apuntes + guía + notebook)*
+Retos semanales (40 %) + Space final (60 %). ⚠️ **Pendiente** de reconciliar con la Orden 8/2025 (prueba escrita, escala 1–10, ≥5 por RA).
 
 ## 6. Estructura de carpetas
 
 ```
 hf/
-├── PLAN.md, AGENTS.md, FUENTES.md, README.md, .gitignore, requirements.txt, serve.sh
-├── curriculo.yml
-├── mkdocs.yml, hooks.py
-├── legislacion/
-│   └── plantilla_sesion.md
-├── practicas/           # notebooks .ipynb por sesión/bloque (pendiente)
+├── PLAN.md, AGENTS.md, README.md, FUENTES.md, GUIA.md, curriculo.yml
+├── mkdocs.yml, hooks.py, requirements.txt, serve.sh
 └── docs/
-    ├── index.md
-    ├── assets/js/init.js
-    ├── evaluacion/       # bancos de pruebas y rúbricas por RA
-    │   ├── index.md, MIA_RA1.md, MIA_RA2.md, MIA_RA5.md, PIA_RA3.md
-    └── bloques/
-        ├── MIA_RA1/  (index.md + sesiones)
-        ├── MIA_RA2/  (index.md + sesiones + notebooks)
-        ├── MIA_RA5/  (index.md + sesiones)
-        └── PIA_RA3/  (index.md + sesiones + notebooks)
+    ├── index.md, relacion_ra.md, assets/js/init.js
+    ├── sesiones/   (7 sesiones: .md + .ipynb)
+    └── evaluacion/ (index.md, retos.md, proyecto_final.md)
 ```
 
-## 7. Plantilla de sesión de 2h presenciales (+ trabajo en casa)
+## 7. Historial de decisiones
 
-Cada `docs/bloques/<MODULO>_<RA>/sesionNN_<tema>.md` sigue `legislacion/plantilla_sesion.md` e incluye:
-- **Práctica guiada (con solución):** ejemplo resuelto con código Python (`transformers`, `datasets`, etc.).
-- **Práctica propuesta (miniproyecto):** tarea para el alumnado, entregable en un notebook `.ipynb` renderizado por mkdocs-jupyter (con botones Colab/Descargar), con enunciado, entregables y criterios de evaluación.
+- 2026-11-11: esqueleto por módulo/RA; repo y CI a Pages.
+- 2026-11-12: 4 bloques por RA redactados.
+- 2026-11-12: reestructuración a 7 sesiones temáticas (revisión de `GUIA.md`).
 
-## 8. Historial de decisiones
+## 8. Pendientes (revisión)
 
-- 2026-11-11 (s1): esqueleto replicando `mia`, organizado **por módulo** (MIA + PIA) por ser Hugging Face transversal. Solo esqueleto + plantillas.
-
-## 9. Pendientes
-
-1. Verificar enunciado/CE del RA3 de PIA (5072) en el RD 279/2021.
-2. Concretar el calendario/festivos del centro para 26-27.
-3. ~~Redactar MIA · RA2.~~ **Hecho.**
-4. ~~Redactar MIA · RA1, MIA · RA5 y PIA · RA3.~~ **Hecho** (4 bloques completos).
-5. ~~Fijar `repo_url` / `extra.colab` / `extra.raw_base`.~~ **Hecho** (repo `jmperez-profesor/hf`).
-6. Rellenar los **bancos de pruebas y rúbricas** de `evaluacion/` (hoy son plantillas vacías).
+1. Enunciado/CE del RA3 de PIA (5072).
+2. Cobertura formal de RA5.
+3. Evaluación ↔ Orden 8/2025.
+4. Calendario/festivos del centro.
