@@ -110,6 +110,13 @@ Entrena un **tokenizador pequeño con `tokenizers`** sobre un corpus propio (una
 ??? tip "Solución"
     El formato de conversación (roles system/user/assistant) que el tokenizador aplica para modelos conversacionales.
 
+## 🎬 Vídeos de la sesión
+
+- [Curso oficial HF — Capítulo 6: la librería Tokenizers](https://huggingface.co/learn/nlp-course/chapter6/1) — gratuito (inglés): BPE, WordPiece, subpalabras y entrenamiento de tokenizadores.
+- [Documentación de la librería `tokenizers`](https://huggingface.co/docs/tokenizers/index) — referencia oficial.
+
+> 🔎 *Pendiente:* añadir un vídeo específico en español sobre tokenización (BPE/WordPiece).
+
 ## Observaciones
 
 - `%pip install transformers` en el Colab.

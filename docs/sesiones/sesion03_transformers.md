@@ -113,6 +113,13 @@ Reproduce **a mano** el resultado de un pipeline de clasificación: tokeniza →
 ??? tip "Solución"
     Un vector que representa el significado de la frase; permite **búsqueda semántica** (frases parecidas → vectores cercanos).
 
+## 🎬 Vídeos de la sesión (serie DotCSV)
+
+- [Parte 1 · De texto a vectores](https://www.youtube.com/watch?v=Tg1MjMIVArc) — 11 min — evolución del NLP.
+- [Parte 2 · ¿Qué es un embedding?](https://www.youtube.com/watch?v=RkYuH_K7Fx4) — 15 min — vectorización del lenguaje.
+- [Parte 3 · ¿Qué es un Transformer?](https://www.youtube.com/watch?v=aL-EmKuB078) — 18 min — atención, Query/Key/Value y *Attention Is All You Need* (la más valiosa).
+- [Parte 4 · ¿Por qué estas redes son tan potentes?](https://www.youtube.com/watch?v=xi94v_jl26U) — 15 min — paralelización y positional encoding.
+
 ## Observaciones
 
 - `%pip install transformers sentence-transformers` en el Colab.

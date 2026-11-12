@@ -102,6 +102,13 @@ Clasificador de imágenes **zero-shot con CLIP** para categorías propias (p. ej
 ??? tip "Solución"
     Reutilizas todo lo aprendido en texto (pipelines, modelos preentrenados, transfer learning) en visión, audio y multimodal.
 
+## 🎬 Vídeos de la sesión
+
+- [Audio Course oficial de Hugging Face](https://huggingface.co/learn/audio-course) — gratuito (inglés): Whisper, clasificación de audio.
+- [Documentación de tareas de visión de Transformers](https://huggingface.co/docs/transformers/tasks/image_classification) — referencia oficial (ViT, CLIP, detección).
+
+> 🔎 *Pendiente:* añadir vídeos en español de visión (ViT/CLIP) y audio (Whisper).
+
 ## Observaciones
 
 - `%pip install transformers` (para CLIP/Whisper puede hacer falta `torch` y descargar pesos).

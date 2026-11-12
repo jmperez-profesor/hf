@@ -132,6 +132,10 @@ Publica en un **Space** el modelo de la sesión 4 o 5 con una interfaz **Gradio*
 ??? tip "Solución"
     La licencia del modelo base, sus sesgos/limitaciones, y documentarlos en la model card.
 
+## 🎬 Vídeos de la sesión
+
+- [Deploying AI Models with Hugging Face](https://www.youtube.com/watch?v=R8h_gpSpEVU) — freeCodeCamp, 6h53m, inglés — curso end-to-end (Gradio, Spaces, despliegue). Para ampliación, con capítulos marcados.
+
 ## Observaciones
 
 - `%pip install gradio huggingface_hub` en el Colab.

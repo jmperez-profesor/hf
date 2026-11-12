@@ -114,6 +114,10 @@ Mide la diferencia **antes y después** del ajuste con 10 preguntas de prueba.
 ??? tip "Solución"
     Es mucho más ligero (KB en vez de GB) y se puede compartir/reutilizar sobre el mismo modelo base.
 
+## 🎬 Vídeos de la sesión
+
+- [Tutorial para usar los modelos de Hugging Face](https://www.youtube.com/watch?v=Puk-AJcnwbA) — 2026, ~23 min, español — las **4 formas de ejecutar un modelo**: API serverless, descarga local, LLM cuantizado en 4 bits e inferencia con vLLM/TGI. Con notebook Colab.
+
 ## Observaciones
 
 - `%pip install transformers datasets accelerate peft bitsandbytes trl` en Colab con GPU T4.

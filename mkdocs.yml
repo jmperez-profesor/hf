@@ -116,6 +116,8 @@ nav:
           - "Guía de clase": sesiones/sesion07_despliegue_gradio_spaces.md
           - "Notebook": sesiones/sesion07_despliegue_gradio_spaces.ipynb
   - "Relación con los RA": relacion_ra.md
+  - Recursos:
+      - "Vídeos educativos": recursos/videos.md
   - Evaluación:
       - Índice: evaluacion/index.md
       - "Retos semanales": evaluacion/retos.md

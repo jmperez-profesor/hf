@@ -137,6 +137,13 @@ Afina un modelo de **NER** o de **clasificación multietiqueta**.
 ??? tip "Solución"
     Sube el modelo (y su card) al Hub para compartirlo y versionarlo.
 
+## 🎬 Vídeos de la sesión
+
+- [Curso oficial HF — Capítulo 5: la librería Datasets](https://huggingface.co/learn/nlp-course/chapter5/1) — gratuito (inglés): carga, transformación y preparación de datos.
+- [Documentación de `datasets`](https://huggingface.co/docs/datasets/index) — referencia oficial.
+
+> 🔎 *Pendiente:* añadir un vídeo específico en español sobre la librería `datasets`.
+
 ## Observaciones
 
 - En Colab gratuito usa subconjuntos (`shuffle` + `select`) y `batch_size` bajo.

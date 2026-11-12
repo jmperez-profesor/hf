@@ -114,6 +114,12 @@ Encuentra en el Hub el **mejor modelo para una tarea dada** (p. ej. NER en espa�
 ??? tip "Solución"
     Es genérico y suele estar en inglés; para tu dominio/idioma conviene un modelo afinado.
 
+## 🎬 Vídeos de la sesión
+
+- [¡Hugging Face desde cero!](https://www.youtube.com/watch?v=29ZGRMlpzu8) — Codificando Bits, ~26 min — introducción completa (qué es HF, modelos, datasets, Spaces), con índice por minuto.
+- [¿Qué es Hugging Face y cómo funciona?](https://www.youtube.com/watch?v=jG4Ns63tTeo) — 2025 — la plataforma en sencillo: repositorio colaborativo y cómo probar demos sin programar.
+- [Un recorrido por el Hub de Hugging Face](https://github.com/huggingface/education-toolkit) — Education Toolkit oficial HF (español, 20-40 min) — Transformers, transfer learning y colaboración en el Hub.
+
 ## Observaciones
 
 - `%pip install transformers` en el Colab.
