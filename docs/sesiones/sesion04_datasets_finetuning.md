@@ -46,8 +46,33 @@ split = dataset["train"].train_test_split(test_size=0.2)  # particionar
 ```
 
 - **Arrow:** formato columnar eficiente; los datos se cachean en disco.
-- **Streaming:** para datasets que no caben en memoria (`load_dataset(..., streaming=True)`).
+- **Streaming:** para datasets que no caben en memoria (`load_dataset(..., streaming=True)`), devuelve un `IterableDataset` (se recorre con `next(iter(...))` y se procesa al vuelo).
 - **`set_format("torch")`** pasa a tensores; **`DataCollatorWithPadding`** hace padding dinámico por lote.
+
+## 2b · Crear, persistir y publicar datasets
+
+Además de cargar, puedes **crear** un dataset desde estructuras Python y **guardarlo**:
+
+```python
+from datasets import Dataset
+
+# desde una lista de diccionarios (p. ej. leídos de una BD o CSV)
+datos = [{"texto": "me encanta", "label": 1}, {"texto": "no me gusta", "label": 0}]
+ds = Dataset.from_list(datos)          # o from_dict(...)
+
+ds.save_to_disk("mi_dataset")          # Arrow (rápido, comprimido)
+ds.to_parquet("mi_dataset.parquet")    # o to_csv / to_json
+from datasets import load_from_disk
+ds = load_from_disk("mi_dataset")
+```
+
+Para **publicarlo en el Hub** (requiere token de escritura):
+
+```python
+from huggingface_hub import login
+login()                                # pega tu token
+ds.push_to_hub("tu-usuario/mi-dataset")
+```
 
 ## 3 · Fine-tuning con `Trainer`
 
@@ -116,3 +141,8 @@ Afina un modelo de **NER** o de **clasificación multietiqueta**.
 
 - En Colab gratuito usa subconjuntos (`shuffle` + `select`) y `batch_size` bajo.
 - `huggingface-cli login` + token solo para publicar.
+
+## Fuentes y atribución
+
+- Documentación oficial de `datasets`: https://huggingface.co/docs/datasets
+- Apartados de crear/persistir/publicar datasets adaptados de **Aitor Medrano** (CC BY-NC-SA 4.0): https://aitor-medrano.github.io/iabd/hf/datasets.html

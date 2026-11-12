@@ -52,6 +52,32 @@ gr.Interface(fn=clasificar, inputs="text", outputs="text").launch()
 
 `Blocks` permite interfaces con varios componentes y estado.
 
+## 2b · `Blocks`: flujo, disposición y componentes
+
+`Blocks` es la API de bajo nivel: controlas **eventos**, **disposición** y **componentes**:
+
+```python
+import gradio as gr
+
+def traducir(texto):
+    return traductor(texto)[0]["translation_text"]
+
+with gr.Blocks() as demo:
+    gr.Markdown("## Traductor ES→EN")
+    with gr.Row():
+        entrada = gr.Textbox(label="Español", placeholder="Escribe aquí…")
+        salida = gr.Textbox(label="English")
+    btn = gr.Button("Traducir")
+    btn.click(fn=traducir, inputs=entrada, outputs=salida)
+
+demo.launch()
+```
+
+- **Disposición:** `gr.Row()`, `gr.Column()`, `gr.Tab()`, `gr.Accordion()` organizan los componentes.
+- **Eventos:** `.click()`, `.change()`, `.submit()` disparan funciones (o con decoradores `@btn.click(...)`).
+- **Componentes:** `Textbox`, `Image`, `Audio`, `Video`, `Slider`, `Dropdown`, `Checkbox`, `DateTime`, `Radio`, `Dataframe`, `Plot`… (más de 30).
+- **Personalización:** `title`, `description`, `article`, `theme`, `examples` (lista de ejemplos precargados).
+
 ## 3 · Spaces
 
 Un **Space** es un repositorio del Hub con una app (Gradio/Streamlit) que se sirve como web. Hardware gratuito (CPU), con **límites** de uso; GPU es de pago.
@@ -73,7 +99,7 @@ Licencias, sesgos conocidos y **documentación en la card**. Antes de publicar: 
 
 ## Práctica (notebook)
 
-Publica en un **Space** el modelo de la sesión 4 o 5 con una interfaz **Gradio**.
+Publica en un **Space** el modelo de la sesión 4 o 5 con una interfaz **Gradio**. Ampliación (tipo Aitor): un **traductor ES↔EN** con `Blocks` y un `Dropdown`/`Radio` para elegir el sentido, usando los modelos `Helsinki-NLP/opus-mt-*`.
 
 ## Proyecto final (última hora)
 
@@ -110,3 +136,8 @@ Publica en un **Space** el modelo de la sesión 4 o 5 con una interfaz **Gradio*
 
 - `%pip install gradio huggingface_hub` en el Colab.
 - Para publicar en Spaces necesitas **token de escritura** (`huggingface-cli login`).
+
+## Fuentes y atribución
+
+- Documentación de Gradio: https://www.gradio.app/guides/quickstart
+- Apartados de `Blocks`, disposición y componentes adaptados de **Aitor Medrano** (CC BY-NC-SA 4.0): https://aitor-medrano.github.io/iabd/hf/gradio.html

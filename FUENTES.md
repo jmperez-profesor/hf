@@ -38,6 +38,12 @@
 - **Web:** https://martinezpenya.es/ModelosIA/ · **Repo:** https://github.com/martinezpenya/ModelosIA
 - **Uso:** **solo referencia de metodología y estructura. No copiar literalmente su prosa.**
 
+### F9 · Apuntes de Aitor Medrano (CC BY-NC-SA 4.0)
+- **Web:** https://aitor-medrano.github.io/iabd/hf/hf.html · `gradio.html` · `datasets.html`
+- **Autor:** Aitor Medrano (docente del CE IA&BD, I.E.S. Severo Ochoa de Elche).
+- **Licencia:** CC BY-NC-SA 4.0 (atribución, no comercial, compartir igual).
+- **Uso:** referencia de contenido para las sesiones de plataforma (Hub, CLI, Spaces), **Gradio** y **Datasets**. Se **adapta y reescribe** (no se copia literalmente), con atribución. Sus actividades etiquetan los códigos oficiales **RAPIA.3** (`CEPIA.3b/c/d`) y **RAMIA.1** (`CEMIA.1d/e`).
+
 ## Pendiente
 
 - Verificar el enunciado oficial del **RA3 de PIA (5072)** en el RD 279/2021 y enlazarlo aquí.

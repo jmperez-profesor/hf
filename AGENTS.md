@@ -71,3 +71,4 @@ docs/
 - **2026-11-11:** esqueleto inicial (estructura por módulo/RA), repo `jmperez-profesor/hf`, CI a Pages.
 - **2026-11-12:** redactados los 4 bloques por módulo/RA (7 sesiones + 8 notebooks).
 - **2026-11-12:** tras revisar `GUIA.md`, **reestructurado a 7 sesiones temáticas** (nav por sesiones + `relacion_ra.md`), fusionando Datasets+Fine-tuning, sin agentes, con evaluación de la guía.
+- **2026-11-12:** integrado el material de **Aitor Medrano** (CC BY-NC-SA 4.0) como referencia: enriquecidas S1 (plataforma/CLI), S4 (crear/persistir/publicar datasets) y S7 (Blocks/disposición), y corregido `relacion_ra.md` con los códigos oficiales `RAPIA.3`/`CEPIA.3*` y `RAMIA.1`/`CEMIA.1*`.

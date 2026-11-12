@@ -66,6 +66,24 @@ Tareas con la misma interfaz: `"sentiment-analysis"`, `"ner"`, `"summarization"`
 - **Caché:** los modelos se descargan una vez y se cachean en `~/.cache/huggingface`.
 - **Token:** necesario para modelos privados o *gated* (`huggingface-cli login`).
 
+## 5 · Cuenta, CLI y token de acceso
+
+Para usar el Hub desde el terminal se instala `huggingface_hub`, que expone el comando **`hf`** (antes `huggingface-cli`):
+
+```bash
+pip install huggingface_hub
+hf auth login          # pide un token de acceso
+hf auth whoami         # confirma el usuario autenticado
+hf cache scan          # cuánto ocupan los modelos descargados
+```
+
+El **token** puede ser de **lectura** (descargar/inferir) o de **escritura** (publicar modelos y datasets). Se genera en *Settings → Access Tokens* del Hub.
+
+## 6 · Spaces e Inference API (adelanto)
+
+- Un **Space** es una app (Gradio/Streamlit) servida como web pública para probar un modelo. Lo vemos en profundidad en la **sesión 7**.
+- La **Inference API** permite probar un modelo desde la propia model card (widget) o por HTTP, sin descargarlo.
+
 ## Práctica (notebook)
 
 Compara **dos modelos de sentimiento** (uno multilingüe y uno en español) sobre 20 frases propias y comenta las diferencias.
@@ -100,3 +118,8 @@ Encuentra en el Hub el **mejor modelo para una tarea dada** (p. ej. NER en espa�
 
 - `%pip install transformers` en el Colab.
 - Primera descarga de un modelo puede tardar; la caché lo acelera después.
+
+## Fuentes y atribución
+
+- Documentación oficial: https://huggingface.co/docs
+- Apartados de plataforma (CLI, token, Spaces) adaptados de **Aitor Medrano** (CC BY-NC-SA 4.0): https://aitor-medrano.github.io/iabd/hf/hf.html
