@@ -2,23 +2,19 @@
 
 > **Módulo:** Modelos de IA (5071) · **RA2:** *Utiliza modelos de sistemas de Inteligencia Artificial implementando sistemas de resolución de problemas.*
 >
-> **Rol de Hugging Face aquí:** el **núcleo** del proyecto. Pipelines, tokenizers, modelos preentrenados, inferencia, Datasets y fine-tuning.
+> **Rol de Hugging Face aquí:** el **núcleo** del proyecto. Pipelines, tokenizers, modelos preentrenados, Datasets y fine-tuning.
+>
+> **Hilo conductor:** **SentimentLab**, una tienda online que clasifica sus reseñas (positiva/negativa).
+
+- [**Apuntes (RA2)**](apuntes.md) — material de lectura y consulta completo.
 
 ## Sesiones
 
-| Sesión | Fecha | Contenido | CE |
-|--------|-------|-----------|----|
-| S01 · Pipelines y modelos preentrenados | TBD | _pendiente_ | RA2 |
-| S02 · Tokenizers y Datasets | TBD | _pendiente_ | RA2 |
-| S03 · Fine-tuning y evaluación | TBD | _pendiente_ | RA2 |
-
-> **PENDIENTE:** redactar apuntes y sesiones. Una sesión de ejemplo ya existe (`sesion01_ejemplo.md`) como referencia de la plantilla.
-
-## Documentos
-
-- `sesion01_ejemplo.md` — **ejemplo de sesión** (plantilla rellena a modo de demostración).
-- `sesionNN_<tema>.md` — planes de sesión (_pendientes_).
-- `sesionNN_<tema>.ipynb` — notebooks de práctica (_pendientes_).
+| Sesión | Contenido | Notebook |
+|--------|-----------|----------|
+| [**S01 · Pipelines y modelos preentrenados**](sesion01_pipelines.md) | Ecosistema HF, Hub, `pipeline`, elegir modelo | [notebook](sesion01_pipelines.ipynb) |
+| [**S02 · Tokenizers y Datasets**](sesion02_tokenizers_datasets.md) | `AutoTokenizer`, padding/truncation, `datasets`, `.map()` | [notebook](sesion02_tokenizers_datasets.ipynb) |
+| [**S03 · Fine-tuning y evaluación**](sesion03_finetuning.md) | `Trainer`, métricas de `evaluate`, guardar/subir | [notebook](sesion03_finetuning.ipynb) |
 
 ## Evaluación
 

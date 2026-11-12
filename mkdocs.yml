@@ -98,7 +98,18 @@ nav:
   - Inicio: index.md
   - "MIA · Modelos de IA (5071)":
       - "RA1 · Caracterización de sistemas IA": bloques/MIA_RA1/index.md
-      - "RA2 · Utiliza modelos de IA": bloques/MIA_RA2/index.md
+      - "RA2 · Utiliza modelos de IA":
+          - Introducción: bloques/MIA_RA2/index.md
+          - "Apuntes (RA2)": bloques/MIA_RA2/apuntes.md
+          - "S01 · Pipelines y modelos preentrenados":
+              - "Guía de clase": bloques/MIA_RA2/sesion01_pipelines.md
+              - "Notebook": bloques/MIA_RA2/sesion01_pipelines.ipynb
+          - "S02 · Tokenizers y Datasets":
+              - "Guía de clase": bloques/MIA_RA2/sesion02_tokenizers_datasets.md
+              - "Notebook": bloques/MIA_RA2/sesion02_tokenizers_datasets.ipynb
+          - "S03 · Fine-tuning y evaluación":
+              - "Guía de clase": bloques/MIA_RA2/sesion03_finetuning.md
+              - "Notebook": bloques/MIA_RA2/sesion03_finetuning.ipynb
       - "RA5 · Sistemas expertos": bloques/MIA_RA5/index.md
   - "PIA · Programación de IA (5072)":
       - "RA3 · Procesamiento de lenguaje natural": bloques/PIA_RA3/index.md

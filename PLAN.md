@@ -46,10 +46,11 @@
   - Contenidos detallados: _pendiente_.
   - Ejercicios: _pendiente_.
 
-### MIA · RA2 — Utiliza modelos de IA (núcleo)
-- **Sesión (2 h) · TBD** — pipelines y modelos preentrenados.
-- **Sesión (2 h) · TBD** — tokenizers y Datasets.
-- **Sesión (2 h) · TBD** — fine-tuning y evaluación.
+### MIA · RA2 — Utiliza modelos de IA (núcleo) ✅ redactado
+- **S01 · Pipelines y modelos preentrenados** — ecosistema HF, Hub, `pipeline`, elegir modelo. *(apuntes + guía + notebook)*
+- **S02 · Tokenizers y Datasets** — `AutoTokenizer`, padding/truncation, `datasets`, `.map()`. *(apuntes + guía + notebook)*
+- **S03 · Fine-tuning y evaluación** — `Trainer`, métricas de `evaluate`, guardar/subir. *(apuntes + guía + notebook)*
+- Hilo conductor del bloque: **SentimentLab** (clasificación de reseñas).
 
 ### MIA · RA5 — Sistemas expertos / guardarraíles
 - **Sesión (2 h) · TBD** — modelos como componente de sistemas híbridos y guardarraíles.
@@ -94,6 +95,6 @@ Cada `docs/bloques/<MODULO>_<RA>/sesionNN_<tema>.md` sigue `legislacion/plantill
 
 1. Verificar enunciado/CE del RA3 de PIA (5072) en el RD 279/2021.
 2. Concretar el calendario/festivos del centro para 26-27.
-3. Redactar el contenido de cada sesión (apuntes + ejercicios).
-4. Crear los notebooks `.ipynb` de cada sesión.
-5. Fijar `repo_url` / `extra.colab` / `extra.raw_base` cuando exista `jmperez-profesor/hf`.
+3. ~~Redactar MIA · RA2 (apuntes + 3 sesiones + 3 notebooks).~~ **Hecho.**
+4. Redactar MIA · RA1, MIA · RA5 y PIA · RA3 (apuntes + sesiones + notebooks).
+5. ~~Fijar `repo_url` / `extra.colab` / `extra.raw_base`.~~ **Hecho** (repo `jmperez-profesor/hf`).
