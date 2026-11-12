@@ -2,21 +2,15 @@
 
 > **Módulo:** Modelos de IA (5071) · **RA1:** *Caracteriza sistemas de Inteligencia Artificial relacionándolos con la mejora de la eficiencia operativa de las organizaciones y empresas.*
 >
-> **Rol de Hugging Face aquí:** el **Hub** como catálogo de sistemas de IA ya construidos (modelos y datasets), para aprender a caracterizar un sistema de IA con una ficha mínima (qué hace, con qué datos, qué métricas).
+> **Rol de Hugging Face aquí:** el **Hub** como catálogo de sistemas de IA ya construidos (modelos y datasets), para aprender a caracterizar un sistema de IA con una ficha mínima.
+
+- [**Apuntes (RA1)**](apuntes.md) — material de lectura y consulta completo.
 
 ## Sesiones
 
-| Sesión | Fecha | Contenido | CE |
-|--------|-------|-----------|----|
-| S01 · El Hub como catálogo de sistemas de IA | TBD | _pendiente_ | RA1 |
-
-> **PENDIENTE:** redactar apuntes (`apuntes.md`), la sesión y los ejercicios.
-
-## Documentos
-
-- `apuntes.md` — material de lectura y consulta (_pendiente_).
-- `sesion01_<tema>.md` — plan de sesión (_pendiente_).
-- `sesion01_<tema>.ipynb` — notebook de práctica (_pendiente_).
+| Sesión | Contenido | Notebook |
+|--------|-----------|----------|
+| [**S01 · El Hub como catálogo de sistemas de IA**](sesion01_caracterizacion.md) | Caracterizar modelos, model cards, ficha de caracterización | [notebook](sesion01_caracterizacion.ipynb) |
 
 ## Evaluación
 

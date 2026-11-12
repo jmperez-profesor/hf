@@ -1,22 +1,17 @@
 # PIA · RA3 — Procesamiento de lenguaje natural con Hugging Face
 
-> **Módulo:** Programación de IA (5072) · **RA3:** *Procesamiento de lenguaje natural* _(enunciado oficial pendiente de verificar contra el RD 279/2021).*
+> **Módulo:** Programación de IA (5072) · **RA3:** *Procesamiento de lenguaje natural* _(enunciado oficial pendiente de verificar contra el RD 279/2021)._
 >
 > **Rol de Hugging Face aquí:** tareas de NLP con Transformers — clasificación de texto, NER, question answering, resumen y generación.
 
+- [**Apuntes (RA3)**](apuntes.md) — material de lectura y consulta completo.
+
 ## Sesiones
 
-| Sesión | Fecha | Contenido | CE |
-|--------|-------|-----------|----|
-| S01 · Clasificación de texto y NER | TBD | _pendiente_ | RA3 |
-| S02 · QA, resumen y generación | TBD | _pendiente_ | RA3 |
-
-> **PENDIENTE:** redactar apuntes, las sesiones y los ejercicios. Referencia de itinerario: el curso oficial de Hugging Face (https://huggingface.co/learn/nlp-course).
-
-## Documentos
-
-- `sesionNN_<tema>.md` — planes de sesión (_pendientes_).
-- `sesionNN_<tema>.ipynb` — notebooks de práctica (_pendientes_).
+| Sesión | Contenido | Notebook |
+|--------|-----------|----------|
+| [**S01 · Clasificación de texto y NER**](sesion01_clasificacion_ner.md) | Tareas PLN, atención, clasificación, entidades | [notebook](sesion01_clasificacion_ner.ipynb) |
+| [**S02 · QA, resumen y generación**](sesion02_qa_resumen_generacion.md) | Question answering, resumen, generación | [notebook](sesion02_qa_resumen_generacion.ipynb) |
 
 ## Evaluación
 

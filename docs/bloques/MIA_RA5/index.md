@@ -4,18 +4,13 @@
 >
 > **Rol de Hugging Face aquí:** modelos de lenguaje como **componente de sistemas híbridos** (reglas + ML) y como **guardarraíles** de agentes LLM.
 
+- [**Apuntes (RA5)**](apuntes.md) — material de lectura y consulta completo.
+
 ## Sesiones
 
-| Sesión | Fecha | Contenido | CE |
-|--------|-------|-----------|----|
-| S01 · Modelos como componente de sistemas híbridos y guardarraíles | TBD | _pendiente_ | RA5 |
-
-> **PENDIENTE:** redactar apuntes, la sesión y los ejercicios.
-
-## Documentos
-
-- `sesionNN_<tema>.md` — plan de sesión (_pendiente_).
-- `sesionNN_<tema>.ipynb` — notebook de práctica (_pendiente_).
+| Sesión | Contenido | Notebook |
+|--------|-----------|----------|
+| [**S01 · Modelos en sistemas híbridos y guardarraíles**](sesion01_guardarrailes.md) | zero-shot, motor de reglas, guardarraíl de dominio y toxicidad | [notebook](sesion01_guardarrailes.ipynb) |
 
 ## Evaluación
 

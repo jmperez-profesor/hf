@@ -97,7 +97,12 @@ hooks:
 nav:
   - Inicio: index.md
   - "MIA · Modelos de IA (5071)":
-      - "RA1 · Caracterización de sistemas IA": bloques/MIA_RA1/index.md
+      - "RA1 · Caracterización de sistemas IA":
+          - Introducción: bloques/MIA_RA1/index.md
+          - "Apuntes (RA1)": bloques/MIA_RA1/apuntes.md
+          - "S01 · El Hub como catálogo de sistemas de IA":
+              - "Guía de clase": bloques/MIA_RA1/sesion01_caracterizacion.md
+              - "Notebook": bloques/MIA_RA1/sesion01_caracterizacion.ipynb
       - "RA2 · Utiliza modelos de IA":
           - Introducción: bloques/MIA_RA2/index.md
           - "Apuntes (RA2)": bloques/MIA_RA2/apuntes.md
@@ -110,9 +115,22 @@ nav:
           - "S03 · Fine-tuning y evaluación":
               - "Guía de clase": bloques/MIA_RA2/sesion03_finetuning.md
               - "Notebook": bloques/MIA_RA2/sesion03_finetuning.ipynb
-      - "RA5 · Sistemas expertos": bloques/MIA_RA5/index.md
+      - "RA5 · Sistemas expertos":
+          - Introducción: bloques/MIA_RA5/index.md
+          - "Apuntes (RA5)": bloques/MIA_RA5/apuntes.md
+          - "S01 · Modelos en sistemas híbridos y guardarraíles":
+              - "Guía de clase": bloques/MIA_RA5/sesion01_guardarrailes.md
+              - "Notebook": bloques/MIA_RA5/sesion01_guardarrailes.ipynb
   - "PIA · Programación de IA (5072)":
-      - "RA3 · Procesamiento de lenguaje natural": bloques/PIA_RA3/index.md
+      - "RA3 · Procesamiento de lenguaje natural":
+          - Introducción: bloques/PIA_RA3/index.md
+          - "Apuntes (RA3)": bloques/PIA_RA3/apuntes.md
+          - "S01 · Clasificación de texto y NER":
+              - "Guía de clase": bloques/PIA_RA3/sesion01_clasificacion_ner.md
+              - "Notebook": bloques/PIA_RA3/sesion01_clasificacion_ner.ipynb
+          - "S02 · QA, resumen y generación":
+              - "Guía de clase": bloques/PIA_RA3/sesion02_qa_resumen_generacion.md
+              - "Notebook": bloques/PIA_RA3/sesion02_qa_resumen_generacion.ipynb
   - Evaluación:
       - Índice: evaluacion/index.md
       - "MIA · RA1": evaluacion/MIA_RA1.md

@@ -37,14 +37,11 @@
 
 ## 5. Detalle de sesiones (contenido y ejercicios)
 
-> **PENDIENTE.** Rellenar sesión a sesión. Por cada sesión usa las subclaves
-> **Contenidos detallados**, **Ejercicios y práctica en clase**, **Materiales / Recursos** y
-> **Observaciones** (enlaza al notebook `sesionNN_<tema>.ipynb` cuando proceda).
+> Cada bloque está redactado: apuntes + guía(s) de clase + notebook(s). Enlaza al notebook
+> `sesionNN_<tema>.ipynb` de cada sesión cuando lo trabajes en clase.
 
-### MIA · RA1 — Caracterización de sistemas de IA
-- **Sesión (2 h) · TBD** — el Hub como catálogo de sistemas de IA.
-  - Contenidos detallados: _pendiente_.
-  - Ejercicios: _pendiente_.
+### MIA · RA1 — Caracterización de sistemas de IA ✅ redactado
+- **S01 · El Hub como catálogo de sistemas de IA** — caracterizar modelos, model cards, ficha de caracterización. *(apuntes + guía + notebook)*
 
 ### MIA · RA2 — Utiliza modelos de IA (núcleo) ✅ redactado
 - **S01 · Pipelines y modelos preentrenados** — ecosistema HF, Hub, `pipeline`, elegir modelo. *(apuntes + guía + notebook)*
@@ -52,12 +49,12 @@
 - **S03 · Fine-tuning y evaluación** — `Trainer`, métricas de `evaluate`, guardar/subir. *(apuntes + guía + notebook)*
 - Hilo conductor del bloque: **SentimentLab** (clasificación de reseñas).
 
-### MIA · RA5 — Sistemas expertos / guardarraíles
-- **Sesión (2 h) · TBD** — modelos como componente de sistemas híbridos y guardarraíles.
+### MIA · RA5 — Sistemas expertos / guardarraíles ✅ redactado
+- **S01 · Modelos en sistemas híbridos y guardarraíles** — zero-shot, motor de reglas, guardarraíl de dominio y toxicidad. *(apuntes + guía + notebook)*
 
-### PIA · RA3 — Procesamiento de lenguaje natural
-- **Sesión (2 h) · TBD** — clasificación de texto y NER.
-- **Sesión (2 h) · TBD** — QA, resumen y generación.
+### PIA · RA3 — Procesamiento de lenguaje natural ✅ redactado
+- **S01 · Clasificación de texto y NER** — tareas PLN, atención, clasificación, entidades. *(apuntes + guía + notebook)*
+- **S02 · QA, resumen y generación** — question answering, resumen, generación. *(apuntes + guía + notebook)*
 
 ## 6. Estructura de carpetas
 
@@ -95,6 +92,7 @@ Cada `docs/bloques/<MODULO>_<RA>/sesionNN_<tema>.md` sigue `legislacion/plantill
 
 1. Verificar enunciado/CE del RA3 de PIA (5072) en el RD 279/2021.
 2. Concretar el calendario/festivos del centro para 26-27.
-3. ~~Redactar MIA · RA2 (apuntes + 3 sesiones + 3 notebooks).~~ **Hecho.**
-4. Redactar MIA · RA1, MIA · RA5 y PIA · RA3 (apuntes + sesiones + notebooks).
+3. ~~Redactar MIA · RA2.~~ **Hecho.**
+4. ~~Redactar MIA · RA1, MIA · RA5 y PIA · RA3.~~ **Hecho** (4 bloques completos).
 5. ~~Fijar `repo_url` / `extra.colab` / `extra.raw_base`.~~ **Hecho** (repo `jmperez-profesor/hf`).
+6. Rellenar los **bancos de pruebas y rúbricas** de `evaluacion/` (hoy son plantillas vacías).
