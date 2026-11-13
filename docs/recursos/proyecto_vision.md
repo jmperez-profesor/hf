@@ -1,23 +1,25 @@
 # Proyecto integrador · Fine-tuning de un Vision Transformer
 
-> Actividad práctica que une las sesiones **S4** (datasets + `Trainer`), **S6** (visión) y **S7** (publicar en el Hub): afinar un **Vision Transformer (ViT)** para clasificar imágenes propias y publicarlo.
+> Actividad práctica que une las sesiones **S36** (datasets), **S38** (fine-tuning), **S41** (visión) y **S44** (publicar en el Hub): afinar un **Vision Transformer (ViT)** para clasificar imágenes propias y publicarlo.
 
 ## Objetivo
 
 Entrenar un modelo de **clasificación de imágenes** a partir de un dataset (propio o del Hub), evaluarlo y **publicarlo en el Hugging Face Hub**.
 
-## Por qué une tres sesiones
+## Por qué une varias sesiones
 
 ```mermaid
 flowchart LR
-    S4[datasets + Trainer] --> P[Fine-tuning ViT]
-    S6[ViT + procesador] --> P
-    P --> S7[push_to_hub / Space]
+    S36[datasets] --> P[Fine-tuning ViT]
+    S38[Trainer + evaluate] --> P
+    S41[ViT + procesador] --> P
+    P --> S44[push_to_hub / Space]
 ```
 
-- **S4:** `load_dataset`, preprocesado, `Trainer`, métricas.
-- **S6:** `ViTForImageClassification` + `ViTImageProcessor`.
-- **S7:** `push_to_hub` y (opcional) demo con Gradio.
+- **S36:** `load_dataset`, preprocesado.
+- **S38:** `Trainer`, métricas.
+- **S41:** `ViTForImageClassification` + `ViTImageProcessor`.
+- **S44:** `push_to_hub` y (opcional) demo con Gradio.
 
 ## Pasos
 
@@ -51,4 +53,4 @@ flowchart LR
 
 - [Afinación del Vision Transformer](https://www.youtube.com/watch?v=cbb6Z2VOU9Q) — Codificando Bits, ~50 min — crea el dataset, monta el `Trainer` y afina un ViT con datos propios.
 
-> Ampliación: despliega el modelo afinado en un **Space con Gradio** (ver S7) para cerrar el ciclo completo.
+> Ampliación: despliega el modelo afinado en un **Space con Gradio** (ver S44) para cerrar el ciclo completo.

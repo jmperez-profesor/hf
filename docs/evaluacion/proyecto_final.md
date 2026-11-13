@@ -17,4 +17,4 @@ El proyecto final consiste en un **Space de Hugging Face** que combine **al meno
 | Documentación | Sin card | Card mínima | Card completa | Card ejemplar (datos, límites, licencia) |
 | Presentación | No explica | Explica a medias | Explica bien | Comunicación clara y justificada |
 
-**Nota final = media de las dimensiones** (entera). El Space se entrega antes de la sesión 7 y se presenta en los últimos 15 minutos de esa sesión.
+**Nota final = media de las dimensiones** (entera). El Space se entrega antes de la sesión 44 y se presenta en los últimos 15 minutos de esa sesión.

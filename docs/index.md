@@ -10,13 +10,13 @@ Profesor: **José Manuel Pérez Torres** · Centro: **I.E.S. Severo Ochoa (Elche
 
 | # | Sesión | Fecha |
 |---|---|---|
-| [S1](sesiones/sesion01_ecosistema_pipelines.md) | Ecosistema y pipelines | 18/11 |
-| [S2](sesiones/sesion02_tokenizadores.md) | Tokenizadores | 23/11 |
-| [S3](sesiones/sesion03_transformers.md) | Transformers por dentro | 25/11 |
-| [S4](sesiones/sesion04_datasets_finetuning.md) | Datasets y fine-tuning | 30/11 |
-| [S5](sesiones/sesion05_llms.md) | LLMs: generación, cuantización y LoRA | 02/12 |
-| [S6](sesiones/sesion06_vision_audio_multimodal.md) | Visión, audio y multimodal | 09/12 |
-| [S7](sesiones/sesion07_despliegue_gradio_spaces.md) | Desplegar: Hub, Gradio y Spaces | 14/12 |
+| [S28](sesiones/sesion28_ecosistema_pipelines.md) | Ecosistema y pipelines | 18/11 |
+| [S31](sesiones/sesion31_tokenizadores.md) | Tokenizadores | 23/11 |
+| [S33](sesiones/sesion33_transformers.md) | Transformers por dentro | 25/11 |
+| [S36](sesiones/sesion36_datasets.md) | La librería Datasets | 30/11 |
+| [S38](sesiones/sesion38_finetuning.md) | Fine-tuning con Trainer y Evaluate | 02/12 |
+| [S41](sesiones/sesion41_vision_audio_multimodal.md) | Visión, audio y multimodal | 09/12 |
+| [S44](sesiones/sesion44_despliegue_gradio_spaces.md) | Desplegar: Hub, Gradio y Spaces | 14/12 |
 
 ## Cómo funciona
 

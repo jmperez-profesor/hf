@@ -18,25 +18,25 @@
 
 | # | Sesión | Fecha | Contenido |
 |---|---|---|---|
-| S1 | Ecosistema y pipelines | 18/11 | Hub, model cards, `pipeline`, elegir modelo |
-| S2 | Tokenizadores | 23/11 | BPE/WordPiece/SentencePiece, `AutoTokenizer`, chat templates |
-| S3 | Transformers por dentro | 25/11 | atención, 3 familias, logits/softmax, embeddings |
-| S4 | Datasets y fine-tuning | 30/11 | `datasets`, `Trainer`, `evaluate`, `push_to_hub` |
-| S5 | LLMs: generación, cuantización, LoRA | 02/12 | generación, bitsandbytes, PEFT/LoRA, SFT |
-| S6 | Visión, audio y multimodal | 09/12 | ViT, CLIP, Whisper, VLM, diffusers |
-| S7 | Despliegue: Hub, Gradio, Spaces | 14/12 | `huggingface_hub`, Gradio, Spaces, `InferenceClient` |
+| S28 | Ecosistema y pipelines | 18/11 | Hub, model cards, `pipeline`, elegir modelo |
+| S31 | Tokenizadores | 23/11 | BPE/WordPiece/SentencePiece, `AutoTokenizer`, chat templates |
+| S33 | Transformers por dentro | 25/11 | atención, 3 familias, logits/softmax, embeddings |
+| S36 | La librería Datasets | 30/11 | `load_dataset`, `map`/`filter`, Arrow, publicar |
+| S38 | Fine-tuning con Trainer y Evaluate | 02/12 | `Trainer`, `evaluate`, `push_to_hub` |
+| S41 | Visión, audio y multimodal | 09/12 | ViT, CLIP, Whisper, VLM |
+| S44 | Despliegue: Hub, Gradio, Spaces | 14/12 | `huggingface_hub`, Gradio, Spaces, `InferenceClient` |
 
-**Fusión aplicada (8 → 7):** Datasets y Fine-tuning en una sola sesión (S4), por ser dos mitades del mismo flujo (preparar datos → entrenar).
+> **Numeración alineada con `GUIA.md`** (S28, S31, S33, S36, S38, S41, S44). Datasets (S36) y Fine-tuning (S38) son sesiones **separadas**.
 
-**Actualizaciones a 2026 aplicadas:** familias de Transformers + mención Mamba/SSM (S3), DPO/salida estructurada fuera de alcance por decisión (S5), nombres actualizados Whisper/FLUX (S6), Inference Providers (S7). **Agentes (`smolagents`) excluidos** por decisión del docente.
+**Actualizaciones a 2026 aplicadas:** familias de Transformers + mención Mamba/SSM (S33), nombres actualizados Whisper/FLUX (S41), Inference Providers (S44). **Agentes (`smolagents`) excluidos** por decisión del docente.
 
 ## 4. Relación con los RA (detalle en `docs/relacion_ra.md`)
 
-- **RA1 (MIA):** S1 · **RA2 (MIA):** S1–S7 (central) · **RA5 (MIA):** tangencial (zero-shot, S1) ⚠️ · **RA3 (PIA):** S3 (+ S1, S5 aplicado).
+- **RA1 (MIA):** S28, S44 · **RA2 (MIA):** S28–S44 (central) · **RA3 (MIA):** S28, S33 · **RA5 (MIA):** fuera de alcance · **RA2/RA3 (PIA):** S28, S36, S38, S44.
 
 ## 5. Evaluación
 
-Retos semanales (40 %) + Space final (60 %). ⚠️ **Pendiente** de reconciliar con la Orden 8/2025 (prueba escrita, escala 1–10, ≥5 por RA).
+Retos semanales (40 %) + Space final (60 %), según la guía de Manuel Quinto.
 
 ## 6. Estructura de carpetas
 
@@ -70,5 +70,6 @@ Pendientes de planificar en sesiones posteriores (identificados al revisar *Hugg
 - **RAG** — consultar datos propios (cap. 12 del libro).
 - **LLMs en local** con GPT4All — privacidad y velocidad sin cloud (cap. 11).
 - **LangChain / LlamaIndex** — frameworks para aplicaciones LLM (cap. 7).
+- **Generación, cuantización y LoRA** — contenido que estaba en la antigua sesión 5 y se aplaza a este bloque de LLMs.
 
 > Fuera de alcance (decisión del docente): agentes (cap. 9) y MCP (cap. 13).

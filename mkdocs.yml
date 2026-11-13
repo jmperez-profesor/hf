@@ -94,27 +94,27 @@ hooks:
 nav:
   - Inicio: index.md
   - Sesiones:
-      - "S1 · Ecosistema y pipelines":
-          - "Guía de clase": sesiones/sesion01_ecosistema_pipelines.md
-          - "Notebook": sesiones/sesion01_ecosistema_pipelines.ipynb
-      - "S2 · Tokenizadores":
-          - "Guía de clase": sesiones/sesion02_tokenizadores.md
-          - "Notebook": sesiones/sesion02_tokenizadores.ipynb
-      - "S3 · Transformers por dentro":
-          - "Guía de clase": sesiones/sesion03_transformers.md
-          - "Notebook": sesiones/sesion03_transformers.ipynb
-      - "S4 · Datasets y fine-tuning":
-          - "Guía de clase": sesiones/sesion04_datasets_finetuning.md
-          - "Notebook": sesiones/sesion04_datasets_finetuning.ipynb
-      - "S5 · LLMs: generación, cuantización y LoRA":
-          - "Guía de clase": sesiones/sesion05_llms.md
-          - "Notebook": sesiones/sesion05_llms.ipynb
-      - "S6 · Visión, audio y multimodal":
-          - "Guía de clase": sesiones/sesion06_vision_audio_multimodal.md
-          - "Notebook": sesiones/sesion06_vision_audio_multimodal.ipynb
-      - "S7 · Desplegar: Hub, Gradio y Spaces":
-          - "Guía de clase": sesiones/sesion07_despliegue_gradio_spaces.md
-          - "Notebook": sesiones/sesion07_despliegue_gradio_spaces.ipynb
+      - "S28 · Ecosistema y pipelines":
+          - "Guía de clase": sesiones/sesion28_ecosistema_pipelines.md
+          - "Notebook": sesiones/sesion28_ecosistema_pipelines.ipynb
+      - "S31 · Tokenizadores":
+          - "Guía de clase": sesiones/sesion31_tokenizadores.md
+          - "Notebook": sesiones/sesion31_tokenizadores.ipynb
+      - "S33 · Transformers por dentro":
+          - "Guía de clase": sesiones/sesion33_transformers.md
+          - "Notebook": sesiones/sesion33_transformers.ipynb
+      - "S36 · La librería Datasets":
+          - "Guía de clase": sesiones/sesion36_datasets.md
+          - "Notebook": sesiones/sesion36_datasets.ipynb
+      - "S38 · Fine-tuning con Trainer y Evaluate":
+          - "Guía de clase": sesiones/sesion38_finetuning.md
+          - "Notebook": sesiones/sesion38_finetuning.ipynb
+      - "S41 · Visión, audio y multimodal":
+          - "Guía de clase": sesiones/sesion41_vision_audio_multimodal.md
+          - "Notebook": sesiones/sesion41_vision_audio_multimodal.ipynb
+      - "S44 · Desplegar: Hub, Gradio y Spaces":
+          - "Guía de clase": sesiones/sesion44_despliegue_gradio_spaces.md
+          - "Notebook": sesiones/sesion44_despliegue_gradio_spaces.ipynb
   - "Relación con los RA": relacion_ra.md
   - Recursos:
       - "Vídeos educativos": recursos/videos.md

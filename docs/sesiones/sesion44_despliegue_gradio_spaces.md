@@ -1,11 +1,11 @@
 ---
-sesion: "07"
+sesion: "44"
 titulo: "Desplegar: Hub, Gradio y Spaces"
 fecha: 2026-12-14
 duracion: 120 min
 ---
 
-# Sesión 7 · Desplegar: Hub, Gradio y Spaces (14/12/2026)
+# Sesión 44 · Desplegar: Hub, Gradio y Spaces (14/12/2026)
 
 > **Objetivo:** convertir un modelo propio en una demo pública y cerrar el curso con un proyecto.
 >
@@ -22,7 +22,7 @@ duracion: 120 min
 
 ## Cuaderno de la sesión
 
-[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion07_despliegue_gradio_spaces.ipynb){ .md-button } · [ver en el sitio](sesion07_despliegue_gradio_spaces.ipynb)
+[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion44_despliegue_gradio_spaces.ipynb){ .md-button } · [ver en el sitio](sesion44_despliegue_gradio_spaces.ipynb)
 
 ## 1 · `huggingface_hub`
 
@@ -99,7 +99,7 @@ Licencias, sesgos conocidos y **documentación en la card**. Antes de publicar: 
 
 ## Práctica (notebook)
 
-Publica en un **Space** el modelo de la sesión 4 o 5 con una interfaz **Gradio**. Ampliación (tipo Aitor): un **traductor ES↔EN** con `Blocks` y un `Dropdown`/`Radio` para elegir el sentido, usando los modelos `Helsinki-NLP/opus-mt-*`.
+Publica en un **Space** el modelo de la sesión 36 o 38 con una interfaz **Gradio**. Ampliación (tipo Aitor): un **traductor ES↔EN** con `Blocks` y un `Dropdown`/`Radio` para elegir el sentido, usando los modelos `Helsinki-NLP/opus-mt-*`.
 
 ## Proyecto final (última hora)
 

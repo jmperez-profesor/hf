@@ -1,11 +1,11 @@
 ---
-sesion: "06"
+sesion: "41"
 titulo: "Visión, audio y multimodal"
 fecha: 2026-12-09
 duracion: 120 min
 ---
 
-# Sesión 6 · Visión, audio y multimodal (09/12/2026)
+# Sesión 41 · Visión, audio y multimodal (09/12/2026)
 
 > **Objetivo:** aplicar el mismo flujo (procesador → modelo → post-proceso) a otras modalidades.
 >
@@ -22,7 +22,7 @@ duracion: 120 min
 
 ## Cuaderno de la sesión
 
-[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion06_vision_audio_multimodal.ipynb){ .md-button } · [ver en el sitio](sesion06_vision_audio_multimodal.ipynb)
+[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion41_vision_audio_multimodal.ipynb){ .md-button } · [ver en el sitio](sesion41_vision_audio_multimodal.ipynb)
 
 ## 1 · El mismo flujo, otra modalidad
 
@@ -69,7 +69,7 @@ vqa = pipeline("visual-question-answering")     # preguntar sobre imagen
 
 ## Práctica (notebook)
 
-Transcribe un **audio en español con Whisper** y clasifica el texto resultante con el **modelo afinado de la sesión 4**.
+Transcribe un **audio en español con Whisper** y clasifica el texto resultante con el **modelo afinado de la sesión 38**.
 
 ## Reto
 
@@ -107,7 +107,7 @@ Clasificador de imágenes **zero-shot con CLIP** para categorías propias (p. ej
 ## 🎬 Vídeos de la sesión
 
 - [Clasificación de imágenes con Vision Transformer](https://www.youtube.com/watch?v=iPQRqNEJiz0) — Codificando Bits, ~27 min — arquitectura ViT, `ViTForImageClassification` y `ViTImageProcessor`.
-- [Afinación del Vision Transformer](https://www.youtube.com/watch?v=cbb6Z2VOU9Q) — Codificando Bits, ~50 min — fine-tuning de ViT con `datasets` y `Trainer` (ampliación; une S4 y S6).
+- [Afinación del Vision Transformer](https://www.youtube.com/watch?v=cbb6Z2VOU9Q) — Codificando Bits, ~50 min — fine-tuning de ViT con `datasets` y `Trainer` (ampliación; une S36 y S41).
 - [De audio a texto con Whisper](https://www.youtube.com/watch?v=cwNRJZBhpPs) — 2025 — transcripción (usa el CLI; en clase usamos el pipeline de HF).
 - [Audio Course oficial de HF](https://huggingface.co/learn/audio-course) — Whisper desde Transformers (inglés).
 

@@ -1,11 +1,11 @@
 ---
-sesion: "01"
+sesion: "28"
 titulo: "Ecosistema y pipelines"
 fecha: 2026-11-18
 duracion: 120 min
 ---
 
-# Sesión 1 · El ecosistema y los pipelines (18/11/2026)
+# Sesión 28 · El ecosistema y los pipelines (18/11/2026)
 
 > **Objetivo:** resolver tareas reales con una línea de código y saber elegir un modelo en el Hub.
 >
@@ -22,7 +22,7 @@ duracion: 120 min
 
 ## Cuaderno de la sesión
 
-[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion01_ecosistema_pipelines.ipynb){ .md-button } · [ver en el sitio](sesion01_ecosistema_pipelines.ipynb)
+[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion28_ecosistema_pipelines.ipynb){ .md-button } · [ver en el sitio](sesion28_ecosistema_pipelines.ipynb)
 
 ## 1 · El ecosistema Hugging Face
 
@@ -81,7 +81,7 @@ El **token** puede ser de **lectura** (descargar/inferir) o de **escritura** (pu
 
 ## 6 · Spaces e Inference API (adelanto)
 
-- Un **Space** es una app (Gradio/Streamlit) servida como web pública para probar un modelo. Lo vemos en profundidad en la **sesión 7**.
+- Un **Space** es una app (Gradio/Streamlit) servida como web pública para probar un modelo. Lo vemos en profundidad en la **sesión 44**.
 - La **Inference API** permite probar un modelo desde la propia model card (widget) o por HTTP, sin descargarlo.
 
 ## Práctica (notebook)

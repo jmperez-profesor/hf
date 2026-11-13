@@ -3,7 +3,7 @@ Guía del curso de Hugging Face (7 sesiones × 2 h)
 Oct 29, 2026 · @Manuel Quinto 
 
 # Sesiones:
-    - {id: S28, fecha: 2026-11-18, tipo: presencial, contenido: "HF 1: Introducción a la plataforma"}
+    - {id: S28, fecha: 2026-11-18, tipo: presencial, contenido: "HF 1: Introducción a la plataforma. El ecosistema y los pipelines "}
     - {id: S31, fecha: 2026-11-23, tipo: presencial, contenido: "HF 2: Spaces y Gradio"}
     - {id: S33, fecha: 2026-11-25, tipo: presencial, contenido: "HF 3: Spaces, Models y Datasets II"}
     - {id: S36, fecha: 2026-11-30, tipo: presencial, contenido: "HF 4: Gradio II"}
@@ -23,7 +23,7 @@ Curso práctico de 16 h centrado en usar y adaptar modelos preentrenados con el 
 
 Pregunta abierta: confirmar con el compañero de DL en qué sesión aparecen atención y Transformers para ajustar la sesión 3. 
 
-# Sesión 1 · El ecosistema y los pipelines 
+# Sesión 28 · El ecosistema y los pipelines 
 
 **Objetivo**: resolver tareas reales con una línea de código y saber elegir un modelo en el Hub. 
 
@@ -35,7 +35,7 @@ Pregunta abierta: confirmar con el compañero de DL en qué sesión aparecen ate
 Práctica: comparar dos modelos de sentimiento (uno multilingüe y uno en español) sobre 20 frases propias. 
 Reto: encontrar en el Hub el mejor modelo para una tarea dada y justificarlo con su model card. 
 
-# Sesión 2 · Tokenizadores 
+# Sesión 31 · Tokenizadores 
 
 **Objetivo**: entender cómo el texto se convierte en la entrada numérica de un modelo. 
 
@@ -48,7 +48,7 @@ Reto: encontrar en el Hub el mejor modelo para una tarea dada y justificarlo con
 Práctica: tokenizar el mismo texto con tres modelos y comparar número de tokens y cortes. 
 Reto: entrenar un tokenizador pequeño con tokenizers sobre un corpus propio. 
 
-# Sesión 3 · Transformers por dentro 
+# Sesión 33 · Transformers por dentro 
 
 **Objetivo**: abrir el pipeline y controlar cada paso a mano. 
 
@@ -62,7 +62,7 @@ Reto: entrenar un tokenizador pequeño con tokenizers sobre un corpus propio.
 
 **Reto**: buscador semántico sobre 100 preguntas frecuentes. 
 
-# Sesión 4 · La librería Datasets 
+# Sesión 36 · La librería Datasets 
 
 **Objetivo**: cargar, transformar y publicar datos listos para entrenar. 
 
@@ -75,7 +75,7 @@ Reto: entrenar un tokenizador pequeño con tokenizers sobre un corpus propio.
 **Práctica**: preparar un dataset de reseñas en español tokenizado y particionado, que se usará en la sesión 5. 
 **Reto**: subir al Hub el dataset FuelConsumptionCo2 del curso de ML con una card completa. 
 
-# Sesión 5 · Fine-tuning con Trainer y Evaluate 
+# Sesión 38 · Fine-tuning con Trainer y Evaluate 
 
 **Objetivo**: ajustar un modelo preentrenado a una tarea propia sin escribir el bucle de entrenamiento. 
 
@@ -88,20 +88,7 @@ Reto: entrenar un tokenizador pequeño con tokenizers sobre un corpus propio.
 **Práctica**: ajustar un modelo encoder en español (p. ej., BETO o RoBERTa-BNE) sobre el dataset de la sesión 4 y compararlo con el zero-shot de la sesión 1. 
 **Reto**: ajustar un modelo de NER o de clasificación multietiqueta. 
 
-# Sesión 6 · LLMs: generación, cuantización y LoRA 
-
-**Objetivo**: usar y adaptar un LLM pequeño con los recursos de Colab. 
-
-- Generación: generate, temperature, top-k/top-p, max_new_tokens y chat templates. 
-- Cuantización en 8 y 4 bits con bitsandbytes: memoria frente a calidad. 
-- PEFT y LoRA: por qué se entrena menos del 1 % de los parámetros. 
-- *Supervised fine-tuning* con trl (SFTTrainer) sobre un dataset de instrucciones. 
-- Fusionar o publicar solo el adaptador. 
-
-**Práctica**: ajustar con QLoRA un modelo de menos de 1B parámetros para que responda con un estilo o formato fijo. 
-**Reto**: medir la diferencia antes y después del ajuste con 10 preguntas de prueba. 
-
-# Sesión 7 · Más allá del texto: visión, audio y multimodal 
+# Sesión 41 · Más allá del texto: visión, audio y multimodal 
 
 **Objetivo**: aplicar el mismo flujo (procesador → modelo → post-proceso) a otras modalidades. 
 
@@ -115,7 +102,7 @@ Reto: entrenar un tokenizador pequeño con tokenizers sobre un corpus propio.
 
 **Reto**: clasificador de imágenes zero-shot con CLIP para categorías propias. 
 
-# Sesión 8 · Compartir y desplegar: Hub, Gradio y Spaces 
+# Sesión 44 · Compartir y desplegar: Hub, Gradio y Spaces 
 
 **Objetivo**: convertir un modelo propio en una demo pública y cerrar el curso con un proyecto. 
 

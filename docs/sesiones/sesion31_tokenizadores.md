@@ -1,11 +1,11 @@
 ---
-sesion: "02"
+sesion: "31"
 titulo: "Tokenizadores"
 fecha: 2026-11-23
 duracion: 120 min
 ---
 
-# Sesión 2 · Tokenizadores (23/11/2026)
+# Sesión 31 · Tokenizadores (23/11/2026)
 
 > **Objetivo:** entender cómo el texto se convierte en la entrada numérica de un modelo.
 >
@@ -22,7 +22,7 @@ duracion: 120 min
 
 ## Cuaderno de la sesión
 
-[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion02_tokenizadores.ipynb){ .md-button } · [ver en el sitio](sesion02_tokenizadores.ipynb)
+[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion31_tokenizadores.ipynb){ .md-button } · [ver en el sitio](sesion31_tokenizadores.ipynb)
 
 ## 1 · Del texto a ids
 
