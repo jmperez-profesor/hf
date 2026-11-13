@@ -36,6 +36,8 @@ flowchart LR
     C --> T[Tarea: clasificar, NER, QA…]
 ```
 
+![Arquitectura del Transformer (encoder-decoder)](../assets/images/transformers.svg)
+
 Resultado: capta mejor el contexto (desambiguar) y entrena mucho más rápido. *(Solo la intuición, sin matemática.)*
 
 ## 2 · Las tres familias

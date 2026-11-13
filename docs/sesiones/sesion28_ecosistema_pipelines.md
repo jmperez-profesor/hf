@@ -57,6 +57,8 @@ flowchart LR
     T[Texto] --> TK[Tokenizer] --> M[Modelo] --> P[Postprocesado] --> L[label + score]
 ```
 
+![Pipeline de NLP: tokenizador → modelo → postprocesado](../assets/images/full_nlp_pipeline.svg)
+
 Tareas con la misma interfaz: `"sentiment-analysis"`, `"ner"`, `"summarization"`, `"translation"`, `"zero-shot-classification"`, `"text-generation"`.
 
 ## 4 · Elegir modelo, CPU/GPU, caché y token

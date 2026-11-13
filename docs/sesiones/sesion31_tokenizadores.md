@@ -39,7 +39,17 @@ print(tokenizer("Hola, mundo"))
 
 ## 2 · Subpalabras y algoritmos
 
-Las palabras fuera del vocabulario se parten en **subpalabras**. Tres algoritmos dominan:
+Las palabras fuera del vocabulario se parten en **subpalabras**. Tres formas de dividir el texto:
+
+![Tokenización por palabras](../assets/images/word_based_tokenization.svg)
+
+![Tokenización por caracteres](../assets/images/character_based_tokenization.svg)
+
+![Tokenización por subpalabras (BPE)](../assets/images/bpe_subword.svg)
+
+*De arriba abajo: por palabras (vocabulario enorme), por caracteres (poco significado) y por subpalabras (el equilibrio ideal).*
+
+Tres algoritmos de subtokenización dominan:
 
 | Algoritmo | Idea | Uso típico |
 |---|---|---|

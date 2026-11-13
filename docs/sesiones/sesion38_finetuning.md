@@ -28,6 +28,12 @@ duracion: 120 min
 
 El **fine-tuning** reentrena un modelo preentrenado durante pocas épocas con tus datos. Regla práctica: para tareas genéricas basta con **zero-shot** (visto en S28); cuando tu dominio es específico, **ajusta** el modelo.
 
+```mermaid
+flowchart LR
+    P[Modelo preentrenado<br/>conoce el lenguaje] --> F[Fine-tuning<br/>pocas épocas, tus datos]
+    F --> A[Modelo afinado<br/>resuelve TU tarea]
+```
+
 ## 2 · `Trainer` y `evaluate`
 
 ```python
@@ -94,6 +100,10 @@ Afina un modelo de **NER** (`AutoModelForTokenClassification`) o de **clasificac
 
 ??? tip "Solución"
     Predecir siempre la clase mayoritaria ya da un accuracy alto sin aprender nada; conviene mirar F1 y la matriz de confusión.
+
+## 🎬 Vídeos de la sesión
+
+- [Capítulo 3 del NLP Course oficial de HF](https://huggingface.co/learn/nlp-course/chapter3/1) — fine-tuning de un modelo preentrenado (gratuito, inglés).
 
 ## Observaciones
 

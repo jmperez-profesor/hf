@@ -26,6 +26,12 @@ duracion: 120 min
 
 ## 1 · `huggingface_hub`
 
+```mermaid
+flowchart LR
+    M[Modelo] --> G[Demo Gradio] --> S[Space público]
+    M --> C[InferenceClient<br/>inferencia remota]
+```
+
 ```python
 from huggingface_hub import HfApi, login
 

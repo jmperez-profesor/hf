@@ -26,6 +26,14 @@ duracion: 120 min
 
 ## 1 · Cargar datos
 
+```mermaid
+flowchart LR
+    H[Hub / CSV / JSON] --> L[load_dataset]
+    L --> T[map / filter / split]
+    T --> E[Trainer]
+    T --> P[push_to_hub]
+```
+
 ```python
 from datasets import load_dataset
 
