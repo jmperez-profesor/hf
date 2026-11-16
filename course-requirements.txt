@@ -1,0 +1,30 @@
+# Dependencias del CURSO de Hugging Face (no confundir con requirements.txt,
+# que es para construir el sitio web con MkDocs).
+#
+# Instalar con:  pip install -r course-requirements.txt
+#        o con:  uv pip install -r course-requirements.txt
+
+# Núcleo
+transformers
+datasets
+tokenizers
+huggingface_hub
+
+# Entrenamiento y evaluación
+evaluate
+accelerate
+
+# Embeddings y despliegue
+sentence-transformers
+gradio
+
+# Cómputo
+torch
+numpy
+pandas
+matplotlib
+
+# Bloque futuro de LLMs (cuantización y LoRA) — no necesario para las 7 sesiones:
+# peft
+# bitsandbytes
+# trl

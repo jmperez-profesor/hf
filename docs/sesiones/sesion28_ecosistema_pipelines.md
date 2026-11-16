@@ -11,6 +11,8 @@ duracion: 120 min
 >
 > Formato: ~30 min de explicación · ~75 min de notebook guiado · ~15 min de reto.
 
+> 🖥️ **Entorno:** puedes trabajar en **Google Colab** (por defecto), en un **entorno virtual local** (`venv`/`uv`) o en un **DevContainer de VS Code**. Ver [Entorno de trabajo](../recursos/entorno.md).
+
 ## Qué vas a aprender
 
 | # | Al terminar la sesión serás capaz de… |

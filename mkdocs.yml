@@ -117,6 +117,7 @@ nav:
           - "Notebook": sesiones/sesion44_despliegue_gradio_spaces.ipynb
   - "Relación con los RA": relacion_ra.md
   - Recursos:
+      - "Entorno de trabajo": recursos/entorno.md
       - "Vídeos educativos": recursos/videos.md
       - "Proyecto integrador · Visión": recursos/proyecto_vision.md
   - Evaluación:

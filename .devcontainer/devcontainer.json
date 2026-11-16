@@ -1,0 +1,26 @@
+// Dev Container para el curso de Hugging Face (CE IA&BD).
+// Abre la carpeta del repositorio en VS Code con la extensión "Dev Containers"
+// y pulsa "Reopen in Container". Las dependencias se instalan solas.
+{
+  "name": "Hugging Face (CE IA&BD)",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+
+  // Instala las dependencias del curso al crear el contenedor.
+  "postCreateCommand": "pip install --upgrade pip && pip install -r course-requirements.txt",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
+    }
+  }
+
+  // Nota: este contenedor usa CPU (suficiente para la mayoría del curso).
+  // Para GPU en local habría que usar una imagen con CUDA y el NVIDIA Container Toolkit.
+}
