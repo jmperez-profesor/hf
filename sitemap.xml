@@ -2,94 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://jmperez-profesor.github.io/hf/index.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/relacion_ra.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/evaluacion/index.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/evaluacion/proyecto_final.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/evaluacion/retos.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/recursos/entorno.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/recursos/proyecto_vision.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/recursos/proyecto_vision.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/recursos/videos.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion28_ecosistema_pipelines.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion29_ecosistema_pipelines.html</loc>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion28_ecosistema_pipelines.html</loc>
-         <lastmod>2026-11-16</lastmod>
-    </url>
-    <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion31_tokenizadores.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion29_ecosistema_pipelines.html</loc>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion31_tokenizadores.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion33_transformers.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion31_tokenizadores.html</loc>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion33_transformers.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion34_transformers.html</loc>
+         <lastmod>2026-11-17</lastmod>
+    </url>
+    <url>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion34_transformers.html</loc>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion36_datasets.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion36_datasets.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion38_finetuning.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion39_finetuning.html</loc>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion38_finetuning.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion39_finetuning.html</loc>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion41_vision_audio_multimodal.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion42_vision_audio_multimodal.html</loc>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion41_vision_audio_multimodal.html</loc>
-         <lastmod>2026-11-16</lastmod>
-    </url>
-    <url>
-         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion44_despliegue_gradio_spaces.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion42_vision_audio_multimodal.html</loc>
+         <lastmod>2026-11-17</lastmod>
     </url>
     <url>
          <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion44_despliegue_gradio_spaces.html</loc>
-         <lastmod>2026-11-16</lastmod>
+         <lastmod>2026-11-17</lastmod>
+    </url>
+    <url>
+         <loc>https://jmperez-profesor.github.io/hf/sesiones/sesion44_despliegue_gradio_spaces.html</loc>
+         <lastmod>2026-11-17</lastmod>
     </url>
 </urlset>
