@@ -44,6 +44,8 @@ Gestiona repositorios, **versiones** (commits), **ramas** y **modelos privados/g
 
 ## 2 · Gradio en pocas líneas
 
+> Ya viste Gradio en la **sesión 29** (envolver un modelo en una interfaz). Aquí lo ampliamos (componentes, disposición, `Blocks`) y lo llevamos a producción.
+
 ```python
 import gradio as gr
 from transformers import pipeline

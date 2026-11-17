@@ -20,7 +20,8 @@ duracion: 120 min
 | 1 | Describir las piezas del ecosistema Hugging Face (Hub, `transformers`, `datasets`, `tokenizers`, `evaluate`) |
 | 2 | Leer una *model card* (tarea, idioma, licencia, métricas, limitaciones) |
 | 3 | Usar `pipeline()` para clasificación, NER, resumen, traducción, zero-shot y generación |
-| 4 | Distinguir CPU/GPU y manejar la caché y el token de autenticación |
+| 4 | Envolver un modelo en una interfaz con **Gradio** |
+| 5 | Distinguir CPU/GPU y manejar la caché y el token de autenticación |
 
 ## Cuaderno de la sesión
 
@@ -63,14 +64,35 @@ flowchart LR
 
 Tareas con la misma interfaz: `"sentiment-analysis"`, `"ner"`, `"summarization"`, `"translation"`, `"zero-shot-classification"`, `"text-generation"`.
 
-## 4 · Elegir modelo, CPU/GPU, caché y token
+## 4 · Gradio: envuelve tu modelo en una interfaz
+
+Con [Gradio](https://www.gradio.app/) conviertes cualquier `pipeline` en una **app web** interactiva, sin escribir HTML/CSS/JS:
+
+```python
+%pip install gradio
+import gradio as gr
+from transformers import pipeline
+
+clasificador = pipeline("sentiment-analysis")
+
+def analizar(texto):
+    return clasificador(texto)[0]["label"]
+
+gr.Interface(fn=analizar, inputs="text", outputs="text").launch()
+```
+
+Abre la URL que imprime y ya tienes una interfaz donde escribir reseñas y ver el sentimiento al instante. Es la forma más rápida de **"usar" un modelo sin programar**.
+
+> Gradio va de la mano de Hugging Face. Lo ampliamos (componentes, disposición, `Blocks`) y lo desplegamos a **Spaces** en la **sesión 44**.
+
+## 5 · Elegir modelo, CPU/GPU, caché y token
 
 - **Elegir modelo:** `pipeline("tarea", model="usuario/modelo")`. El por defecto es genérico y en inglés.
 - **CPU/GPU:** `pipeline(..., device=0)` fuerza GPU; en Colab cambia a T4 en *Runtime*.
 - **Caché:** los modelos se descargan una vez y se cachean en `~/.cache/huggingface`.
 - **Token:** necesario para modelos privados o *gated* (`huggingface-cli login`).
 
-## 5 · Cuenta, CLI y token de acceso
+## 6 · Cuenta, CLI y token de acceso
 
 Para usar el Hub desde el terminal se instala `huggingface_hub`, que expone el comando **`hf`** (antes `huggingface-cli`):
 
@@ -83,7 +105,7 @@ hf cache scan          # cuánto ocupan los modelos descargados
 
 El **token** puede ser de **lectura** (descargar/inferir) o de **escritura** (publicar modelos y datasets). Se genera en *Settings → Access Tokens* del Hub.
 
-## 6 · Spaces e Inference API (adelanto)
+## 7 · Spaces e Inference API (adelanto)
 
 - Un **Space** es una app (Gradio/Streamlit) servida como web pública para probar un modelo. Lo vemos en profundidad en la **sesión 44**.
 - La **Inference API** permite probar un modelo desde la propia model card (widget) o por HTTP, sin descargarlo.
@@ -126,7 +148,7 @@ Encuentra en el Hub el **mejor modelo para una tarea dada** (p. ej. NER en espa�
 
 ## Observaciones
 
-- `%pip install transformers` en el Colab.
+- `%pip install transformers gradio` en el Colab.
 - Primera descarga de un modelo puede tardar; la caché lo acelera después.
 
 ## Fuentes y atribución
