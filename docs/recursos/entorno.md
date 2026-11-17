@@ -94,12 +94,12 @@ El contenedor por defecto usa **CPU** (suficiente para casi todo el curso). Para
 
 | Sesión | Colab | `venv`/`uv` | DevContainer |
 |---|---|:---:|:---:|
-| S28 · Ecosistema y pipelines | ✅ GPU | ✅ | ✅ |
+| S29 · Ecosistema y pipelines | ✅ GPU | ✅ | ✅ |
 | S31 · Tokenizadores | ✅ | ✅ (recomendado) | ✅ |
-| S33 · Transformers | ✅ | ✅ | ✅ |
+| S34 · Transformers | ✅ | ✅ | ✅ |
 | S36 · Datasets | ✅ | ✅ (recomendado) | ✅ |
-| S38 · Fine-tuning | ✅ (GPU) | ⚠️ lento | ⚠️ sin GPU |
-| S41 · Visión/audio | ✅ (GPU) | ⚠️ lento | ⚠️ sin GPU |
+| S39 · Fine-tuning | ✅ (GPU) | ⚠️ lento | ⚠️ sin GPU |
+| S42 · Visión/audio | ✅ (GPU) | ⚠️ lento | ⚠️ sin GPU |
 | S44 · Despliegue Gradio | ✅ | ✅ (recomendado) | ✅ |
 
 > **Regla práctica:** GPU → Colab · CPU y práctica de entorno → `venv`/`uv` o DevContainer.

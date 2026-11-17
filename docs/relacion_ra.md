@@ -17,27 +17,27 @@ Este curso de Hugging Face se imparte en paralelo a **ML** (Manuel Quinto) y **D
 
 | Sesión | Contenido | MIA (5071) | PIA (5073) |
 |--------|-----------|------------|------------|
-| S28 · Ecosistema y pipelines | Hub, model cards, CLI, `pipeline` | **RA1** · **RA3** (NLP) | **RA3** (convergencia) |
+| S29 · Ecosistema y pipelines | Hub, model cards, CLI, `pipeline` | **RA1** · **RA3** (NLP) | **RA3** (convergencia) |
 | S31 · Tokenizadores | BPE/WordPiece, `AutoTokenizer` | **RA2** | — |
-| S33 · Transformers por dentro | atención, familias, embeddings | **RA2** · **RA3** | — |
+| S34 · Transformers por dentro | atención, familias, embeddings | **RA2** · **RA3** | — |
 | S36 · La librería Datasets | `datasets`, transformación, publicación | **RA2** | **RA2** (desarrollo) |
-| S38 · Fine-tuning | `Trainer`, `evaluate`, `push_to_hub` | **RA2** | **RA2** (desarrollo) |
-| S41 · Visión, audio y multimodal | ViT, CLIP, Whisper, VLM | **RA2** | — |
+| S39 · Fine-tuning | `Trainer`, `evaluate`, `push_to_hub` | **RA2** | **RA2** (desarrollo) |
+| S42 · Visión, audio y multimodal | ViT, CLIP, Whisper, VLM | **RA2** | — |
 | S44 · Despliegue: Hub, Gradio, Spaces | `huggingface_hub`, Gradio, Spaces | **RA1** | **RA2** · **RA3** |
 
 ## RA implicados (texto oficial)
 
 ### MIA (5071) · Modelos de Inteligencia Artificial
 
-- **RA1** — Caracteriza sistemas de IA relacionándolos con la mejora de la eficiencia operativa. → **S28, S44**
-- **RA2** — Utiliza modelos de sistemas de IA implementando sistemas de resolución de problemas. → **S28–S44** (hilo central)
-- **RA3** — Relaciona el PLN con sus aplicaciones determinando su potencial y sus limitaciones. → **S28, S33**
+- **RA1** — Caracteriza sistemas de IA relacionándolos con la mejora de la eficiencia operativa. → **S29, S44**
+- **RA2** — Utiliza modelos de sistemas de IA implementando sistemas de resolución de problemas. → **S29–S44** (hilo central)
+- **RA3** — Relaciona el PLN con sus aplicaciones determinando su potencial y sus limitaciones. → **S29, S34**
 - **RA5** — Aplica sistemas expertos. → **Fuera de alcance** de este curso (se imparte en el módulo MIA; ver el proyecto `mia`).
 
 ### PIA (5073) · Programación de Inteligencia Artificial
 
-- **RA2** — Desarrolla aplicaciones de IA utilizando entornos de modelado. → **S36, S38, S44**
-- **RA3** (`RAPIA.3`) — Evalúa las mejoras en los negocios integrando convergencia tecnológica. → **S28, S44** (Hub/Spaces como plataforma que unifica herramientas)
+- **RA2** — Desarrolla aplicaciones de IA utilizando entornos de modelado. → **S36, S39, S44**
+- **RA3** (`RAPIA.3`) — Evalúa las mejoras en los negocios integrando convergencia tecnológica. → **S29, S44** (Hub/Spaces como plataforma que unifica herramientas)
 
 ## Evaluación
 

@@ -1,11 +1,11 @@
 ---
-sesion: "38"
+sesion: "39"
 titulo: "Fine-tuning con Trainer y Evaluate"
 fecha: 2026-12-02
 duracion: 120 min
 ---
 
-# Sesión 38 · Fine-tuning con Trainer y Evaluate (02/12/2026)
+# Sesión 39 · Fine-tuning con Trainer y Evaluate (02/12/2026)
 
 > **Objetivo:** ajustar un modelo preentrenado a una tarea propia sin escribir el bucle de entrenamiento.
 >
@@ -22,11 +22,11 @@ duracion: 120 min
 
 ## Cuaderno de la sesión
 
-[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion38_finetuning.ipynb){ .md-button } · [ver en el sitio](sesion38_finetuning.ipynb)
+[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion39_finetuning.ipynb){ .md-button } · [ver en el sitio](sesion39_finetuning.ipynb)
 
 ## 1 · Transfer learning aplicado
 
-El **fine-tuning** reentrena un modelo preentrenado durante pocas épocas con tus datos. Regla práctica: para tareas genéricas basta con **zero-shot** (visto en S28); cuando tu dominio es específico, **ajusta** el modelo.
+El **fine-tuning** reentrena un modelo preentrenado durante pocas épocas con tus datos. Regla práctica: para tareas genéricas basta con **zero-shot** (visto en S29); cuando tu dominio es específico, **ajusta** el modelo.
 
 ```mermaid
 flowchart LR
@@ -71,7 +71,7 @@ tokenizer.push_to_hub("tu-usuario/mi-modelo")
 
 ## Práctica (notebook)
 
-Ajusta un modelo **encoder en español** (p. ej. `dccuchile/bert-base-spanish-wwm-uncased` o BETO) sobre el dataset de la sesión 36 y compáralo con el **zero-shot** de la sesión 28.
+Ajusta un modelo **encoder en español** (p. ej. `dccuchile/bert-base-spanish-wwm-uncased` o BETO) sobre el dataset de la sesión 36 y compáralo con el **zero-shot** de la sesión 29.
 
 ## Reto
 

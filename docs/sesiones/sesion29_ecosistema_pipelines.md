@@ -1,11 +1,11 @@
 ---
-sesion: "28"
+sesion: "29"
 titulo: "Ecosistema y pipelines"
 fecha: 2026-11-18
 duracion: 120 min
 ---
 
-# Sesión 28 · El ecosistema y los pipelines (18/11/2026)
+# Sesión 29 · El ecosistema y los pipelines (18/11/2026)
 
 > **Objetivo:** resolver tareas reales con una línea de código y saber elegir un modelo en el Hub.
 >
@@ -24,7 +24,7 @@ duracion: 120 min
 
 ## Cuaderno de la sesión
 
-[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion28_ecosistema_pipelines.ipynb){ .md-button } · [ver en el sitio](sesion28_ecosistema_pipelines.ipynb)
+[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion29_ecosistema_pipelines.ipynb){ .md-button } · [ver en el sitio](sesion29_ecosistema_pipelines.ipynb)
 
 ## 1 · El ecosistema Hugging Face
 

@@ -10,12 +10,12 @@ Profesor: **José Manuel Pérez Torres** · Centro: **I.E.S. Severo Ochoa (Elche
 
 | # | Sesión | Fecha |
 |---|---|---|
-| [S28](sesiones/sesion28_ecosistema_pipelines.md) | Ecosistema y pipelines | 18/11 |
+| [S29](sesiones/sesion29_ecosistema_pipelines.md) | Ecosistema y pipelines | 18/11 |
 | [S31](sesiones/sesion31_tokenizadores.md) | Tokenizadores | 23/11 |
-| [S33](sesiones/sesion33_transformers.md) | Transformers por dentro | 25/11 |
+| [S34](sesiones/sesion34_transformers.md) | Transformers por dentro | 25/11 |
 | [S36](sesiones/sesion36_datasets.md) | La librería Datasets | 30/11 |
-| [S38](sesiones/sesion38_finetuning.md) | Fine-tuning con Trainer y Evaluate | 02/12 |
-| [S41](sesiones/sesion41_vision_audio_multimodal.md) | Visión, audio y multimodal | 09/12 |
+| [S39](sesiones/sesion39_finetuning.md) | Fine-tuning con Trainer y Evaluate | 02/12 |
+| [S42](sesiones/sesion42_vision_audio_multimodal.md) | Visión, audio y multimodal | 09/12 |
 | [S44](sesiones/sesion44_despliegue_gradio_spaces.md) | Desplegar: Hub, Gradio y Spaces | 14/12 |
 
 ## Cómo funciona

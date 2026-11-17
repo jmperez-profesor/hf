@@ -18,21 +18,21 @@
 
 | # | Sesión | Fecha | Contenido |
 |---|---|---|---|
-| S28 | Ecosistema y pipelines | 18/11 | Hub, model cards, `pipeline`, elegir modelo |
+| S29 | Ecosistema y pipelines | 18/11 | Hub, model cards, `pipeline`, elegir modelo |
 | S31 | Tokenizadores | 23/11 | BPE/WordPiece/SentencePiece, `AutoTokenizer`, chat templates |
-| S33 | Transformers por dentro | 25/11 | atención, 3 familias, logits/softmax, embeddings |
+| S34 | Transformers por dentro | 25/11 | atención, 3 familias, logits/softmax, embeddings |
 | S36 | La librería Datasets | 30/11 | `load_dataset`, `map`/`filter`, Arrow, publicar |
-| S38 | Fine-tuning con Trainer y Evaluate | 02/12 | `Trainer`, `evaluate`, `push_to_hub` |
-| S41 | Visión, audio y multimodal | 09/12 | ViT, CLIP, Whisper, VLM |
+| S39 | Fine-tuning con Trainer y Evaluate | 02/12 | `Trainer`, `evaluate`, `push_to_hub` |
+| S42 | Visión, audio y multimodal | 09/12 | ViT, CLIP, Whisper, VLM |
 | S44 | Despliegue: Hub, Gradio, Spaces | 14/12 | `huggingface_hub`, Gradio, Spaces, `InferenceClient` |
 
-> **Numeración alineada con `GUIA.md`** (S28, S31, S33, S36, S38, S41, S44). Datasets (S36) y Fine-tuning (S38) son sesiones **separadas**.
+> **Numeración alineada con `GUIA.md`** (S29, S31, S34, S36, S39, S42, S44). Datasets (S36) y Fine-tuning (S39) son sesiones **separadas**.
 
-**Actualizaciones a 2026 aplicadas:** familias de Transformers + mención Mamba/SSM (S33), nombres actualizados Whisper/FLUX (S41), Inference Providers (S44). **Agentes (`smolagents`) excluidos** por decisión del docente.
+**Actualizaciones a 2026 aplicadas:** familias de Transformers + mención Mamba/SSM (S34), nombres actualizados Whisper/FLUX (S42), Inference Providers (S44). **Agentes (`smolagents`) excluidos** por decisión del docente.
 
 ## 4. Relación con los RA (detalle en `docs/relacion_ra.md`)
 
-- **RA1 (MIA):** S28, S44 · **RA2 (MIA):** S28–S44 (central) · **RA3 (MIA):** S28, S33 · **RA5 (MIA):** fuera de alcance · **RA2/RA3 (PIA):** S28, S36, S38, S44.
+- **RA1 (MIA):** S29, S44 · **RA2 (MIA):** S29–S44 (central) · **RA3 (MIA):** S29, S34 · **RA5 (MIA):** fuera de alcance · **RA2/RA3 (PIA):** S29, S36, S39, S44.
 
 ## 5. Evaluación
 

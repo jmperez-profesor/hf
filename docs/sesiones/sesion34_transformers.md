@@ -1,11 +1,11 @@
 ---
-sesion: "33"
+sesion: "34"
 titulo: "Transformers por dentro"
 fecha: 2026-11-25
 duracion: 120 min
 ---
 
-# Sesión 33 · Transformers por dentro (25/11/2026)
+# Sesión 34 · Transformers por dentro (25/11/2026)
 
 > **Objetivo:** abrir el pipeline y controlar cada paso a mano.
 >
@@ -23,7 +23,7 @@ duracion: 120 min
 
 ## Cuaderno de la sesión
 
-[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion33_transformers.ipynb){ .md-button } · [ver en el sitio](sesion33_transformers.ipynb)
+[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion34_transformers.ipynb){ .md-button } · [ver en el sitio](sesion34_transformers.ipynb)
 
 ## 1 · Intuición de la atención
 

@@ -82,7 +82,7 @@ ds.push_to_hub("tu-usuario/mi-dataset")
 
 ## Práctica (notebook)
 
-Prepara un **dataset de reseñas en español** tokenizado y particionado, que se usará en la sesión 38 (fine-tuning).
+Prepara un **dataset de reseñas en español** tokenizado y particionado, que se usará en la sesión 39 (fine-tuning).
 
 ## Reto
 

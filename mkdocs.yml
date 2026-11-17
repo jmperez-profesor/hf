@@ -94,24 +94,24 @@ hooks:
 nav:
   - Inicio: index.md
   - Sesiones:
-      - "S28 · Ecosistema y pipelines":
-          - "Guía de clase": sesiones/sesion28_ecosistema_pipelines.md
-          - "Notebook": sesiones/sesion28_ecosistema_pipelines.ipynb
+      - "S29 · Ecosistema y pipelines":
+          - "Guía de clase": sesiones/sesion29_ecosistema_pipelines.md
+          - "Notebook": sesiones/sesion29_ecosistema_pipelines.ipynb
       - "S31 · Tokenizadores":
           - "Guía de clase": sesiones/sesion31_tokenizadores.md
           - "Notebook": sesiones/sesion31_tokenizadores.ipynb
-      - "S33 · Transformers por dentro":
-          - "Guía de clase": sesiones/sesion33_transformers.md
-          - "Notebook": sesiones/sesion33_transformers.ipynb
+      - "S34 · Transformers por dentro":
+          - "Guía de clase": sesiones/sesion34_transformers.md
+          - "Notebook": sesiones/sesion34_transformers.ipynb
       - "S36 · La librería Datasets":
           - "Guía de clase": sesiones/sesion36_datasets.md
           - "Notebook": sesiones/sesion36_datasets.ipynb
-      - "S38 · Fine-tuning con Trainer y Evaluate":
-          - "Guía de clase": sesiones/sesion38_finetuning.md
-          - "Notebook": sesiones/sesion38_finetuning.ipynb
-      - "S41 · Visión, audio y multimodal":
-          - "Guía de clase": sesiones/sesion41_vision_audio_multimodal.md
-          - "Notebook": sesiones/sesion41_vision_audio_multimodal.ipynb
+      - "S39 · Fine-tuning con Trainer y Evaluate":
+          - "Guía de clase": sesiones/sesion39_finetuning.md
+          - "Notebook": sesiones/sesion39_finetuning.ipynb
+      - "S42 · Visión, audio y multimodal":
+          - "Guía de clase": sesiones/sesion42_vision_audio_multimodal.md
+          - "Notebook": sesiones/sesion42_vision_audio_multimodal.ipynb
       - "S44 · Desplegar: Hub, Gradio y Spaces":
           - "Guía de clase": sesiones/sesion44_despliegue_gradio_spaces.md
           - "Notebook": sesiones/sesion44_despliegue_gradio_spaces.ipynb

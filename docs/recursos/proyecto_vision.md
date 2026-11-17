@@ -1,6 +1,6 @@
 # Proyecto integrador · Fine-tuning de un Vision Transformer
 
-> Actividad práctica que une las sesiones **S36** (datasets), **S38** (fine-tuning), **S41** (visión) y **S44** (publicar en el Hub): afinar un **Vision Transformer (ViT)** para clasificar imágenes propias y publicarlo.
+> Actividad práctica que une las sesiones **S36** (datasets), **S39** (fine-tuning), **S42** (visión) y **S44** (publicar en el Hub): afinar un **Vision Transformer (ViT)** para clasificar imágenes propias y publicarlo.
 
 ## Objetivo
 
@@ -11,14 +11,14 @@ Entrenar un modelo de **clasificación de imágenes** a partir de un dataset (pr
 ```mermaid
 flowchart LR
     S36[datasets] --> P[Fine-tuning ViT]
-    S38[Trainer + evaluate] --> P
-    S41[ViT + procesador] --> P
+    S39[Trainer + evaluate] --> P
+    S42[ViT + procesador] --> P
     P --> S44[push_to_hub / Space]
 ```
 
 - **S36:** `load_dataset`, preprocesado.
-- **S38:** `Trainer`, métricas.
-- **S41:** `ViTForImageClassification` + `ViTImageProcessor`.
+- **S39:** `Trainer`, métricas.
+- **S42:** `ViTForImageClassification` + `ViTImageProcessor`.
 - **S44:** `push_to_hub` y (opcional) demo con Gradio.
 
 ## Pasos
