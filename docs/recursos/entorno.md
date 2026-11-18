@@ -23,6 +23,20 @@ Cada sesión tiene un notebook con el botón **"Abrir en Colab"**. Es la opción
 
 Para ejecutar el código en tu máquina (sesiones de CPU: tokenizadores, datasets, transformers, Gradio).
 
+!!! important "Un solo entorno para todo el curso"
+    Crea **un único entorno** y reutilízalo en todas las sesiones. **No** crees uno por sesión: cada entorno trae su propia copia de `torch` (2-5 GB) y eso es lo que llena el disco. Los ejercicios van en subcarpetas:
+
+    ```
+    hf/
+    ├── .venv/                  ← el único entorno virtual
+    ├── course-requirements.txt
+    ├── sesion29/
+    ├── sesion31/
+    └── ...
+    ```
+
+    En cada sesión solo tienes que **reactivar** el entorno: `source .venv/bin/activate`.
+
 ### Opción A · `venv` (clásico)
 
 ```bash
@@ -87,6 +101,26 @@ flowchart LR
 ### ¿Y la GPU?
 
 El contenedor por defecto usa **CPU** (suficiente para casi todo el curso). Para GPU en local haría falta una imagen con CUDA y el *NVIDIA Container Toolkit*, más complejo. Por eso las sesiones pesadas (fine-tuning, visión) se hacen en **Colab**, y el DevContainer queda para las de CPU.
+
+---
+
+## Gestionar el espacio en disco
+
+El disco se llena por **dos motivos distintos**, y solo uno se arregla con los entornos:
+
+| Qué ocupa | Dónde vive | Cómo se gestiona |
+|---|---|---|
+| **Librerías** (`torch`, `transformers`, …) | dentro del `.venv` | **un solo entorno** (no duplicar) |
+| **Modelos descargados** | `~/.cache/huggingface/` (global) | `hf cache scan` / `hf cache delete` |
+
+Los modelos de HF se guardan en una **caché global** compartida entre todos los entornos. Para ver cuánto ocupan y limpiarlos:
+
+```bash
+hf cache scan                 # cuánto ocupa cada modelo
+hf cache delete <modelo>      # borra un modelo que ya no uses
+```
+
+> **Rutina recomendada:** al final de cada trimestre (o del curso), ejecuta `hf cache scan`, mira qué modelos ya no necesitas y bórralos con `hf cache delete`. En **Colab** no hay que preocuparse: la caché es efímera (se borra entre sesiones).
 
 ---
 
