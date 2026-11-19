@@ -13,6 +13,20 @@
 
 > Los ejemplos de CPU los puedes lanzar en Colab sin GPU o en tu máquina. Los de GPU necesitan la **T4 de Colab**.
 
+## ¿Dónde lo ejecuto: Colab o local?
+
+Gradio funciona en **ambos**, pero se comporta distinto:
+
+| Dónde | `demo.launch()` | Resultado |
+|---|---|---|
+| **Colab** | `launch()` | app **inline** dentro del notebook |
+| **Colab** | `launch(share=True)` | + **URL pública temporal** (72 h) |
+| **Local** | `launch()` | abre `http://127.0.0.1:7860` |
+
+- Las demos **de GPU** (resumen, QA, imagen) van mejor en **Colab con T4**.
+- Las demos **de CPU** (traductor, sentimiento, NER) funcionan bien en local.
+- El enlace `share=True` es **temporal**; para algo permanente, desplegamos a **Spaces** en la sesión 44.
+
 ---
 
 ## 🖥️ CPU
