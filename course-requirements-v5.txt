@@ -1,0 +1,27 @@
+# Dependencias del curso con transformers v5 (la ÚLTIMA versión).
+# Lo usa el DevContainer para probar la migración v4 → v5.
+# El venv local usa course-requirements.txt (fijado a transformers<5).
+#
+# En v5 se eliminan las pipelines 'translation', 'summarization',
+# 'question-answering', 'image-to-text' y 'visual-question-answering'.
+# Ver docs/recursos/migracion_v5.md para el antes/después.
+
+# Núcleo
+transformers          # v5 (sin fijar)
+datasets
+tokenizers
+huggingface_hub
+
+# Entrenamiento y evaluación
+evaluate
+accelerate
+
+# Embeddings y despliegue
+sentence-transformers
+gradio
+
+# Cómputo
+torch
+numpy
+pandas
+matplotlib

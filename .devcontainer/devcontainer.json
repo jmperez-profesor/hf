@@ -2,11 +2,12 @@
 // Abre la carpeta del repositorio en VS Code con la extensión "Dev Containers"
 // y pulsa "Reopen in Container". Las dependencias se instalan solas.
 {
-  "name": "Hugging Face (CE IA&BD)",
+  "name": "Hugging Face (CE IA&BD) — v5",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
 
-  // Instala las dependencias del curso al crear el contenedor.
-  "postCreateCommand": "pip install --upgrade pip && pip install -r course-requirements.txt",
+  // Instala las dependencias del curso en su versión v5 (la última).
+  // El venv local usa course-requirements.txt (fijado a transformers<5).
+  "postCreateCommand": "pip install --upgrade pip && pip install -r course-requirements-v5.txt",
 
   "customizations": {
     "vscode": {

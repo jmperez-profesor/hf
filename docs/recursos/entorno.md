@@ -124,6 +124,55 @@ hf cache delete <modelo>      # borra un modelo que ya no uses
 
 ---
 
+## Probar transformers v4 y v5 (hola-traductor)
+
+Para comprobar la diferencia entre versiones, separamos los entornos:
+
+| Entorno | Versión | Requisitos |
+|---|---|---|
+| **venv local** (por defecto) | v4 (`transformers<5`) | `course-requirements.txt` |
+| **DevContainer** | v5 (última) | `course-requirements-v5.txt` |
+
+### Script v4 (usa la pipeline `translation`)
+
+```python
+from transformers import pipeline
+
+pipe = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
+print(pipe("I like to play basketball")[0]["translation_text"])
+```
+
+### Script v5 (la pipeline `translation` se eliminó en v5)
+
+```python
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+modelo = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-es")
+tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-es")
+
+entradas = tokenizer("I like to play basketball", return_tensors="pt")
+print(tokenizer.decode(modelo.generate(**entradas)[0], skip_special_tokens=True))
+```
+
+### Pasos para probar cada uno
+
+**v4 (venv):**
+```bash
+uv venv && source .venv/bin/activate
+uv pip install "transformers<5"
+python3 hola-traductor.py     # script v4
+```
+
+**v5 (DevContainer):** abre el repo en VS Code → *Reopen in Container* (instala `course-requirements-v5.txt`). Luego:
+```bash
+python3 hola-traductor.py     # script v5
+```
+
+> Comprueba la versión instalada con `python -c "import transformers; print(transformers.__version__)"`.
+> Detalle del cambio: [Migración v4 → v5](migracion_v5.md).
+
+---
+
 ## ¿Cuál uso en cada sesión?
 
 | Sesión | Colab | `venv`/`uv` | DevContainer |
