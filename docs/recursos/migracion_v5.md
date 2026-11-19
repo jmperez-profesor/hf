@@ -105,6 +105,8 @@ print(pipe(mensaje)[0]["generated_text"])
 | **1 · Fijar v4** | `course-requirements.txt` fija `transformers<5`; los notebooks funcionan tal cual | ✅ **activa** |
 | **2 · Migrar a v5** | adaptar los ejemplos con la tabla de arriba (o un chat model) | 📚 documentada aquí |
 
+> 🎨 ¿Quieres usar **v5 de forma sencilla para el alumnado**? Envuelve los modelos en **Gradio**: así no importa qué cambie la API. Ver [Demos con Gradio (v5)](gradio_demos.md).
+
 !!! tip "Si usas v5 y un ejemplo falla"
     O fijas `transformers<5` en tu entorno (`pip install "transformers<5"`), o adaptas la tarea eliminada con la tabla de arriba. Los notebooks del curso instalan con `%pip install "transformers<5"` para evitar el problema.
 

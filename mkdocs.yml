@@ -118,6 +118,7 @@ nav:
   - "Relación con los RA": relacion_ra.md
   - Recursos:
       - "Entorno de trabajo": recursos/entorno.md
+      - "Demos con Gradio (v5)": recursos/gradio_demos.md
       - "Migración transformers v4 → v5": recursos/migracion_v5.md
       - "Vídeos educativos": recursos/videos.md
       - "Proyecto integrador · Visión": recursos/proyecto_vision.md
