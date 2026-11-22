@@ -107,6 +107,11 @@ print(pipe(mensaje)[0]["generated_text"])
 
 > 🎨 ¿Quieres usar **v5 de forma sencilla para el alumnado**? Envuelve los modelos en **Gradio**: así no importa qué cambie la API. Ver [Demos con Gradio (v5)](gradio_demos.md).
 
+## Cuadernos de ejemplo
+
+- [Cuaderno v4 · Pipelines clásicas](cuaderno_v4_pipelines.ipynb) — los ejemplos tal como se vieron en clase (v4, sin Gradio).
+- [Cuaderno v5 · Ejemplos con Gradio y Hub](cuaderno_v5_gradio.ipynb) — los mismos ejemplos en v5, con Gradio y el Hub.
+
 !!! tip "Si usas v5 y un ejemplo falla"
     O fijas `transformers<5` en tu entorno (`pip install "transformers<5"`), o adaptas la tarea eliminada con la tabla de arriba. Los notebooks del curso instalan con `%pip install "transformers<5"` para evitar el problema.
 

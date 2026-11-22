@@ -120,6 +120,8 @@ nav:
       - "Entorno de trabajo": recursos/entorno.md
       - "Demos con Gradio (v5)": recursos/gradio_demos.md
       - "Migración transformers v4 → v5": recursos/migracion_v5.md
+      - "Cuaderno v4 (pipelines)": recursos/cuaderno_v4_pipelines.ipynb
+      - "Cuaderno v5 (Gradio + Hub)": recursos/cuaderno_v5_gradio.ipynb
       - "Vídeos educativos": recursos/videos.md
       - "Proyecto integrador · Visión": recursos/proyecto_vision.md
   - Evaluación:
