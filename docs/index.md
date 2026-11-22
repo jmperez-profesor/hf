@@ -10,9 +10,8 @@ Profesor: **José Manuel Pérez Torres** · Centro: **I.E.S. Severo Ochoa (Elche
 
 | # | Sesión | Fecha |
 |---|---|---|
-| [S29](sesiones/sesion29_ecosistema_pipelines.md) | Ecosistema y pipelines | 18/11 |
-| [S31](sesiones/sesion31_tokenizadores.md) | Tokenizadores | 23/11 |
-| [S34](sesiones/sesion34_transformers.md) | Transformers por dentro | 25/11 |
+| [S29_31](sesiones/sesion29_31_introduccion.md) | Introducción a Hugging Face (PLN, Transformer, HF) | 18 y 23/11 |
+| [S34](sesiones/sesion34_transformers.md) | Transformers, pipelines y tokenizadores | 25/11 |
 | [S36](sesiones/sesion36_datasets.md) | La librería Datasets | 30/11 |
 | [S39](sesiones/sesion39_finetuning.md) | Fine-tuning con Trainer y Evaluate | 02/12 |
 | [S42](sesiones/sesion42_vision_audio_multimodal.md) | Visión, audio y multimodal | 09/12 |

@@ -94,15 +94,14 @@ hooks:
 nav:
   - Inicio: index.md
   - Sesiones:
-      - "S29 · Ecosistema y pipelines":
-          - "Guía de clase": sesiones/sesion29_ecosistema_pipelines.md
-          - "Notebook": sesiones/sesion29_ecosistema_pipelines.ipynb
-      - "S31 · Tokenizadores":
-          - "Guía de clase": sesiones/sesion31_tokenizadores.md
-          - "Notebook": sesiones/sesion31_tokenizadores.ipynb
-      - "S34 · Transformers por dentro":
+      - "S29_31 · Introducción a Hugging Face":
+          - "Guía de clase": sesiones/sesion29_31_introduccion.md
+      - "S34 · Transformers, pipelines y tokenizadores":
           - "Guía de clase": sesiones/sesion34_transformers.md
-          - "Notebook": sesiones/sesion34_transformers.ipynb
+          - "Notebooks":
+              - "Ecosistema y pipelines": sesiones/sesion29_ecosistema_pipelines.ipynb
+              - "Tokenizadores": sesiones/sesion31_tokenizadores.ipynb
+              - "Transformers por dentro": sesiones/sesion34_transformers.ipynb
       - "S36 · La librería Datasets":
           - "Guía de clase": sesiones/sesion36_datasets.md
           - "Notebook": sesiones/sesion36_datasets.ipynb

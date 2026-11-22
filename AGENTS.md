@@ -75,3 +75,4 @@ docs/
 - **2026-11-12:** verificado el **RD 279/2021** (BOE-A-2021-7686): corregida la numeración (**PIA = 5073**, 5072 = ML) y transcritos los RA/CE oficiales de MIA y PIA en `curriculo.yml`. Decisiones de revisión: **RA5 fuera de alcance** y **evaluación = retos 40 % + Space 60 %**.
 - **2026-11-13:** alineada la numeración de sesiones con `GUIA.md` (S29, S31, S34, S36, S39, S42, S44). Datasets (S36) y Fine-tuning (S39) quedan como sesiones separadas; la sesión de LLMs se aplaza al bloque futuro de LLMs.
 - **2026-11-17:** reajuste de numeración por cambios de planificación (S28→S29, S33→S34, S38→S39, S41→S42).
+- **2026-11-22:** reestructuración pedagógica: las sesiones 29 y 31 se fusionan en una **"29_31"** (introducción basada en la presentación `IABD_HF_SESIONES_29_y_31.pdf`), y su contenido de profundización se mueve a la **S34** (Transformers, pipelines y tokenizadores).

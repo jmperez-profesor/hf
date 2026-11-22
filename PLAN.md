@@ -18,21 +18,20 @@
 
 | # | Sesión | Fecha | Contenido |
 |---|---|---|---|
-| S29 | Ecosistema y pipelines | 18/11 | Hub, model cards, `pipeline`, elegir modelo |
-| S31 | Tokenizadores | 23/11 | BPE/WordPiece/SentencePiece, `AutoTokenizer`, chat templates |
-| S34 | Transformers por dentro | 25/11 | atención, 3 familias, logits/softmax, embeddings |
+| S29_31 | Introducción a Hugging Face | 18 y 23/11 | PLN, Transformer, `pipeline`, Hub (presentación) |
+| S34 | Transformers, pipelines y tokenizadores | 25/11 | pipelines, tokenizadores, atención, familias, logits, embeddings |
 | S36 | La librería Datasets | 30/11 | `load_dataset`, `map`/`filter`, Arrow, publicar |
 | S39 | Fine-tuning con Trainer y Evaluate | 02/12 | `Trainer`, `evaluate`, `push_to_hub` |
 | S42 | Visión, audio y multimodal | 09/12 | ViT, CLIP, Whisper, VLM |
 | S44 | Despliegue: Hub, Gradio, Spaces | 14/12 | `huggingface_hub`, Gradio, Spaces, `InferenceClient` |
 
-> **Numeración alineada con `GUIA.md`** (S29, S31, S34, S36, S39, S42, S44). Datasets (S36) y Fine-tuning (S39) son sesiones **separadas**.
+> **Reestructuración (22/11):** las sesiones 29 y 31 se fusionan en una **"29_31"** (introducción, basada en la presentación del curso); su contenido de profundización se mueve a la S34 (Transformers, pipelines y tokenizadores).
 
 **Actualizaciones a 2026 aplicadas:** familias de Transformers + mención Mamba/SSM (S34), nombres actualizados Whisper/FLUX (S42), Inference Providers (S44). **Agentes (`smolagents`) excluidos** por decisión del docente.
 
 ## 4. Relación con los RA (detalle en `docs/relacion_ra.md`)
 
-- **RA1 (MIA):** S29, S44 · **RA2 (MIA):** S29–S44 (central) · **RA3 (MIA):** S29, S34 · **RA5 (MIA):** fuera de alcance · **RA2/RA3 (PIA):** S29, S36, S39, S44.
+- **RA1 (MIA):** S29_31, S44 · **RA2 (MIA):** S29_31–S44 (central) · **RA3 (MIA):** S29_31, S34 · **RA5 (MIA):** fuera de alcance · **RA2/RA3 (PIA):** S29_31, S36, S39, S44.
 
 ## 5. Evaluación
 

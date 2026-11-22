@@ -177,9 +177,8 @@ python3 hola-traductor.py     # script v5
 
 | Sesión | Colab | `venv`/`uv` | DevContainer |
 |---|---|:---:|:---:|
-| S29 · Ecosistema y pipelines | ✅ GPU | ✅ | ✅ |
-| S31 · Tokenizadores | ✅ | ✅ (recomendado) | ✅ |
-| S34 · Transformers | ✅ | ✅ | ✅ |
+| S29_31 · Introducción a HF | ✅ GPU | ✅ | ✅ |
+| S34 · Transformers, pipelines y tokenizadores | ✅ | ✅ | ✅ |
 | S36 · Datasets | ✅ | ✅ (recomendado) | ✅ |
 | S39 · Fine-tuning | ✅ (GPU) | ⚠️ lento | ⚠️ sin GPU |
 | S42 · Visión/audio | ✅ (GPU) | ⚠️ lento | ⚠️ sin GPU |

@@ -4,9 +4,8 @@ Un **reto corto** al final de cada sesión. Se entrega en el notebook de la sesi
 
 | Sesión | Reto | Criterio principal |
 |--------|------|--------------------|
-| S29 · Ecosistema y pipelines | Encontrar el mejor modelo para una tarea y justificarlo con su model card | Elección justificada (tarea, idioma, métricas, licencia) |
-| S31 · Tokenizadores | Entrenar un tokenizador BPE pequeño sobre un corpus propio | Vocabulario generado y explicación |
-| S34 · Transformers | Buscador semántico sobre FAQs (similitud coseno) | Recupera la FAQ correcta |
+| S29_31 · Introducción a HF | Crear entorno virtual, traductor + Stable Diffusion, y cuenta/CLI/caché | Actividades 1 y 2 de la presentación |
+| S34 · Transformers, pipelines y tokenizadores | Buscador semántico sobre FAQs (similitud coseno) | Recupera la FAQ correcta |
 | S36 · Datasets | Subir al Hub un dataset propio con su card completa | Dataset publicado y documentado |
 | S39 · Fine-tuning | Fine-tuning de NER o clasificación multietiqueta | Entrenamiento correcto + métricas |
 | S42 · Visión/audio | Clasificador CLIP zero-shot con categorías propias | Funciona con categorías nuevas |

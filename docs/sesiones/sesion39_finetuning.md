@@ -26,7 +26,7 @@ duracion: 120 min
 
 ## 1 · Transfer learning aplicado
 
-El **fine-tuning** reentrena un modelo preentrenado durante pocas épocas con tus datos. Regla práctica: para tareas genéricas basta con **zero-shot** (visto en S29); cuando tu dominio es específico, **ajusta** el modelo.
+El **fine-tuning** reentrena un modelo preentrenado durante pocas épocas con tus datos. Regla práctica: para tareas genéricas basta con **zero-shot** (visto en S29_31); cuando tu dominio es específico, **ajusta** el modelo.
 
 ```mermaid
 flowchart LR
@@ -71,7 +71,7 @@ tokenizer.push_to_hub("tu-usuario/mi-modelo")
 
 ## Práctica (notebook)
 
-Ajusta un modelo **encoder en español** (p. ej. `dccuchile/bert-base-spanish-wwm-uncased` o BETO) sobre el dataset de la sesión 36 y compáralo con el **zero-shot** de la sesión 29.
+Ajusta un modelo **encoder en español** (p. ej. `dccuchile/bert-base-spanish-wwm-uncased` o BETO) sobre el dataset de la sesión 36 y compáralo con el **zero-shot** de la sesión 29_31.
 
 ## Reto
 

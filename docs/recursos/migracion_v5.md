@@ -8,8 +8,8 @@ La v5 elimina estas tareas de `pipeline()`:
 
 | Tarea eliminada en v5 | Se usaba en… |
 |---|---|
-| `translation` / `translation_xx_to_yy` | S29 |
-| `summarization` | S29 |
+| `translation` / `translation_xx_to_yy` | S29_31 |
+| `summarization` | S29_31 |
 | `question-answering` | S34 |
 | `text2text-generation` | — |
 | `image-to-text` | S42 |
