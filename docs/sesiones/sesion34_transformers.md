@@ -21,8 +21,8 @@ duracion: 120 min
 
 ## Cuadernos
 
-- [Notebook · Ecosistema y pipelines](sesion29_ecosistema_pipelines.ipynb)
-- [Notebook · Tokenizadores](sesion31_tokenizadores.ipynb)
+- [Notebook · Ecosistema y pipelines](sesion34_pipelines.ipynb)
+- [Notebook · Tokenizadores](sesion34_tokenizadores.ipynb)
 - [Notebook · Transformers por dentro](sesion34_transformers.ipynb)
 
 ---

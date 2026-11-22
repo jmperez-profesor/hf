@@ -8,8 +8,6 @@ duracion: 240 min
 # Sesiones 29 y 31 · Introducción a la plataforma Hugging Face (18 y 23/11/2026)
 
 > Sesiones introductorias que combinan **PLN**, la **arquitectura Transformer** y **Hugging Face**, siguiendo la presentación del curso.
->
-> 📄 [Descargar la presentación](../assets/pdf/IABD_HF_SESIONES_29_y_31.pdf)
 
 ## Qué vas a aprender
 
@@ -47,7 +45,7 @@ duracion: 240 min
 
 - **Traductor** (`Helsinki-NLP/opus-mt-en-es`) y **generación de imágenes** (Stable Diffusion), en Colab o en local.
 
-## Ejercicios (sesión 31)
+## Ejercicios (sesiones 29 y 31)
 
 ### Actividad 1 · Traductor + Stable Diffusion (3p)
 Crea un entorno virtual e instala las librerías necesarias para ejecutar el **traductor** y el modelo **Stable Diffusion**. Genera un par de frases e imágenes, anota en comentarios el tiempo de generación y adjunta las traducciones y las imágenes generadas.

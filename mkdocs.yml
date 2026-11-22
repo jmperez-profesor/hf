@@ -99,8 +99,8 @@ nav:
       - "S34 · Transformers, pipelines y tokenizadores":
           - "Guía de clase": sesiones/sesion34_transformers.md
           - "Notebooks":
-              - "Ecosistema y pipelines": sesiones/sesion29_ecosistema_pipelines.ipynb
-              - "Tokenizadores": sesiones/sesion31_tokenizadores.ipynb
+              - "Ecosistema y pipelines": sesiones/sesion34_pipelines.ipynb
+              - "Tokenizadores": sesiones/sesion34_tokenizadores.ipynb
               - "Transformers por dentro": sesiones/sesion34_transformers.ipynb
       - "S36 · La librería Datasets":
           - "Guía de clase": sesiones/sesion36_datasets.md
