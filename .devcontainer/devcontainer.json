@@ -3,7 +3,7 @@
 // y pulsa "Reopen in Container". Las dependencias se instalan solas.
 {
   "name": "Hugging Face (CE IA&BD) — v5",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "image": "mcr.microsoft.com/devcontainers/python:3.15",
 
   // Instala las dependencias del curso en su versión v5 (la última).
   // El venv local usa course-requirements.txt (fijado a transformers<5).
