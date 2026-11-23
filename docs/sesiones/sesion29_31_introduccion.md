@@ -469,6 +469,9 @@ mi-proyecto-hf/
 └── demo.py                    # la demo de Gradio
 ```
 
+!!! warning "Ojo con la ubicación de los ficheros"
+    `requirements.txt` y `demo.py` van en la **raíz del proyecto** (la misma carpeta que `.devcontainer/`), **no** dentro de `.devcontainer/`. Si los pones dentro, el `COPY requirements.txt .` del Dockerfile dará el error `"/requirements.txt": not found`.
+
 ### Paso a paso
 
 #### Paso 1 · Crea la carpeta del proyecto
