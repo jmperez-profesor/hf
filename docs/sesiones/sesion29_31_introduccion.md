@@ -285,6 +285,38 @@ El **token** puede ser de **lectura** (descargar/inferir) o de **escritura** (pu
 
 ---
 
+## 3.6 · Prueba rápida: v5 + Gradio en el DevContainer (opcional)
+
+> 🧪 **Solo de introducción, no es un ejercicio.** Si quieres ver cómo se trabajará con la v5, prueba esta demo en el **DevContainer** (que ya usa `transformers` v5).
+
+**1 · Abre el DevContainer:** clona el repositorio, ábrelo en VS Code y pulsa **"Reopen in Container"** (instala `transformers` v5 automáticamente). Ver [Entorno de trabajo](../recursos/entorno.md).
+
+**2 · Ejecuta la demo** (el fichero `demo_v5.py` ya está en el repositorio):
+
+```bash
+python3 demo_v5.py
+```
+
+**3 · Prueba:** se abre una interfaz en `http://127.0.0.1:7860` donde escribes una reseña y ves el sentimiento al instante. Es la misma demo que en v4, pero ya en el entorno v5.
+
+El código de la demo:
+
+```python
+import gradio as gr
+from transformers import pipeline
+
+clasificador = pipeline("sentiment-analysis")
+
+def analizar(texto):
+    r = clasificador(texto)[0]
+    return f"{r['label']} ({r['score']:.2f})"
+
+gr.Interface(fn=analizar, inputs="text", outputs="text",
+             examples=["Me encanta este producto", "Llegó roto y tarde"]).launch()
+```
+
+> En la [página de demos](../recursos/gradio_demos.md) tienes más ejemplos en v5 (traducción, resumen, pregunta-respuesta, describir imágenes).
+
 # Ejercicios (sesiones 29 y 31)
 
 ## Actividad 1 · Traductor + Stable Diffusion (3p)
