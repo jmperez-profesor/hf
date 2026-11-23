@@ -319,6 +319,7 @@ Para poder acceder, previamente tenemos que obtener un token de acceso. Para ell
 
 !!! info "Lectura o escritura"
     A la hora de generar el token, podemos crear tokens de:
+    
     - Con granularidad fina, donde podremos configurar en detalle a qué le damos permiso. 
     - Lectura (*read*): para la lectura de los repositorios públicos y de los que somos miembros, y por tanto, nos sirve para descargar modelos privados o realizar inferencia.
     - Escritura (*write*): para la escritura en los repositorios que tenemos acceso, por ejemplo, para entrenar un modelo o modificar la tarjeta de un modelo.
@@ -443,21 +444,106 @@ El **token** puede ser de **lectura** (descargar/inferir) o de **escritura** (pu
 
 ---
 
-## 3.6 · Prueba rápida: v5 + Gradio en el DevContainer (opcional)
+## 3.6 · Prueba rápida: v5 + Gradio en un DevContainer (opcional)
 
-> 🧪 **Solo de introducción, no es un ejercicio.** Si quieres ver cómo se trabajará con la v5, prueba esta demo en el **DevContainer** (que ya usa `transformers` v5).
+> 🧪 **Solo de introducción, no es un ejercicio.** Creamos desde cero un **DevContainer** con `transformers` **v5** + Gradio, para ver cómo se trabajará en las próximas sesiones.
 
-**1 · Abre el DevContainer:** clona el repositorio, ábrelo en VS Code y pulsa **"Reopen in Container"** (instala `transformers` v5 automáticamente). Ver [Entorno de trabajo](../recursos/entorno.md).
+### ¿Qué es un Dev Container?
 
-**2 · Ejecuta la demo** (el fichero `demo_v5.py` ya está en el repositorio):
+Un **Dev Container** es un entorno de desarrollo **reproducible** que se ejecuta dentro de un contenedor **Docker** y se configura con ficheros guardados en el propio proyecto. Ventajas: reproducible, aislado y portable.
 
-```bash
-python3 demo_v5.py
+### Requisitos (una sola vez)
+
+1. **Docker Desktop** (Windows/macOS) o **Docker Engine** (Linux).
+2. **VS Code** + la extensión **Dev Containers** (`ms-vscode-remote.remote-containers`).
+
+### Estructura del proyecto
+
+```
+mi-proyecto-hf/
+├── .devcontainer/
+│   ├── devcontainer.json      # configuración: Dockerfile, extensiones, puertos, comandos
+│   ├── Dockerfile             # imagen Python + herramientas
+│   └── postCreateCommand.sh   # se ejecuta una vez al crear el contenedor
+├── requirements.txt           # dependencias (transformers v5)
+└── demo.py                    # la demo de Gradio
 ```
 
-**3 · Prueba:** se abre una interfaz en `http://127.0.0.1:7860` donde escribes una reseña y ves el sentimiento al instante. Es la misma demo que en v4, pero ya en el entorno v5.
+### Paso a paso
 
-El código de la demo:
+#### Paso 1 · Crea la carpeta del proyecto
+
+```bash
+mkdir mi-proyecto-hf && cd mi-proyecto-hf
+mkdir -p .devcontainer
+```
+
+#### Paso 2 · Crea `requirements.txt`
+
+```text
+transformers
+gradio
+torch
+huggingface_hub
+```
+
+#### Paso 3 · Crea el `Dockerfile`
+
+```dockerfile
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_ROOT_USER_ACTION=ignore
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
+
+CMD ["bash"]
+```
+
+#### Paso 4 · Crea `postCreateCommand.sh`
+
+```bash
+#!/bin/bash
+# Se ejecuta una vez al crear el contenedor: verifica el entorno.
+echo "--- Python ---"
+python --version
+echo "--- transformers + gradio ---"
+python -c "import transformers, gradio; print('transformers', transformers.__version__, '· gradio', gradio.__version__)"
+```
+
+#### Paso 5 · Crea `devcontainer.json`
+
+```json
+{
+  "name": "HF - v5 + Gradio",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+  "forwardPorts": [7860],
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh"
+}
+```
+
+#### Paso 6 · Crea la demo `demo.py`
 
 ```python
 import gradio as gr
@@ -472,6 +558,19 @@ def analizar(texto):
 gr.Interface(fn=analizar, inputs="text", outputs="text",
              examples=["Me encanta este producto", "Llegó roto y tarde"]).launch()
 ```
+
+#### Paso 7 · Abre el contenedor y prueba
+
+1. Abre la carpeta `mi-proyecto-hf` en VS Code.
+2. Paleta de comandos (`Ctrl+Shift+P`) → **Dev Containers: Reopen in Container**.
+3. VS Code construye la imagen (instala `transformers` v5) y ejecuta `postCreateCommand.sh`.
+4. En el terminal, ejecuta:
+
+```bash
+python3 demo.py
+```
+
+5. Se abre una interfaz en `http://127.0.0.1:7860`: escribe una reseña y verás el sentimiento.
 
 > En la [página de demos](../recursos/gradio_demos.md) tienes más ejemplos en v5 (traducción, resumen, pregunta-respuesta, describir imágenes).
 
