@@ -272,6 +272,164 @@ pipeline("text-generation", model="Qwen/...")
 
 ## 3.5 · El Hub: cuenta, CLI y token
 
+### Hugging Face Hub
+
+El **Hugging Face Hub** es una plataforma con más de 400.000 modelos, 100.000 conjuntos de datos y 150.000 demos en el cual podemos colaborar y reutilizar en nuestros desarrollos de ML.
+
+El Hub de Hugging Face funciona a modo de repositorio Git que almacena todos los archivos necesarios de:
+
+- **Modelos** (*models*): incluyendo los últimos modelos **NLP**, de **visión artificial** o **tratamiento de audio**.
+- **Espacios** (*spaces*): aplicaciones interactivas para probar los modelos directamente desde el navegador.
+- **Conjuntos de datos** (*datasets*): con datos de diferentes dominios.
+
+![Hub de Hugging Face](../assets/images/01hf-hub.png)
+
+### Repositorios
+
+Los [**repositorios**](https://huggingface.co/docs/hub/repositories) permiten almacenar el código y los assets para hacer copias de seguridad de nuestro trabajo, compartirlo con la comunidad y trabajar en equipo. Para ello, se utiliza un repositorio Git para la gestión del control de versiones y facilitar el trabajo colaborativo.
+
+##### Paso 1: Crear cuenta de HF
+
+El primer paso es crearnos una cuenta en [Hugging Face](https://huggingface.co/)
+
+##### Paso 2: Cliente de HF
+
+El siguiente paso es instalar el cliente de Hugging Face para poder interactuar con todas las herramientas disponibles.
+
+> **Organizaciones**
+Hemos creado una organización llamada [IABDs8a](https://huggingface.co/IABDs8a) para agrupar al alumnado del IES Severo Ochoa.
+
+#### HuggingFace-CLI
+
+Para poder subir nuestro código al *Hub*, podemos realizarlo desde el interfaz gráfico, o hacer uso del [CLI](https://huggingface.co/docs/huggingface_hub/guides/cli).
+
+Para ello, el primer paso es instalarlo:
+
+```bash
+pip install huggingface_hub
+```
+
+Mediante el CLI vamos a poder interactuar con *Hugging Face* para descargar repositorios, espacios, modelos o archivos de forma individual, así como subir todo tipo de artefactos y recursos.
+
+### Token de acceso
+
+Para poder acceder, previamente tenemos que obtener un token de acceso. Para ello, desde el interfaz web, accedemos a la sección de *"Access Token"* y generamos un token:
+
+![Tokens de acceso](../assets/images/04_tokens_acceso.png)
+
+!!! info "Lectura o escritura"
+    A la hora de generar el token, podemos crear tokens de:
+    - Con granularidad fina, donde podremos configurar en detalle a qué le damos permiso. 
+    - Lectura (*read*): para la lectura de los repositorios públicos y de los que somos miembros, y por tanto, nos sirve para descargar modelos privados o realizar inferencia.
+    - Escritura (*write*): para la escritura en los repositorios que tenemos acceso, por ejemplo, para entrenar un modelo o modificar la tarjeta de un modelo.
+
+Podemos generar tantos tokens como queramos, para diferentes aplicaciones o servicios.
+
+#### Pasos para crear un token de lectura para VSCode
+
+##### Paso 1: Accedemos a nuestro perfil de usuario
+
+![](../assets/images/01_tokens_acceso.png)
+
+##### Paso 2: Hacemos clic en "Settings"
+
+![Hacemos clic en settings](../assets/images/02_tokens_acceso.png)
+
+##### Paso 3: Hacemos clic en la opción "Access Tokens"
+
+![Hacemos clic en Access Tokens](../assets/images/03_tokens_acceso.png)
+
+Veremos el listado de tokens actuales.
+
+##### Paso 4: Listado de tokens actuales
+
+![Listado de Tokens actuales](../assets/images/04_tokens_acceso.png)
+
+##### Paso 5: Hacemos clic en "+Create new token"
+
+**Tokens de grano fino**:
+![Listado de Tokens actuales](../assets/images/05_token_acceso_granofino.png)
+Con granularidad fina, donde podremos configurar en detalle a qué le damos permiso. 
+
+**Tokens de solo lectura (para usarlo en VSCode por ejemplo)**:
+![Listado de Tokens actuales](../assets/images/05_token_acceso_solo_lectura.png)
+Para la lectura de los repositorios públicos y de los que somos miembros, y por tanto, nos sirve para descargar modelos privados o realizar inferencia.
+
+**Tokens de escritura**:
+![Listado de Tokens actuales](../assets/images/05_token_acceso_solo_escritura.png)
+Para la escritura en los repositorios que tenemos acceso, por ejemplo, para entrenar un modelo o modificar la tarjeta de un modelo.
+
+##### Paso 6: Crear un token de solo lectura para VSCode
+
+![Creamos el token](../assets/images/06_token_acceso_solo_lectura.png)
+
+##### Paso 7: Copiar el token en la terminal de VSCode 
+
+Nos aparecerá el token que debemos copiar y guardar en un lugar seguro ya que no se volverá a mostrar (similar a las API Keys de los modelos de IA: OpenAI, Claud, DeepSeek, Mistral, etc.)
+
+![Copiamos el token de solo lectura para VSCode](../assets/images/07_token_acceso_solo_lectura.png)
+
+##### Paso 8: Pegar el token en la terminal de VSCode 
+
+###### Login
+
+Tras crear una cuenta y obtener el access token, ya podemos hacer login con `hf auth login`:
+
+```bash
+> hf auth login
+
+    _|    _|  _|    _|    _|_|_|    _|_|_|  _|_|_|  _|      _|    _|_|_|      _|_|_|_|    _|_|      _|_|_|  _|_|_|_|
+    _|    _|  _|    _|  _|        _|          _|    _|_|    _|  _|            _|        _|    _|  _|        _|
+    _|_|_|_|  _|    _|  _|  _|_|  _|  _|_|    _|    _|  _|  _|  _|  _|_|      _|_|_|    _|_|_|_|  _|        _|_|_|
+    _|    _|  _|    _|  _|    _|  _|    _|    _|    _|    _|_|  _|    _|      _|        _|    _|  _|        _|
+    _|    _|    _|_|      _|_|_|    _|_|_|  _|_|_|  _|      _|    _|_|_|      _|        _|    _|    _|_|_|  _|_|_|_|
+
+    To login, `huggingface_hub` requires a token generated from https://huggingface.co/settings/tokens .
+Token: 
+Token is valid (permission: read).
+Your token has been saved in your configured git credential helpers (osxkeychain).
+Your token has been saved to /Users/aitormedrano/.cache/huggingface/token
+Login successful
+```
+Tendremos que pegar el token que hemos copiado previamente.
+
+!!! warning "Ojo, el token no se visualiza en la terminal."
+
+##### Forzar a introducir de nuevo un token
+
+```bash
+hf auth login --force
+```
+**Elegimos la opción "Paste an access token":**
+![Forzamos a introducir nuevamene un token](../assets/images/08_token_acceso_pegar1.png)
+
+**Pegamos el token:**
+![](../assets/images/08_token_acceso_pegar2.png)
+
+**Mensaje de éxito si todo ha ido bien:**
+![](../assets/images/08_token_acceso_pegar3.png)
+
+Por ejemplo, para comprobar si hemos entrado bien al sistema le pasaremos el parámetro [`whoami`](https://huggingface.co/docs/huggingface_hub/guides/cli#hf-auth-whoami):
+
+```bash
+> hf auth whoami
+jmpereztorres
+```
+Otro comando muy útil para saber cuanto ocupa los datos descargados en nuestro ordenador local es utilizar el parámetro cache scan:
+
+```bash
+> hf cache scan
+REPO ID                        REPO TYPE SIZE ON DISK NB FILES LAST_ACCESSED  LAST_MODIFIED REFS LOCAL PATH                                                                         
+------------------------------ --------- ------------ -------- -------------- ------------- ---- ---------------------------------------------------------------------------------- 
+runwayml/stable-diffusion-v1-5 model             5.5G       15 22 minutes ago 3 weeks ago   main /Users/aitormedrano/.cache/huggingface/hub/models--runwayml--stable-diffusion-v1-5 
+
+Done in 0.0s. Scanned 1 repo(s) for a total of 5.5G.
+```
+
+Una vez tenemos el *token* ya podemos clonar los espacios y modelos y utilizar el token para autenticarnos.
+
+### Resumen
+
 Para interactuar con el Hub:
 
 ```bash
