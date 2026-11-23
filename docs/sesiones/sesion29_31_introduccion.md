@@ -243,7 +243,34 @@ imagen = pipeline("Una ardilla al estilo Picasso").images[0]
 imagen.save("hola-hf.png")
 ```
 
-## 3.4 · El Hub: cuenta, CLI y token
+## 3.4 · ¿Por qué v4 hoy y v5 después?
+
+Un apunte importante antes de los ejercicios: **hoy usamos `transformers` v4 y en las próximas sesiones pasaremos a la v5**. Te lo explicamos en dos minutos.
+
+**Qué pasó:** a finales de 2025, `transformers` sacó la versión 5 y **eliminó algunas funciones "de una línea"** (traducción, resumen, pregunta-respuesta). ¿Por qué? Porque un **modelo de lenguaje moderno (LLM)** hace esas tareas mejor, con solo darle una instrucción.
+
+**La diferencia, en una línea:**
+
+```python
+# v4 (hoy): una función especializada, sin GPU
+pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
+
+# v5 (después): un LLM + un prompt (necesita GPU)
+pipeline("text-generation", model="Qwen/...")
+```
+
+**¿Por qué empezamos con v4?** Porque es más sencilla: una línea, funciona en CPU y nos deja centrarnos en **qué es un pipeline, un modelo y un tokenizador**, sin la fricción de la v5.
+
+> 🚗 **Analogía:** es como aprender a conducir — primero en un coche sencillo (v4) y, cuando dominas lo básico, te subes al coche real (v5). Los conceptos son los mismos; solo cambian nombres de funciones.
+
+**¿Cuándo pasamos a v5?** En las próximas sesiones, cuando veamos los **LLM** (RAG, modelos en local), que es donde la v5 brilla.
+
+!!! warning "Importante para los ejercicios"
+    Al crear el entorno virtual, instala la **versión 4** (`pip install "transformers<5"`), porque el ejemplo del traductor usa una función que la v5 eliminó. Si instalas la última versión, ese ejemplo dará error.
+
+    El detalle de qué cambió está en [Migración v4 → v5](../recursos/migracion_v5.md).
+
+## 3.5 · El Hub: cuenta, CLI y token
 
 Para interactuar con el Hub:
 
