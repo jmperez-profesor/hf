@@ -19,19 +19,18 @@
 | # | Sesión | Fecha | Contenido |
 |---|---|---|---|
 | S29_31 | Introducción a Hugging Face | 18 y 23/11 | PLN, Transformer, `pipeline`, Hub (presentación) |
-| S34 | Transformers, pipelines y tokenizadores | 25/11 | pipelines, tokenizadores, atención, familias, logits, embeddings |
+| S34 | Hub, Gradio y Spaces | 25/11 | `huggingface_hub`, Gradio, Spaces |
 | S36 | La librería Datasets | 30/11 | `load_dataset`, `map`/`filter`, Arrow, publicar |
-| S39 | Fine-tuning con Trainer y Evaluate | 02/12 | `Trainer`, `evaluate`, `push_to_hub` |
+| S39 | Fine-tuning y profundización | 02/12 | `Trainer`, `evaluate`, pipelines, tokenizadores, Transformers |
 | S42 | Visión, audio y multimodal | 09/12 | ViT, CLIP, Whisper, VLM |
-| S44 | Despliegue: Hub, Gradio, Spaces | 14/12 | `huggingface_hub`, Gradio, Spaces, `InferenceClient` |
 
-> **Reestructuración (22/11):** las sesiones 29 y 31 se fusionan en una **"29_31"** (introducción, basada en la presentación del curso); su contenido de profundización se mueve a la S34 (Transformers, pipelines y tokenizadores).
+> **Reestructuración (23/11):** siguiendo el hilo conductor de Aitor Medrano (Hub → Spaces → Modelos → Datasets), la sesión de **Hub, Gradio y Spaces** (antes S44) se adelanta a la **S34**, y el contenido de profundización (pipelines, tokenizadores, Transformers) se fusiona en la **S39** (fine-tuning).
 
-**Actualizaciones a 2026 aplicadas:** familias de Transformers + mención Mamba/SSM (S34), nombres actualizados Whisper/FLUX (S42), Inference Providers (S44). **Agentes (`smolagents`) excluidos** por decisión del docente.
+**Actualizaciones a 2026 aplicadas:** familias de Transformers + mención Mamba/SSM (S39), nombres actualizados Whisper/FLUX (S42), Inference Providers (S34). **Agentes (`smolagents`) excluidos** por decisión del docente.
 
 ## 4. Relación con los RA (detalle en `docs/relacion_ra.md`)
 
-- **RA1 (MIA):** S29_31, S44 · **RA2 (MIA):** S29_31–S44 (central) · **RA3 (MIA):** S29_31, S34 · **RA5 (MIA):** fuera de alcance · **RA2/RA3 (PIA):** S29_31, S36, S39, S44.
+- **RA1 (MIA):** S29_31, S34 · **RA2 (MIA):** S29_31–S42 (central) · **RA3 (MIA):** S29_31, S39 · **RA5 (MIA):** fuera de alcance · **RA2/RA3 (PIA):** S29_31, S34, S36, S39.
 
 ## 5. Evaluación
 

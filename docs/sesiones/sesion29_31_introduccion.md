@@ -558,4 +558,4 @@ Crea una cuenta en Hugging Face, instala el CLI, haz login (`hf auth login`) y a
 
 ## Profundización
 
-Esta sesión introductoria se profundiza en la [**S34 · Transformers, pipelines y tokenizadores**](sesion34_transformers.md), donde vemos el tokenizador, la atención y las familias del Transformer en detalle.
+Esta sesión introductoria se profundiza en la [**S39 · Fine-tuning y profundización**](sesion39_finetuning.md), donde vemos el tokenizador, la atención y las familias del Transformer en detalle.

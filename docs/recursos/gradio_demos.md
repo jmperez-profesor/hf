@@ -25,7 +25,7 @@ Gradio funciona en **ambos**, pero se comporta distinto:
 
 - Las demos **de GPU** (resumen, QA, imagen) van mejor en **Colab con T4**.
 - Las demos **de CPU** (traductor, sentimiento, NER) funcionan bien en local.
-- El enlace `share=True` es **temporal**; para algo permanente, desplegamos a **Spaces** en la sesión 44.
+- El enlace `share=True` es **temporal**; para algo permanente, desplegamos a **Spaces** en la sesión 34.
 
 ---
 
@@ -155,8 +155,8 @@ gr.Interface(fn=describir, inputs=gr.Image(type="filepath"), outputs="text",
 
 ---
 
-## Cómo se relaciona con la sesión 44
+## Cómo se relaciona con la sesión 34
 
-En la **S29_31** aprendes a envolver un modelo en Gradio; aquí tienes demos completas para las tareas del curso. En la **S44** las ampliamos (`Blocks`, disposición, componentes) y las **desplegamos a Spaces**.
+En la **S29_31** aprendes a envolver un modelo en Gradio; aquí tienes demos completas para las tareas del curso. En la **S34** las ampliamos (`Blocks`, disposición, componentes) y las **desplegamos a Spaces**.
 
 > Ver también: [Migración transformers v4 → v5](migracion_v5.md) para el detalle de qué pipelines se eliminaron y por qué.

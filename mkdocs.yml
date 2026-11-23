@@ -96,24 +96,22 @@ nav:
   - Sesiones:
       - "S29_31 · Introducción a Hugging Face":
           - "Guía de clase": sesiones/sesion29_31_introduccion.md
-      - "S34 · Transformers, pipelines y tokenizadores":
-          - "Guía de clase": sesiones/sesion34_transformers.md
-          - "Notebooks":
-              - "Ecosistema y pipelines": sesiones/sesion34_pipelines.ipynb
-              - "Tokenizadores": sesiones/sesion34_tokenizadores.ipynb
-              - "Transformers por dentro": sesiones/sesion34_transformers.ipynb
+      - "S34 · Hub, Gradio y Spaces":
+          - "Guía de clase": sesiones/sesion34_hub_gradio_spaces.md
+          - "Notebook": sesiones/sesion34_hub_gradio_spaces.ipynb
       - "S36 · La librería Datasets":
           - "Guía de clase": sesiones/sesion36_datasets.md
           - "Notebook": sesiones/sesion36_datasets.ipynb
-      - "S39 · Fine-tuning con Trainer y Evaluate":
+      - "S39 · Fine-tuning y profundización":
           - "Guía de clase": sesiones/sesion39_finetuning.md
-          - "Notebook": sesiones/sesion39_finetuning.ipynb
+          - "Notebooks":
+              - "Fine-tuning": sesiones/sesion39_finetuning.ipynb
+              - "Ecosistema y pipelines": sesiones/sesion34_pipelines.ipynb
+              - "Tokenizadores": sesiones/sesion34_tokenizadores.ipynb
+              - "Transformers por dentro": sesiones/sesion34_transformers.ipynb
       - "S42 · Visión, audio y multimodal":
           - "Guía de clase": sesiones/sesion42_vision_audio_multimodal.md
           - "Notebook": sesiones/sesion42_vision_audio_multimodal.ipynb
-      - "S44 · Desplegar: Hub, Gradio y Spaces":
-          - "Guía de clase": sesiones/sesion44_despliegue_gradio_spaces.md
-          - "Notebook": sesiones/sesion44_despliegue_gradio_spaces.ipynb
   - "Relación con los RA": relacion_ra.md
   - Recursos:
       - "Entorno de trabajo": recursos/entorno.md

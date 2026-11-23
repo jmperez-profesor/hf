@@ -1,15 +1,15 @@
 ---
-sesion: "44"
-titulo: "Desplegar: Hub, Gradio y Spaces"
-fecha: 2026-12-14
+sesion: "34"
+titulo: "Hub, Gradio y Spaces"
+fecha: 2026-11-25
 duracion: 120 min
 ---
 
-# Sesión 44 · Desplegar: Hub, Gradio y Spaces (14/12/2026)
+# Sesión 34 · Hub, Gradio y Spaces (25/11/2026)
 
-> **Objetivo:** convertir un modelo propio en una demo pública y cerrar el curso con un proyecto.
+> **Objetivo:** convertir un modelo propio en una demo pública con Gradio y Spaces.
 >
-> Formato: ~30 min de explicación · ~75 min de notebook guiado · ~15 min de proyecto final.
+> Formato: ~30 min de explicación · ~75 min de notebook guiado · ~15 min de reto.
 
 ## Qué vas a aprender
 
@@ -22,7 +22,7 @@ duracion: 120 min
 
 ## Cuaderno de la sesión
 
-[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion44_despliegue_gradio_spaces.ipynb){ .md-button } · [ver en el sitio](sesion44_despliegue_gradio_spaces.ipynb)
+[Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion34_hub_gradio_spaces.ipynb){ .md-button } · [ver en el sitio](sesion34_hub_gradio_spaces.ipynb)
 
 ## 1 · `huggingface_hub`
 

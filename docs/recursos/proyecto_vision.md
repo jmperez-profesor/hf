@@ -1,6 +1,6 @@
 # Proyecto integrador · Fine-tuning de un Vision Transformer
 
-> Actividad práctica que une las sesiones **S36** (datasets), **S39** (fine-tuning), **S42** (visión) y **S44** (publicar en el Hub): afinar un **Vision Transformer (ViT)** para clasificar imágenes propias y publicarlo.
+> Actividad práctica que une las sesiones **S36** (datasets), **S39** (fine-tuning), **S42** (visión) y **S34** (publicar en el Hub): afinar un **Vision Transformer (ViT)** para clasificar imágenes propias y publicarlo.
 
 ## Objetivo
 
@@ -13,13 +13,13 @@ flowchart LR
     S36[datasets] --> P[Fine-tuning ViT]
     S39[Trainer + evaluate] --> P
     S42[ViT + procesador] --> P
-    P --> S44[push_to_hub / Space]
+    P --> S34[push_to_hub / Space]
 ```
 
 - **S36:** `load_dataset`, preprocesado.
 - **S39:** `Trainer`, métricas.
 - **S42:** `ViTForImageClassification` + `ViTImageProcessor`.
-- **S44:** `push_to_hub` y (opcional) demo con Gradio.
+- **S34:** `push_to_hub` y (opcional) demo con Gradio.
 
 ## Pasos
 
@@ -53,4 +53,4 @@ flowchart LR
 
 - [Afinación del Vision Transformer](https://www.youtube.com/watch?v=cbb6Z2VOU9Q) — Codificando Bits, ~50 min — crea el dataset, monta el `Trainer` y afina un ViT con datos propios.
 
-> Ampliación: despliega el modelo afinado en un **Space con Gradio** (ver S44) para cerrar el ciclo completo.
+> Ampliación: despliega el modelo afinado en un **Space con Gradio** (ver S34) para cerrar el ciclo completo.

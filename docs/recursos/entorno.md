@@ -206,6 +206,6 @@ pip install "transformers<5" "huggingface-hub<1.0" "gradio<6"
 | S36 · Datasets | ✅ | ✅ (recomendado) | ✅ |
 | S39 · Fine-tuning | ✅ (GPU) | ⚠️ lento | ⚠️ sin GPU |
 | S42 · Visión/audio | ✅ (GPU) | ⚠️ lento | ⚠️ sin GPU |
-| S44 · Despliegue Gradio | ✅ | ✅ (recomendado) | ✅ |
+| S34 · Despliegue Gradio | ✅ | ✅ (recomendado) | ✅ |
 
 > **Regla práctica:** GPU → Colab · CPU y práctica de entorno → `venv`/`uv` o DevContainer.
