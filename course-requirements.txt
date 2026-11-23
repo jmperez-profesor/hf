@@ -10,9 +10,9 @@
 # Fijamos la rama 4.x para usar esas pipelines sencillas en el curso.
 # Ver docs/recursos/migracion_v5.md para la migración a v5.
 transformers<5
+huggingface-hub<1.0   # la v4 de transformers exige hub <1.0
 datasets
 tokenizers
-huggingface_hub
 
 # Entrenamiento y evaluación
 evaluate
@@ -20,7 +20,7 @@ accelerate
 
 # Embeddings y despliegue
 sentence-transformers
-gradio
+gradio<6              # gradio 6.x exige hub >=1.16 (incompatible con transformers v4)
 
 # Cómputo
 torch

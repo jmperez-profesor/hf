@@ -173,6 +173,30 @@ python3 hola-traductor.py     # script v5
 
 ---
 
+## Cómo volver a v4 (si empezaste con v5)
+
+Si creaste el entorno con `transformers` **v5** (la última) y los ejemplos te fallan (porque usan funciones que la v5 eliminó), vuelve a la v4.
+
+**La forma limpia (recomendada):** recrea el entorno con los requisitos fijados del curso:
+
+```bash
+rm -rf .venv
+uv venv && source .venv/bin/activate        # o: python3 -m venv .venv
+uv pip install -r course-requirements.txt   # fija transformers<5 y dependencias compatibles
+```
+
+**La forma rápida (sin recrear):** fuerza la bajada de versión:
+
+```bash
+pip install "transformers<5" "huggingface-hub<1.0" "gradio<6"
+```
+
+> **¿Por qué también `huggingface-hub` y `gradio`?** La v4 de `transformers` necesita `huggingface-hub<1.0`, y eso choca con `gradio` 6.x y `diffusers` 0.42 (que piden `huggingface-hub>=1.16`). Fijando las tres juntas evitas el conflicto de dependencias.
+
+**En Colab:** no hay que hacer nada; cada notebook instala `transformers<5` en su primera celda.
+
+---
+
 ## ¿Cuál uso en cada sesión?
 
 | Sesión | Colab | `venv`/`uv` | DevContainer |
