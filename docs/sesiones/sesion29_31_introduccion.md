@@ -462,8 +462,8 @@ Un **Dev Container** es un entorno de desarrollo **reproducible** que se ejecuta
 ```
 mi-proyecto-hf/
 ├── .devcontainer/
-│   └── devcontainer.json      # configuración: imagen, extensiones, puertos
-├── postCreateCommand.sh       # fuera de .devcontainer/: instala todo al crear el contenedor
+│   ├── devcontainer.json      # configuración: imagen, extensiones, puertos
+│   └── postCreateCommand.sh   # instala todo al crear el contenedor
 └── demo.py                    # la demo de Gradio
 ```
 
@@ -495,11 +495,11 @@ mkdir -p .devcontainer
     }
   },
   "forwardPorts": [7860],
-  "postCreateCommand": "bash postCreateCommand.sh"
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh"
 }
 ```
 
-#### Paso 3 · Crea `postCreateCommand.sh` (en la raíz, fuera de `.devcontainer/`)
+#### Paso 3 · Crea `postCreateCommand.sh` (dentro de `.devcontainer/`)
 
 ```bash
 #!/bin/bash
