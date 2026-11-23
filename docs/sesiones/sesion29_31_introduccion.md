@@ -462,15 +462,13 @@ Un **Dev Container** es un entorno de desarrollo **reproducible** que se ejecuta
 ```
 mi-proyecto-hf/
 ├── .devcontainer/
-│   ├── devcontainer.json      # configuración: Dockerfile, extensiones, puertos, comandos
-│   ├── Dockerfile             # imagen Python + herramientas
-│   └── postCreateCommand.sh   # se ejecuta una vez al crear el contenedor
-├── requirements.txt           # dependencias (transformers v5)
+│   └── devcontainer.json      # configuración: imagen, extensiones, puertos
+├── postCreateCommand.sh       # fuera de .devcontainer/: instala todo al crear el contenedor
 └── demo.py                    # la demo de Gradio
 ```
 
-!!! warning "Ojo con la ubicación de los ficheros"
-    `requirements.txt` y `demo.py` van en la **raíz del proyecto** (la misma carpeta que `.devcontainer/`), **no** dentro de `.devcontainer/`. Si los pones dentro, el `COPY requirements.txt .` del Dockerfile dará el error `"/requirements.txt": not found`.
+!!! tip "Sencillo: sin Dockerfile ni requirements.txt"
+    Usamos la **imagen predefinida** de Python (`image`) y un único `postCreateCommand.sh` que instala las librerías. Así evitamos el `Dockerfile` (y su `COPY`), que era la causa del error `requirements.txt not found`.
 
 ### Paso a paso
 
@@ -481,57 +479,12 @@ mkdir mi-proyecto-hf && cd mi-proyecto-hf
 mkdir -p .devcontainer
 ```
 
-#### Paso 2 · Crea `requirements.txt`
-
-```text
-transformers
-gradio
-torch
-huggingface_hub
-```
-
-#### Paso 3 · Crea el `Dockerfile`
-
-```dockerfile
-FROM python:3.15-slim
-
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PIP_ROOT_USER_ACTION=ignore
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    git curl \
-    && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /workspace
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
-
-CMD ["bash"]
-```
-
-#### Paso 4 · Crea `postCreateCommand.sh`
-
-```bash
-#!/bin/bash
-# Se ejecuta una vez al crear el contenedor: verifica el entorno.
-echo "--- Python ---"
-python --version
-echo "--- transformers + gradio ---"
-python -c "import transformers, gradio; print('transformers', transformers.__version__, '· gradio', gradio.__version__)"
-```
-
-#### Paso 5 · Crea `devcontainer.json`
+#### Paso 2 · Crea `devcontainer.json` (dentro de `.devcontainer/`)
 
 ```json
 {
   "name": "HF - v5 + Gradio",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
+  "image": "mcr.microsoft.com/devcontainers/python:3.15",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -542,11 +495,25 @@ python -c "import transformers, gradio; print('transformers', transformers.__ver
     }
   },
   "forwardPorts": [7860],
-  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh"
+  "postCreateCommand": "bash postCreateCommand.sh"
 }
 ```
 
-#### Paso 6 · Crea la demo `demo.py`
+#### Paso 3 · Crea `postCreateCommand.sh` (en la raíz, fuera de `.devcontainer/`)
+
+```bash
+#!/bin/bash
+# Se ejecuta una vez al crear el contenedor: instala y verifica.
+pip install --upgrade pip
+pip install transformers gradio torch huggingface_hub
+
+echo "--- Python ---"
+python --version
+echo "--- transformers + gradio ---"
+python -c "import transformers, gradio; print('transformers', transformers.__version__, '· gradio', gradio.__version__)"
+```
+
+#### Paso 4 · Crea la demo `demo.py`
 
 ```python
 import gradio as gr
@@ -562,11 +529,11 @@ gr.Interface(fn=analizar, inputs="text", outputs="text",
              examples=["Me encanta este producto", "Llegó roto y tarde"]).launch()
 ```
 
-#### Paso 7 · Abre el contenedor y prueba
+#### Paso 5 · Abre el contenedor y prueba
 
 1. Abre la carpeta `mi-proyecto-hf` en VS Code.
 2. Paleta de comandos (`Ctrl+Shift+P`) → **Dev Containers: Reopen in Container**.
-3. VS Code construye la imagen (instala `transformers` v5) y ejecuta `postCreateCommand.sh`.
+3. VS Code crea el contenedor (Python 3.15) y ejecuta `postCreateCommand.sh` (instala las librerías).
 4. En el terminal, ejecuta:
 
 ```bash
