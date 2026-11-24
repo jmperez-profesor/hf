@@ -77,3 +77,4 @@ docs/
 - **2026-11-17:** reajuste de numeración por cambios de planificación (S28→S29, S33→S34, S38→S39, S41→S42).
 - **2026-11-22:** reestructuración pedagógica: las sesiones 29 y 31 se fusionan en una **"29_31"** (introducción basada en la presentación `IABD_HF_SESIONES_29_y_31.pdf`), y su contenido de profundización se mueve a la **S34** (Transformers, pipelines y tokenizadores).
 - **2026-11-23:** siguiendo el hilo conductor de Aitor Medrano (Hub → Spaces → Modelos → Datasets), la sesión de **Hub, Gradio y Spaces** (antes S44) se adelanta a la **S34**, y la profundización (pipelines, tokenizadores, Transformers) se fusiona en la **S39** (fine-tuning).
+- **2026-11-24:** con la autorización expresa de Aitor Medrano, se copian **tal cual** (texto, imágenes y enlaces) las secciones **Spaces, Modelos y Datasets** de su `hf.html` en la sesión **S34**. Se descargan sus imágenes (prefijo `aitor_`) y CSV a `docs/assets/`.

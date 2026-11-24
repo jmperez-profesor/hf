@@ -43,6 +43,7 @@
 - **Autor:** Aitor Medrano (docente del CE IA&BD, I.E.S. Severo Ochoa de Elche).
 - **Licencia:** CC BY-NC-SA 4.0 (atribución, no comercial, compartir igual).
 - **Uso:** referencia de contenido para las sesiones de plataforma (Hub, CLI, Spaces), **Gradio** y **Datasets**. Se **adapta y reescribe** (no se copia literalmente), con atribución. Sus actividades etiquetan los códigos oficiales **RAPIA.3** (`CEPIA.3b/c/d`) y **RAMIA.1** (`CEMIA.1d/e`).
+- **Nota (24/11):** con la autorización expresa de Aitor Medrano, las secciones **Spaces, Modelos y Datasets** de `hf.html` se reproducen **tal cual** (texto, imágenes y enlaces) en la sesión **S34 · Hub, Gradio y Spaces**.
 
 ## Pendiente
 
