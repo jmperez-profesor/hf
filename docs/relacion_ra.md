@@ -18,7 +18,7 @@ Este curso de Hugging Face se imparte en paralelo a **ML** (Manuel Quinto) y **D
 | Sesión | Contenido | MIA (5071) | PIA (5073) |
 |--------|-----------|------------|------------|
 | S29_31 · Introducción a HF | PLN, Transformer, `pipeline`, Hub | **RA1** · **RA3** (NLP) | **RA3** (convergencia) |
-| S34 · Hub, Gradio y Spaces | `huggingface_hub`, Gradio, Spaces | **RA1** | **RA2** · **RA3** |
+| S34 · Hub: Spaces, Modelos y Datasets | `huggingface_hub`, Gradio, Spaces | **RA1** | **RA2** · **RA3** |
 | S36 · La librería Datasets | `datasets`, transformación, publicación | **RA2** | **RA2** (desarrollo) |
 | S39 · Fine-tuning y profundización | `Trainer`, `evaluate`, pipelines, tokenizadores, Transformers | **RA2** · **RA3** | **RA2** (desarrollo) |
 | S42 · Visión, audio y multimodal | ViT, CLIP, Whisper, VLM | **RA2** | — |

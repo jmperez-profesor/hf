@@ -11,7 +11,7 @@ Profesor: **José Manuel Pérez Torres** · Centro: **I.E.S. Severo Ochoa (Elche
 | # | Sesión | Fecha |
 |---|---|---|
 | [S29_31](sesiones/sesion29_31_introduccion.md) | Introducción a Hugging Face (PLN, Transformer, HF) | 18 y 23/11 |
-| [S34](sesiones/sesion34_hub_gradio_spaces.md) | Hub, Gradio y Spaces | 25/11 |
+| [S34](sesiones/sesion34_hub_gradio_spaces.md) | Hub: Spaces, Modelos y Datasets | 25/11 |
 | [S36](sesiones/sesion36_datasets.md) | La librería Datasets | 30/11 |
 | [S39](sesiones/sesion39_finetuning.md) | Fine-tuning y profundización | 02/12 |
 | [S42](sesiones/sesion42_vision_audio_multimodal.md) | Visión, audio y multimodal | 09/12 |

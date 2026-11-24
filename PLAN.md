@@ -19,12 +19,12 @@
 | # | Sesión | Fecha | Contenido |
 |---|---|---|---|
 | S29_31 | Introducción a Hugging Face | 18 y 23/11 | PLN, Transformer, `pipeline`, Hub (presentación) |
-| S34 | Hub, Gradio y Spaces | 25/11 | `huggingface_hub`, Gradio, Spaces |
+| S34 | Hub: Spaces, Modelos y Datasets | 25/11 | `huggingface_hub`, Gradio, Spaces |
 | S36 | La librería Datasets | 30/11 | `load_dataset`, `map`/`filter`, Arrow, publicar |
 | S39 | Fine-tuning y profundización | 02/12 | `Trainer`, `evaluate`, pipelines, tokenizadores, Transformers |
 | S42 | Visión, audio y multimodal | 09/12 | ViT, CLIP, Whisper, VLM |
 
-> **Reestructuración (23/11):** siguiendo el hilo conductor de Aitor Medrano (Hub → Spaces → Modelos → Datasets), la sesión de **Hub, Gradio y Spaces** (antes S44) se adelanta a la **S34**, y el contenido de profundización (pipelines, tokenizadores, Transformers) se fusiona en la **S39** (fine-tuning).
+> **Reestructuración (23/11):** siguiendo el hilo conductor de Aitor Medrano (Hub → Spaces → Modelos → Datasets), la sesión de **Hub: Spaces, Modelos y Datasets** (antes S44) se adelanta a la **S34**, y el contenido de profundización (pipelines, tokenizadores, Transformers) se fusiona en la **S39** (fine-tuning).
 
 **Actualizaciones a 2026 aplicadas:** familias de Transformers + mención Mamba/SSM (S39), nombres actualizados Whisper/FLUX (S42), Inference Providers (S34). **Agentes (`smolagents`) excluidos** por decisión del docente.
 

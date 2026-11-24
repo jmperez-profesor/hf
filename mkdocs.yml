@@ -96,9 +96,8 @@ nav:
   - Sesiones:
       - "S29_31 · Introducción a Hugging Face":
           - "Guía de clase": sesiones/sesion29_31_introduccion.md
-      - "S34 · Hub, Gradio y Spaces":
+      - "S34 · Hub: Spaces, Modelos y Datasets":
           - "Guía de clase": sesiones/sesion34_hub_gradio_spaces.md
-          - "Notebook": sesiones/sesion34_hub_gradio_spaces.ipynb
       - "S36 · La librería Datasets":
           - "Guía de clase": sesiones/sesion36_datasets.md
           - "Notebook": sesiones/sesion36_datasets.ipynb
