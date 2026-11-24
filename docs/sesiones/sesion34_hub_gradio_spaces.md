@@ -9,6 +9,71 @@ duracion: 120 min
 
 > Contenido reproducido con la autorización de **Aitor Medrano** (I.E.S. Severo Ochoa), de sus apuntes [Hugging Face](https://aitor-medrano.github.io/iabd/hf/hf.html) (CC BY-NC-SA 4.0). Texto, imágenes y enlaces copiados tal cual.
 
+## Proyecto de la sesión · Crea un Space de traducción
+
+> 🎯 **Actividad 3** (RAMIA.1 / CEMIA.1d, CEMIA.1e / 2p). Vamos a construir, paso a paso, un **Space de Gradio que traduce** (reutilizando el traductor de la sesión anterior), primero en Hugging Face y luego en local. Al final, lo completas con tu toque personal.
+
+### Paso 1 · Crea el Space
+
+1. Ve a tu perfil de Hugging Face → pestaña **Spaces** → **Create new Space**.
+2. Configúralo: **nombre** (p. ej. `mi-traductor`), **licencia**, **SDK = Gradio**, **plantilla = Blank**, **hardware = CPU (gratis)** y **visibilidad = Público**.
+3. Pulsa **Create Space**.
+
+### Paso 2 · Escribe el `app.py`
+
+Sustituye el contenido del fichero `app.py` por:
+
+```python
+import gradio as gr
+from transformers import pipeline
+
+traductor = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
+
+def traducir(texto):
+    return traductor(texto)[0]["translation_text"]
+
+demo = gr.Interface(
+    fn=traducir,
+    inputs=gr.Textbox(label="Inglés", placeholder="Escribe aquí..."),
+    outputs="text",
+    title="Traductor EN → ES",
+    examples=["I like to play basketball"],
+)
+demo.launch()
+```
+
+> ⚠️ En `transformers` v5 la tarea `translation` se eliminó. Si usas v5, cambia el `pipeline` por `AutoModelForSeq2SeqLM` (ver [Migración v4 → v5](../recursos/migracion_v5.md)).
+
+### Paso 3 · Publica y prueba
+
+1. Haz **Commit** del `app.py` (el Space se reconstruye automáticamente).
+2. Cuando termine, escribe una frase en inglés y verás la traducción.
+3. ¡Ya tienes tu Space público! Cualquiera con la URL puede usarlo.
+
+### Paso 4 · También en local
+
+Prueba el mismo `app.py` en tu ordenador:
+
+```bash
+pip install gradio transformers
+python3 app.py
+```
+
+Se abre en `http://127.0.0.1:7860`.
+
+### Tu toque personal (completa la actividad)
+
+Para que el Space sea **tuyo** (y no una copia del profesor), elige al menos una de estas mejoras:
+
+- Cambia el **par de idiomas** (p. ej. ES → EN, u otro modelo de `Helsinki-NLP`).
+- Añade **ejemplos** propios a la interfaz.
+- Cambia el **título, descripción o tema** del Space.
+- Añade un `requirements.txt` con las dependencias y una **descripción** en el README.
+
+**Entregable:** la URL de tu Space + una captura de la app funcionando (en HF y en local).
+
+---
+
 ## Spaces
 
 Mediante los espacios podemos construir y desplegar modelos de IA, así como aplicaciones de demostración para probarlos.
@@ -272,6 +337,12 @@ Por ejemplo, si le pasamos una [foto](../assets/images/aitor_perro-gato.jpg) al 
 
 Aunque a priori se pueden [añadir elementos](https://huggingface.co/docs/hub/models-widgets#how-can-i-control-my-models-widget-example-input) para probar el modelo directamente, actualmente no funciona, al menos, para poner imágenes de entrada.
 
+### Actividad (opcional) · Publica un modelo de perros y gatos
+
+Siguiendo la sección **Usando Git**, crea un modelo y configura tu clave SSH. Descarga los archivos del modelo [`omarques/autotrain-dogs-and-cats-1527055142`](https://huggingface.co/omarques/autotrain-dogs-and-cats-1527055142) (`config.json`, `preprocessor_config.json`, `pytorch_model.bin`), súbelos a tu modelo y, mediante Python, realiza la inferencia con un `pipeline` de `image-classification`.
+
+*(Actividad 4 de Aitor Medrano: RAPIA.3 / CEPIA.3b, CEPIA.3c / opcional.)*
+
 ## Datasets
 
 Por último, *Hugging Face* también ofrece un entorno para la utilización y publicación de *datasets*, organizados por categorías, tamaños, lenguajes y licencias de uso:
@@ -373,6 +444,12 @@ DatasetDict({
     })
 })
 ```
+
+### Actividad · Crea un dataset del Titanic
+
+Crea un dataset en Hugging Face a partir de los datos de entrenamiento ([`titanic_train.csv`](../assets/resources/titanic_train.csv)) y pruebas ([`titanic_test.csv`](../assets/resources/titanic_test.csv)) del [Titanic](https://www.kaggle.com/c/titanic/data). A continuación, desde Python con la librería `datasets`, recupera los datos y muestra sus características.
+
+*(Actividad 5 de Aitor Medrano: RAPIA.3 / CEPIA.3b, CEPIA.3c / 2p.)*
 
 ---
 
