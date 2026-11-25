@@ -337,6 +337,37 @@ Por ejemplo, si le pasamos una [foto](../assets/images/aitor_perro-gato.jpg) al 
 
 Aunque a priori se pueden [añadir elementos](https://huggingface.co/docs/hub/models-widgets#how-can-i-control-my-models-widget-example-input) para probar el modelo directamente, actualmente no funciona, al menos, para poner imágenes de entrada.
 
+### Pipelines
+
+Ya hemos estudiado anteriormente que los *pipelines* son una abstracción para realizar inferencia sobre los modelos, simplificando el código complejo mediante un API dedicada a tareas.
+
+Por ejemplo, podemos utilizarlo pasándole por parámetro la tarea a realizar o el modelo a utilizar:
+
+```python
+from transformers import pipeline
+
+pipe = pipeline("text-classification")
+result = pipe("Me encanta venir a clase al IES Severo Ochoa")
+print(result)
+# [{'label': 'POSITIVE', 'score': 0.9526600241661072}]
+```
+
+Si queremos, podemos indicarle, además de la tarea, qué modelo queremos emplear:
+
+```python
+from transformers import pipeline
+
+pipe = pipeline("text-generation", model="openai-community/gpt2")
+result = pipe("What is big data?")
+print(result)
+
+trad = pipeline("text2text-generation", model="google/flan-t5-base")
+result = trad("translate from spanish to english: Me encanta disfrutar las vacaciones en la playa")
+print(result)
+```
+
+El listado de tareas disponibles se pueden consultar en la API del método `transformers.pipeline` con el parámetro [`task`](https://huggingface.co/docs/transformers/v4.39.3/en/main_classes/pipelines#transformers.pipeline.task), por ejemplo, `audio-classification`, `image-segmentation`, `image-to-text`, `token-classification`, etc...
+
 ### Actividad (opcional) · Publica un modelo de perros y gatos
 
 Siguiendo la sección **Usando Git**, crea un modelo y configura tu clave SSH. Descarga los archivos del modelo [`omarques/autotrain-dogs-and-cats-1527055142`](https://huggingface.co/omarques/autotrain-dogs-and-cats-1527055142) (`config.json`, `preprocessor_config.json`, `pytorch_model.bin`), súbelos a tu modelo y, mediante Python, realiza la inferencia con un `pipeline` de `image-classification`.
