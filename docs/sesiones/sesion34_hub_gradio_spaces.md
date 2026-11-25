@@ -11,7 +11,7 @@ duracion: 120 min
 
 ## Proyecto de la sesión · Crea un Space de traducción
 
-> 🎯 **Actividad 3** (RAMIA.1 / CEMIA.1d, CEMIA.1e / 2p). Vamos a construir, paso a paso, un **Space de Gradio que traduce** (reutilizando el traductor de la sesión anterior), primero en Hugging Face y luego en local. Al final, lo completas con tu toque personal.
+> 🎯 **Actividad 1** (RAMIA.1 / CEMIA.1d, CEMIA.1e / 2p). Vamos a construir, paso a paso, un **Space de Gradio que traduce** (reutilizando el traductor de la sesión anterior), primero en Hugging Face y luego en local. Al final, lo completas con tu toque personal.
 
 ### Paso 1 · Crea el Space
 
@@ -203,7 +203,7 @@ Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras el
 
 ## Modelos
 
-> 🎯 **Actividad 4** (RAPIA.3 / CEPIA.3b, CEPIA.3c / obligatoria). Todo este apartado lo haremos **conjuntamente**: crea un modelo, configura tu clave SSH y sube los archivos del modelo de perros/gatos, **pegando una captura de cada paso** en un documento. Al final, de forma **individual**, harás la inferencia con Python usando un `pipeline`.
+> 🎯 **Actividad 2** (RAPIA.3 / CEPIA.3b, CEPIA.3c / obligatoria). Todo este apartado lo haremos **conjuntamente**: crea un modelo, configura tu clave SSH y sube los archivos del modelo de perros/gatos, **pegando una captura de cada paso** en un documento. Al final, de forma **individual**, harás la inferencia con Python usando un `pipeline`.
 
 *Hugging Face* ofrece multitud de modelos que podemos probar y utilizar en nuestras aplicaciones. Además, si queremos, podemos utilizar alguna técnica de transferencia de conocimiento para crear nuestros propios modelos adaptados a nuestras necesidades.
 
