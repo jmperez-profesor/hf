@@ -1,11 +1,11 @@
 ---
 sesion: "34"
-titulo: "Hub: Spaces, Modelos y Datasets"
+titulo: "Hub: Spaces y Modelos"
 fecha: 2026-11-25
 duracion: 120 min
 ---
 
-# Sesión 34 · Hub: Spaces, Modelos y Datasets (25/11/2026)
+# Sesión 34 · Hub: Spaces y Modelos (25/11/2026)
 
 > Contenido reproducido con la autorización de **Aitor Medrano** (I.E.S. Severo Ochoa), de sus apuntes [Hugging Face](https://aitor-medrano.github.io/iabd/hf/hf.html) (CC BY-NC-SA 4.0). Texto, imágenes y enlaces copiados tal cual.
 
