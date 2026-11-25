@@ -37,7 +37,7 @@ El uso básico de los espacios es **gratuito**, pero si necesitamos emplear GPU 
 
 ### Apuntes · Crear un Space
 
-Para familiarizarnos con ellos, vamos a crear nuestro espacio que utilizaremos a lo largo del bloque. Para ello, dentro de la pestaña [*Spaces*](https://huggingface.co/spaces), creamos uno nuevo (*New Space*), y vemos como primero indicamos un nombre, una licencia, el SDK que utilizaremos para el prototipado, el hardware empleado y la visibilidad del mismo:
+Para familiarizarnos con ellos, vamos a crear nuestro espacio que utilizaremos a lo largo del bloque. Para ello, dentro de la pestaña [*Spaces*](https://huggingface.co/spaces), creamos uno nuevo (*New Space*), y vemos cómo primero indicamos un nombre, una licencia, el SDK que utilizaremos para el prototipado, el hardware empleado y la visibilidad del mismo:
 
 ![Creando un Space](../assets/images/34/03hf-create-space-all.png)
 
@@ -339,15 +339,15 @@ Vamos a ir a la pestaña de *`Files and versions`* y añadimos un archivo desde 
 
 ![Añadimos un archivo al modelo](../assets/images/34/aitor_01hf-model-initial-commit.png)
 
-Y si ahora vamos a la pestaña de archivos, vemos como tenemos el archivo recién añadido, así como el archivo `README.md` que nos permite configurar la página de inicio de nuestro modelo:
+Y si ahora vamos a la pestaña de archivos, vemos cómo tenemos el archivo recién añadido, así como el archivo `README.md` que nos permite configurar la página de inicio de nuestro modelo:
 
 ![Ficheros en modelos](../assets/images/34/aitor_01hf-model-files.png)
 
 ### Usando Git
 
-Para poder trabajar con el repositorio ya hemos visto que podemos hacerlo mediante el interfaz web, aunque lo más cómodo para nosotros será trabajar mediante Git y GitLFS. [GitLFS](https://git-lfs.com/) es una extensión para trabajar con archivos de gran tamaño (superiores a 10Mb), ya que es posible, que bien nuestros modelos o bien nuestros *datasets* tengan un tamaño considerable.
+Para poder trabajar con el repositorio ya hemos visto que podemos hacerlo mediante el interfaz web, aunque lo más cómodo para nosotros será trabajar mediante Git y GitLFS. [GitLFS](https://git-lfs.com/) es una extensión para trabajar con archivos de gran tamaño (superiores a 10 MB), ya que es posible, que bien nuestros modelos o bien nuestros *datasets* tengan un tamaño considerable.
 
-Así pues, como es probable que trabajemos con archivos superiores a los 10Mb, instalaremos en nuestro sistema *git-lfs*:
+Así pues, como es probable que trabajemos con archivos superiores a los 10 MB, instalaremos en nuestro sistema *git-lfs*:
 
 ```bash
 sudo apt-get install git-lfs # Ubuntu
@@ -390,7 +390,7 @@ git clone git@hf.co:jmpereztorres/iabd_model
 cd iabd_model
 ```
 
-Y comprobamos como se han descargado los archivos del modelo, incluyendo el que hemos creado previamente:
+Y comprobamos cómo se han descargado los archivos del modelo, incluyendo el que hemos creado previamente:
 
 ```bash
 % ls
@@ -449,7 +449,7 @@ En próximas sesiones donde nos centremos en el *fine-tuning*, volveremos a la t
 
 ### Inference API
 
-Si vamos a la tarjeta de nuestro modelo, si nuestro modelo tiene la suficiente visibilidad social (*likes*) veremos que en la parte derecha se ha marcado dentro del bloque de *Inference API* que se trata de un modelo de clasificación de imágenes y nos permite arrastrar una imagen.
+Si vamos a la tarjeta de nuestro modelo, si nuestro modelo tiene suficiente visibilidad social (*likes*) veremos que en la parte derecha se ha marcado dentro del bloque de *Inference API* que se trata de un modelo de clasificación de imágenes y nos permite arrastrar una imagen.
 
 Esta API utiliza un [widget](https://huggingface.co/docs/hub/en/models-widgets) el cual obtiene información de los metadatos del modelo y del archivo de configuración (`config.json`) para saber qué interfaz mostrar. Si queremos, podemos indicarlo de forma explícita mediante el `pipeline_tag` de la tarjeta del modelo, por ejemplo, en nuestro caso `image-classification`.
 
