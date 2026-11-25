@@ -135,7 +135,7 @@ demo = gr.Interface(
 demo.launch()
 ```
 
-> ℹ️ Usamos **transformers v5** (eliminó la tarea `translation`, por eso `AutoModelForSeq2SeqLM`) y **ZeroGPU** (por eso `import spaces` al principio y `@spaces.GPU` en la función). Añade un `requirements.txt` con `transformers`, `torch` y `sentencepiece`.
+> ℹ️ Usamos **transformers v5** (eliminó la tarea `translation`, por eso `AutoModelForSeq2SeqLM`) y **ZeroGPU** (por eso `import spaces` al principio y `@spaces.GPU` en la función). 
 
 !!! info "Versión 4 (solo como referencia)"
     Con `transformers` v4 bastaba con un `pipeline`:
@@ -154,11 +154,11 @@ demo.launch()
 
 ### Actividad 1 · Paso 3: Publica y prueba
 
-1. Haz **Commit** del `app.py` (el Space se reconstruye automáticamente).
+**1.-** Haz **Commit** del `app.py` (el Space se reconstruye automáticamente).
 
 **¿Funciona?** Si ahora volvemos a la pestaña de la aplicación veremos que ha fallado:
 
-![Propiedades de nuestro Space](../assets/images/34/08hf-space-stable-app-py-failed.png)
+![Error en el ejemplo de app.py tranductor de nuestro Space](../assets/images/34/08hf-space-stable-app-py-failed.png)
 
 **¿El motivo?** Claramente no hemos instalado ninguna de las librerías que necesita nuestro ejemplo. Por defecto, los *Spaces* ya tienen instaladas las librerías `huggingface_hub` para gestionar los repositorios y ficheros del Hub, `requests` para realizar llamadas a APIs externas, `datasets` para cargar y mostrar datos (la veremos en una próxima sesión) y `gradio`, el SDK seleccionado.
 
@@ -174,10 +174,11 @@ sentencepiece
 
 Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y, al cabo de unos minutos (no utiliza GPU), veremos el resultado:
 
+![Ejemplo app.py traductor](../assets/images/34/09hf-space-stable-app-py.png)
 
 
-2. Cuando termine, escribe una frase en inglés y verás la traducción.
-3. ¡Ya tienes tu Space público! Cualquiera con la URL puede usarlo.
+**2.-** Cuando termine, escribe una frase en inglés y verás la traducción.
+**3.-** ¡Ya tienes tu Space público! Cualquiera con la URL puede usarlo.
 
 
 
@@ -316,6 +317,10 @@ Si entramos a un modelo en concreto, por ejemplo a [speecht5_tts](https://huggin
 Por último, la página [tareas](https://huggingface.co/tasks) (*Tasks*) agrupa todos los modelos de IA por su utilidad:
 
 ![Tareas en Hugging Face](../assets/images/34/aitor_01hf-tasks.png)
+
+También podemos acceder desde el menú de opciones (no está muy accesible):
+
+![Tareas en Hugging Face](../assets/images/34/aitor_01hf-tasks-menu.png)
 
 ### Creando un modelo
 
@@ -460,13 +465,21 @@ from transformers import pipeline
 pipe = pipeline("text-generation", model="openai-community/gpt2")
 result = pipe("What is big data?")
 print(result)
-
-trad = pipeline("text2text-generation", model="google/flan-t5-base")
-result = trad("translate from spanish to english: Me encanta disfrutar las vacaciones en la playa")
-print(result)
 ```
 
-El listado de tareas disponibles se pueden consultar en la API del método `transformers.pipeline` con el parámetro [`task`](https://huggingface.co/docs/transformers/v4.39.3/en/main_classes/pipelines#transformers.pipeline.task), por ejemplo, `audio-classification`, `image-segmentation`, `image-to-text`, `token-classification`, etc...
+> ⚠️ En v4 había `text2text-generation` para traducir, pero en `transformers` v5 se eliminó. Para traducir en v5, usa el modelo y el tokenizador directamente:
+
+```python
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+
+modelo = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-base")
+tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-base")
+
+entradas = tokenizer("translate from spanish to english: Me encanta disfrutar las vacaciones en la playa", return_tensors="pt")
+print(tokenizer.decode(modelo.generate(**entradas)[0], skip_special_tokens=True))
+```
+
+El listado de tareas disponibles se pueden consultar en la API del método `transformers.pipeline` con el parámetro [`task`](https://huggingface.co/docs/transformers/main_classes/pipelines#transformers.pipeline.task), por ejemplo, `audio-classification`, `image-segmentation`, `image-classification`, `token-classification`, etc...
 
 ### Tu parte (individual) · Inferencia con Python
 
