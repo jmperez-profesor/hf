@@ -106,12 +106,14 @@ Sustituye el contenido del fichero `app.py` por:
 
 ```python
 import gradio as gr
-from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
-traductor = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
+modelo = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-es")
+tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-es")
 
 def traducir(texto):
-    return traductor(texto)[0]["translation_text"]
+    entradas = tokenizer(texto, return_tensors="pt")
+    return tokenizer.decode(modelo.generate(**entradas)[0], skip_special_tokens=True)
 
 demo = gr.Interface(
     fn=traducir,
@@ -123,7 +125,21 @@ demo = gr.Interface(
 demo.launch()
 ```
 
-> ℹ️ Este código usa `pipeline("translation")` de `transformers` **v4** (más sencillo para empezar). En **v5** se eliminó esa tarea, así que añade `transformers<5` al `requirements.txt` (junto con `torch` y `sentencepiece`) o mira la versión v5 en [Migración v4 → v5](../recursos/migracion_v5.md).
+> ℹ️ Usamos **transformers v5**, que eliminó la tarea `translation`; por eso cargamos el modelo con `AutoModelForSeq2SeqLM` + `AutoTokenizer`. Añade un `requirements.txt` con `transformers`, `torch` y `sentencepiece` (necesario para `opus-mt-en-es`).
+
+!!! info "Versión 4 (solo como referencia)"
+    Con `transformers` v4 bastaba con un `pipeline`:
+
+    ```python
+    from transformers import pipeline
+
+    traductor = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
+
+    def traducir(texto):
+        return traductor(texto)[0]["translation_text"]
+    ```
+
+    Ver [Migración v4 → v5](../recursos/migracion_v5.md).
 
 ### Actividad 1 · Paso 3: Publica y prueba
 
@@ -152,7 +168,7 @@ gradio app.py
 Prueba el `app.py` de tu traductor en tu ordenador:
 
 ```bash
-pip install gradio "transformers<5" sentencepiece
+pip install gradio transformers sentencepiece
 python3 app.py
 ```
 
