@@ -11,27 +11,31 @@ duracion: 120 min
 
 ## Spaces
 
+![Espacio de MusicGen](../assets/images/34/01_hf_spaces_home.png)
+
 Mediante los espacios podemos construir y desplegar modelos de IA, así como aplicaciones de demostración para probarlos.
 
-Podemos crear *demos* de forma rápida, con una pocas líneas de *Python*, con las librerías [Gradio](https://www.gradio.app/) o [Streamlit](https://streamlit.io/), y utilizar controles multimodales que facilitan el testeo de los modelos.
+Podemos crear *demos* de forma rápida, con una pocas líneas de *Python*, con la librería [Gradio](https://www.gradio.app/) y utilizar controles multimodales que facilitan el testeo de los modelos.
 
 Por ejemplo, si vamos a los espacios, podemos ordenarlos por los que tienen más *likes*, y entrar a [MusicGen](https://huggingface.co/spaces/facebook/MusicGen) y ver los diferentes controles para introducir texto, subir un archivo, así como posteriormente reproducir un audio o un vídeo:
 
-![Espacio de MusicGen](../assets/images/aitor_01hf-space-musicgen.png)
+![Espacio de MusicGen](../assets/images/34/02_hf_musicgen.png)
 
 Otros espacios no tienen apariencia de formulario, como [FacePoke](https://huggingface.co/spaces/jbilcke-hf/FacePoke) (prueba a subir una foto de un retrato, o una versión menos interactiva como [expression-editor](https://huggingface.co/spaces/fffiloni/expression-editor)), o permiten el uso de la aplicación en tiempo real como [Realtime-whisper-large-v3-turbo](https://huggingface.co/spaces/KingNish/Realtime-whisper-large-v3-turbo), pudiendo ofrecer elementos de ejemplo para probar los modelos como [Kolors-Virtual-Try-On](https://huggingface.co/spaces/Kwai-Kolors/Kolors-Virtual-Try-On).
 
-En este bloque, y en concreto en la próxima sesión nos vamos a centrar en *Gradio* para la creación del interfaz de usuario.
+Más adelante nos centraremos en *Gradio* para la creación del interfaz de usuario.
 
-El uso básico de los espacios es gratuito, pero si necesitamos emplear GPU puede ser que necesitemos pagar por su uso.
+El uso básico de los espacios es **gratuito**, pero si necesitamos emplear GPU puede ser que necesitemos pagar por su uso.
+
+> 💡 **ZeroGPU** es la alternativa gratuita con GPU: en vez de una GPU dedicada (de pago), te deja usar una **GPU compartida de forma dinámica**, asignada solo mientras tu código la necesita. Exige escribir la inferencia como *functions* con `@spaces.GPU` (librería `spaces`) y está pensada para **demos con inferencia puntual**, no para entrenamientos largos.
 
 > 🎯 **Actividad 1** (RAMIA.1 / CEMIA.1d, CEMIA.1e / 2p). Vamos a construir, paso a paso, un **Space de Gradio que traduce** (reutilizando el traductor de la sesión anterior), primero en Hugging Face y luego en local. Los pasos guiados están marcados abajo; antes de cada uno tienes los apuntes que necesitas.
 
 ### Apuntes · Crear un Space
 
-Para familiarizarnos con ellos, vamos a crear nuestro espacio que utilizaremos a lo largo del bloque. Para ello, dentro de la pestaña *Spaces*, creamos uno nuevo (*Create new Space*), y vemos como primero indicamos un nombre, una licencia, el SDK que utilizaremos para el prototipado, el hardware empleado y la visibilidad del mismo:
+Para familiarizarnos con ellos, vamos a crear nuestro espacio que utilizaremos a lo largo del bloque. Para ello, dentro de la pestaña [*Spaces*](https://huggingface.co/spaces), creamos uno nuevo (*Create new Space*), y vemos como primero indicamos un nombre, una licencia, el SDK que utilizaremos para el prototipado, el hardware empleado y la visibilidad del mismo:
 
-![Creando un Space](../assets/images/aitor_01hf-create-space.png)
+![Creando un Space](../assets/images/34/aitor_01hf-create-space.png)
 
 Si desplegamos sobre el tipo de *hardware*, podemos ver las diferentes opciones de tamaño y precio que ofrece la plataforma por hora de ejecución:
 
