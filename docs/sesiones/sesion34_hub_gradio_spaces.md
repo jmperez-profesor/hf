@@ -326,9 +326,17 @@ También podemos acceder desde el menú de opciones (no está muy accesible):
 
 El primer paso es crear un modelo que implícitamente inicializará un repositorio donde almacenar el código fuente y los artefactos.
 
-Para crear el modelo, de forma similar a cómo hicimos al crear el espacio, vamos a nuestro perfil y pulsamos sobre `+ New Model` y tras ponerle un nombre y una licencia, accederemos a su panel donde tenemos por una parte una *card* que hace de página de inicio, la pestaña con los ficheros y versiones que hace de repositorio, así como la posibilidad de interactuar con la comunidad y las preferencias.
+Para crear el modelo, de forma similar a cómo hicimos al crear el espacio, vamos a nuestro perfil y pulsamos sobre `+ New Model`. 
 
-![Modelo en blanco](../assets/images/34/aitor_01hf-create-model.png)
+![New model](../assets/images/34/10hf-model-new-model.png)
+
+Le ponemos el nombre **`iabd_model`** y la licencia `cc-by-nc-4.0`: 
+
+![New model](../assets/images/34/11hf-new-model.png)
+
+Tras ponerle un nombre y una licencia, accederemos a su panel donde tenemos por una parte una *card* que hace de página de inicio, la pestaña con los ficheros y versiones que hace de repositorio, así como la posibilidad de interactuar con la comunidad y las preferencias.
+
+![Modelo en blanco](../assets/images/34/12hf-create-model.png)
 
 Vamos a ir a la pestaña de *Files and versions* y añadimos un archivo desde el interfaz web (`+Add file`), por ejemplo, lo nombramos `authors.txt` y ponemos nuestro nombre en el contenido:
 
@@ -454,7 +462,7 @@ from transformers import pipeline
 pipe = pipeline("text-classification")
 result = pipe("Me encanta venir a clase al IES Severo Ochoa")
 print(result)
-# [{'label': 'POSITIVE', 'score': 0.9526600241661072}]
+# Salida orientativa: [{'label': 'POSITIVE', 'score': 0.9998743534088135}]
 ```
 
 Si queremos, podemos indicarle, además de la tarea, qué modelo queremos emplear:
