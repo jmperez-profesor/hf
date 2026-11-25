@@ -32,7 +32,7 @@ El uso básico de los espacios es **gratuito**, pero si necesitamos emplear GPU 
 ### Actividad 1 · Paso 1: Crea el Space
 
 1. Ve a tu perfil de Hugging Face → pestaña **Spaces** → **Create new Space**.
-2. Configúralo: **nombre** (p. ej. `mi-traductor`), **licencia**, **SDK = Gradio**, **plantilla = Blank**, **hardware = CPU (gratis)** y **visibilidad = Público**.
+2. Configúralo: **nombre** (p. ej. `iabd`), **licencia**, **SDK = Gradio**, **plantilla = Blank**, **hardware = CPU (gratis)** y **visibilidad = Público**.
 3. Pulsa **Create Space**.
 
 ### Apuntes · Crear un Space
@@ -167,6 +167,7 @@ Para ello, desde la pestaña *Files*, añadimos un nuevo fichero con el código 
 `stable-app.py`
 
 ```python
+import spaces                      # 1º: antes que torch/diffusers
 import gradio as gr
 from diffusers import DiffusionPipeline
 import torch
@@ -174,10 +175,11 @@ import torch
 # Se carga UNA sola vez, cuando el Space arranca (no en cada llamada)
 pipe = DiffusionPipeline.from_pretrained(
     "sd-legacy/stable-diffusion-v1-5",
-    torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
+    torch_dtype=torch.float16,
 )
-pipe.to("cuda" if torch.cuda.is_available() else "cpu")
+pipe.to("cuda")
 
+@spaces.GPU
 def stable(prompt):
     return pipe(prompt).images[0]
 
@@ -185,7 +187,7 @@ demo = gr.Interface(fn=stable, inputs="text", outputs="image")
 demo.launch()
 ```
 
-> 💡 **¿Dónde cargar el modelo?** En un Space normal (CPU o GPU dedicada), el modelo se carga **una sola vez a nivel de módulo**, como en este ejemplo. En un Space con **ZeroGPU**, en cambio, hay que cargarlo **dentro** de la función `@spaces.GPU`, porque la GPU solo está disponible durante su ejecución: si hicieras `from_pretrained(...).to("cuda")` a nivel de módulo, caería en CPU en silencio.
+> 💡 **ZeroGPU** (hardware por defecto en muchos Spaces): hay que **importar `spaces` al principio** (antes que `torch`/`diffusers`) y marcar la función de inferencia con **`@spaces.GPU`**. El modelo se carga **a nivel de módulo** con `.to("cuda")`, igual que en un Space normal, gracias al modo de emulación CUDA de ZeroGPU. El decorador es *effect-free* fuera de ZeroGPU, así que este mismo código sirve también en un Space CPU o GPU dedicada.
 
 Para indicarle al *Space* que este fichero es la nueva aplicación, editamos el fichero `README.md` que contiene la configuración del espacio (título, colores del banner, descripción y el nombre del *script* que lanza la aplicación):
 
@@ -210,7 +212,11 @@ Algunos de los campos los podemos editar directamente desde el interfaz gráfico
 
 ![Propiedades de nuestro Space](../assets/images/34/aitor_01hf-space-properties.png)
 
-Si ahora volvemos a la pestaña de la aplicación veremos que ha fallado ¿El motivo? Claramente no hemos instalado ninguna de las librerías que necesita nuestro ejemplo. Por defecto, los *Spaces* ya tienen instaladas las librerías `huggingface_hub` para gestionar los repositorios y ficheros del Hub, `requests` para realizar llamadas a APIs externas, `datasets` para cargar y mostrar datos (la veremos en una próxima sesión) y el SDK seleccionado, ya sea `gradio` o `streamlit`.
+Si ahora volvemos a la pestaña de la aplicación veremos que ha fallado:
+
+![Propiedades de nuestro Space](../assets/images/34/08hf-space-stable-app-py-failed.png)
+
+**¿El motivo?** Claramente no hemos instalado ninguna de las librerías que necesita nuestro ejemplo. Por defecto, los *Spaces* ya tienen instaladas las librerías `huggingface_hub` para gestionar los repositorios y ficheros del Hub, `requests` para realizar llamadas a APIs externas, `datasets` para cargar y mostrar datos (la veremos en una próxima sesión) y `gradio`, el SDK seleccionado.
 
 Para instalar otras dependencias, añadiremos a la raíz un archivo nombrado `requirements.txt`:
 
@@ -223,7 +229,7 @@ transformers
 accelerate
 ```
 
-Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y tras más de 17 minutos (no utiliza GPU) podremos ver el resultado:
+Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y, gracias a ZeroGPU, ver el resultado en pocos segundos (en CPU tardaría varios minutos):
 
 ![Space con Stable Diffusion](../assets/images/34/aitor_01hf-space-stable.png)
 
