@@ -108,11 +108,18 @@ Sustituye el contenido del fichero `app.py` por:
 import gradio as gr
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
+# Cargamos el modelo de traducción EN→ES y su tokenizador (transformers v5)
 modelo = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-es")
 tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-es")
 
 def traducir(texto):
+    # return_tensors="pt" convierte el texto en tensores de PyTorch (números),
+    # porque un modelo no entiende letras, solo números.
     entradas = tokenizer(texto, return_tensors="pt")
+
+    # generate() produce los tokens de salida y decode() los vuelve a convertir
+    # a texto. skip_special_tokens=True omite los tokens especiales
+    # (como <s> de inicio o </s> de fin de frase).
     return tokenizer.decode(modelo.generate(**entradas)[0], skip_special_tokens=True)
 
 demo = gr.Interface(
@@ -133,6 +140,7 @@ demo.launch()
     ```python
     from transformers import pipeline
 
+    # El pipeline se encarga de todo: tokenizador + modelo + postprocesado.
     traductor = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
 
     def traducir(texto):
@@ -190,10 +198,12 @@ import torch
 # Se carga UNA sola vez, cuando el Space arranca (no en cada llamada)
 pipe = DiffusionPipeline.from_pretrained(
     "sd-legacy/stable-diffusion-v1-5",
+    # float32 = precisión estándar; corre en CPU (más lento, pero sin GPU)
     torch_dtype=torch.float32,
 )
 
 def stable(prompt):
+    # pipe(prompt) genera la imagen; .images[0] es la primera (y única) imagen
     return pipe(prompt).images[0]
 
 demo = gr.Interface(fn=stable, inputs="text", outputs="image")
