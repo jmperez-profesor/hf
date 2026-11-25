@@ -485,11 +485,7 @@ DatasetDict({
 })
 ```
 
-### Actividad · Crea un dataset del Titanic
-
-Crea un dataset en Hugging Face a partir de los datos de entrenamiento ([`titanic_train.csv`](../assets/resources/titanic_train.csv)) y pruebas ([`titanic_test.csv`](../assets/resources/titanic_test.csv)) del [Titanic](https://www.kaggle.com/c/titanic/data). A continuación, desde Python con la librería `datasets`, recupera los datos y muestra sus características.
-
-*(Actividad 5 de Aitor Medrano: RAPIA.3 / CEPIA.3b, CEPIA.3c / 2p.)*
+> 💡 La actividad de crear y publicar un dataset (el del Titanic) la haremos en la **sesión 36**, dedicada a la librería `datasets`.
 
 ---
 

@@ -84,9 +84,26 @@ ds.push_to_hub("tu-usuario/mi-dataset")
 
 Prepara un **dataset de reseñas en español** tokenizado y particionado, que se usará en la sesión 39 (fine-tuning).
 
-## Reto
+## Actividad 5 · Crea y publica un dataset del Titanic
 
-Sube al Hub un dataset propio (p. ej. el `FuelConsumptionCo2` del curso de ML) con su *dataset card* completa.
+Crea un dataset en Hugging Face a partir de los datos de entrenamiento ([`titanic_train.csv`](../assets/resources/titanic_train.csv)) y de prueba ([`titanic_test.csv`](../assets/resources/titanic_test.csv)) del [Titanic](https://www.kaggle.com/c/titanic/data):
+
+1. En el Hub, crea un nuevo **Dataset** y sube los dos CSV (como hicimos con `cp_train.csv` en la sesión 34).
+2. Desde Python, recupéralo con `load_dataset` y muestra sus características:
+
+```python
+from datasets import load_dataset
+
+titanic = load_dataset("tu-usuario/titanic")
+print(titanic)                     # DatasetDict con los splits train/test
+print(titanic["train"].features)   # columnas y tipos
+```
+
+**Entregable:** la URL de tu dataset + la salida de los `print` (splits y características).
+
+> ⏱️ Si te sobra tiempo (o para casa), sube también el `FuelConsumptionCo2` del curso de ML con su *dataset card* completa.
+
+*(Actividad 5 de Aitor Medrano: RAPIA.3 / CEPIA.3b, CEPIA.3c / 2p.)*
 
 ## Ejercicios de autoevaluación
 
