@@ -106,14 +106,12 @@ Sustituye el contenido del fichero `app.py` por:
 
 ```python
 import gradio as gr
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import pipeline
 
-modelo = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-es")
-tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-es")
+traductor = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
 
 def traducir(texto):
-    entradas = tokenizer(texto, return_tensors="pt")
-    return tokenizer.decode(modelo.generate(**entradas)[0], skip_special_tokens=True)
+    return traductor(texto)[0]["translation_text"]
 
 demo = gr.Interface(
     fn=traducir,
@@ -125,7 +123,7 @@ demo = gr.Interface(
 demo.launch()
 ```
 
-> ℹ️ En `transformers` **v5** se eliminó la tarea `translation`, por eso usamos `AutoModelForSeq2SeqLM` + `AutoTokenizer` directamente. Añade un `requirements.txt` con `transformers`, `torch` y `sentencepiece` (necesario para `opus-mt-en-es`). Ver [Migración v4 → v5](../recursos/migracion_v5.md).
+> ℹ️ Este código usa `pipeline("translation")` de `transformers` **v4** (más sencillo para empezar). En **v5** se eliminó esa tarea, así que añade `transformers<5` al `requirements.txt` (junto con `torch` y `sentencepiece`) o mira la versión v5 en [Migración v4 → v5](../recursos/migracion_v5.md).
 
 ### Actividad 1 · Paso 3: Publica y prueba
 
@@ -154,7 +152,7 @@ gradio app.py
 Prueba el `app.py` de tu traductor en tu ordenador:
 
 ```bash
-pip install gradio transformers sentencepiece
+pip install gradio "transformers<5" sentencepiece
 python3 app.py
 ```
 
@@ -169,7 +167,6 @@ Para ello, desde la pestaña *Files*, añadimos un nuevo fichero con el código 
 `stable-app.py`
 
 ```python
-import spaces                      # 1º: antes que torch/diffusers
 import gradio as gr
 from diffusers import DiffusionPipeline
 import torch
@@ -177,11 +174,9 @@ import torch
 # Se carga UNA sola vez, cuando el Space arranca (no en cada llamada)
 pipe = DiffusionPipeline.from_pretrained(
     "sd-legacy/stable-diffusion-v1-5",
-    torch_dtype=torch.float16,
+    torch_dtype=torch.float32,
 )
-pipe.to("cuda")
 
-@spaces.GPU
 def stable(prompt):
     return pipe(prompt).images[0]
 
@@ -189,7 +184,7 @@ demo = gr.Interface(fn=stable, inputs="text", outputs="image")
 demo.launch()
 ```
 
-> 💡 **ZeroGPU** (hardware por defecto en muchos Spaces): hay que **importar `spaces` al principio** (antes que `torch`/`diffusers`) y marcar la función de inferencia con **`@spaces.GPU`**. El modelo se carga **a nivel de módulo** con `.to("cuda")`, igual que en un Space normal, gracias al modo de emulación CUDA de ZeroGPU. El decorador es *effect-free* fuera de ZeroGPU, así que este mismo código sirve también en un Space CPU o GPU dedicada.
+> 💡 **Versión educativa (CPU)**: aquí usamos la versión simple, sin GPU. Si tu Space usa **ZeroGPU** (GPU gratis), añade `import spaces` al principio y `@spaces.GPU` en la función `stable`; el resto queda igual.
 
 Para indicarle al *Space* que este fichero es la nueva aplicación, editamos el fichero `README.md` que contiene la configuración del espacio (título, colores del banner, descripción y el nombre del *script* que lanza la aplicación):
 
@@ -231,7 +226,7 @@ transformers
 accelerate
 ```
 
-Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y, gracias a ZeroGPU, ver el resultado en pocos segundos (en CPU tardaría varios minutos):
+Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y, al cabo de unos minutos (no utiliza GPU), veremos el resultado:
 
 ![Space con Stable Diffusion](../assets/images/34/aitor_01hf-space-stable.png)
 
