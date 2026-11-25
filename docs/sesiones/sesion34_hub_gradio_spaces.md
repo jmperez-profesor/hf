@@ -203,6 +203,8 @@ Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras el
 
 ## Modelos
 
+> 🎯 **Actividad obligatoria** (RAPIA.3 / CEPIA.3b, CEPIA.3c). Todo este apartado lo haremos **conjuntamente**: crea un modelo, configura tu clave SSH y sube los archivos del modelo de perros/gatos, **pegando una captura de cada paso** en un documento. Al final, de forma **individual**, harás la inferencia con Python usando un `pipeline`.
+
 *Hugging Face* ofrece multitud de modelos que podemos probar y utilizar en nuestras aplicaciones. Además, si queremos, podemos utilizar alguna técnica de transferencia de conocimiento para crear nuestros propios modelos adaptados a nuestras necesidades.
 
 Si entramos a la página de [Modelos](https://huggingface.co/models), podemos buscar un modelo por tarea o palabra clave, y ordenar los resultados por popularidad, tendencia o actualizaciones recientes.
@@ -368,11 +370,18 @@ print(result)
 
 El listado de tareas disponibles se pueden consultar en la API del método `transformers.pipeline` con el parámetro [`task`](https://huggingface.co/docs/transformers/v4.39.3/en/main_classes/pipelines#transformers.pipeline.task), por ejemplo, `audio-classification`, `image-segmentation`, `image-to-text`, `token-classification`, etc...
 
-### Actividad (opcional) · Publica un modelo de perros y gatos
+### Tu parte (individual) · Inferencia con Python
 
-Siguiendo la sección **Usando Git**, crea un modelo y configura tu clave SSH. Descarga los archivos del modelo [`omarques/autotrain-dogs-and-cats-1527055142`](https://huggingface.co/omarques/autotrain-dogs-and-cats-1527055142) (`config.json`, `preprocessor_config.json`, `pytorch_model.bin`), súbelos a tu modelo y, mediante Python, realiza la inferencia con un `pipeline` de `image-classification`.
+Una vez subidos los archivos del modelo (hecho conjuntamente), realiza **individualmente** la inferencia con Python usando un `pipeline`:
 
-*(Actividad 4 de Aitor Medrano: RAPIA.3 / CEPIA.3b, CEPIA.3c / opcional.)*
+```python
+from transformers import pipeline
+
+clasificador = pipeline("image-classification", model="tu-usuario/mi-modelo")
+print(clasificador("perro.jpg"))
+```
+
+**Entregable:** un documento con las capturas de todo el proceso (crear modelo, SSH, subir archivos) + tu script de inferencia ejecutado.
 
 ## Datasets
 
