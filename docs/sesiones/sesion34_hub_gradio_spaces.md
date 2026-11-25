@@ -356,6 +356,20 @@ Así pues, como es probable que trabajemos con archivos superiores a los 10Mb, i
 sudo apt-get install git-lfs # Ubuntu
 brew install git-lfs    # MacOS
 ```
+#### 🪟 Windows
+* **Con Winget (Recomendado):**
+  ```powershell
+  winget install -e --id GitHub.GitLFS
+  ```
+* **Con Chocolatey / Scoop:**
+  ```powershell
+  choco install git-lfs
+  # o bien:
+  scoop install git-lfs
+  ```
+* **Instalador manual:** Descargar el `.exe` desde [git-lfs.com](https://git-lfs.com) o marcar la opción incluida al instalar **Git for Windows**.
+
+---
 
 #### Usando SSH
 
@@ -370,12 +384,12 @@ ssh-add ~/.ssh/id_rsa
 
 A continuación, vamos a las preferencias del usuario, y en la opción *SSH and GPG Keys*, creamos una nueva clave, poniendo como identificador, por ejemplo, el nombre de nuestro ordenador, y en la clave, pegamos el contenido del archivo `.pub` generado anteriormente.
 
-![Configuración SSH](../assets/images/34/aitor_01hf-ssh.png)
+![Configuración SSH](../assets/images/34/13hf-ssh.png)
 
 Y haciendo uso de git, clonamos el repositorio:
 
 ```bash
-git clone git@hf.co:aitor-medrano/iabd_model
+git clone git@hf.co:jmpereztorres/iabd_model
 cd iabd_model
 ```
 
@@ -501,110 +515,6 @@ print(clasificador("perro.jpg"))
 ```
 
 **Entregable:** un documento con las capturas de todo el proceso (crear modelo, SSH, subir archivos) + tu script de inferencia ejecutado.
-
-## Datasets
-
-Por último, *Hugging Face* también ofrece un entorno para la utilización y publicación de *datasets*, organizados por categorías, tamaños, lenguajes y licencias de uso:
-
-![Datasets en Hugging Face](../assets/images/aitor_01hf-datasets.png)
-
-Por ejemplo, uno de los *datasets* más utilizados al estudiar redes neuronales es el [MNIST](https://huggingface.co/datasets/mnist) que contiene 70.000 imágenes de 28x28 en blanco y negro con los dígitos transcritos. Como podemos observar, el entorno ofrece previsualización de todas las columnas, así como la posibilidad de utilizar el *dataset* con unas pocas líneas de código:
-
-![MNIST Hugging Face](../assets/images/aitor_01hf-datasets-mnist.png)
-
-Si queremos usar el *dataset*, podemos pulsar sobre el botón *Use in Datasets library* o codificar el siguiente fragmento:
-
-```python
-from datasets import load_dataset
-
-mnist_dataset = load_dataset("mnist")
-print(mnist_dataset)
-# DatasetDict({
-#     train: Dataset({
-#         features: ['image', 'label'],
-#         num_rows: 60000
-#     })
-#     test: Dataset({
-#         features: ['image', 'label'],
-#         num_rows: 10000
-#     })
-# })
-```
-
-Y si queremos acceder a una imagen:
-
-![Imagen de MNIST](../assets/images/aitor_5.png)
-
-```python
-imagen = mnist_dataset["train"]["image"][0]
-etiqueta = mnist_dataset["train"]["label"][0]
-print(etiqueta) # 5
-```
-
-Además, al abstraer los datos dentro de la librería *datasets*, se crea la estructura de datos necesaria para entrenar los modelos más fácilmente mediante la clase [`Trainer`](https://huggingface.co/docs/transformers/main/en/trainer) que facilita realizar el mismo proceso de *fine-tuning* a diferentes modelos (esto lo estudiaremos más adelante en la sesión sobre *fine-tuning*).
-
-### Creando nuestro dataset
-
-Aunque más adelante veremos cómo utilizar la librería *datasets* para cargar, filtrar y persistir *datasets*, vamos a ver cómo crear un *dataset* en *HuggingFace* para almacenar los datos. Para ello, el primer paso es crearlo desde el interfaz gráfico, y a continuación, podemos acceder a la pestaña de *Files* y subiremos, por ejemplo, los datos de [`cp_train.csv`](../assets/resources/cp_train.csv), [`cp_test.csv`](../assets/resources/cp_test.csv) y [`cp_val.csv`](../assets/resources/cp_val.csv):
-
-![Files del Dataset](../assets/images/aitor_01hf-datasets-files.png)
-
-Una vez añadidos los archivos, automáticamente se mostrará la información (ya que los nombres de archivos contienen token reconocidos, como `test`, `train`, `val`...). Más información en [https://huggingface.co/docs/datasets/repository_structure](https://huggingface.co/docs/datasets/repository_structure):
-
-![Previsualización del Dataset](../assets/images/aitor_01hf-datasets-card.png)
-
-Y si editamos el archivo `README.md`, podemos añadir información extra como el tamaño del dataset, la licencia o fuera de los metadatos, toda la información que queramos como, por ejemplo, la descripción de los campos:
-
-`README.md`
-
-```yaml
----
-size_categories:
-- 1K<n<10K
----
-
-Extraído de <https://github.com/anthony-wang/BestPractices/tree/master/data>.
-
-Campos:
-
-* Formula (`string`)
-* T (`float64`): Temperatura (K)
-* CP (`float64`): Capacidad calorífica (J/mol K)
-```
-
-Para terminar, si queremos usar nuestro *dataset*, de la misma forma que antes, usaremos el método `load_dataset`, indicando el usuario y el nombre del dataset:
-
-```python
-from datasets import load_dataset
-
-iabd_dataset = load_dataset("aitor-medrano/iabd")
-print(iabd_dataset)
-```
-
-Y al ejecutarlo podemos ver la descarga de las tres partes, así como los nombres de las características y la cantidad de filas de cada uno de los *splits*:
-
-```
-Downloading readme: 100%|...| 229/229 [00:00<00:00, 478kB/s]
-Generating train split: 3214 examples [00:00, 148561.75 examples/s]
-Generating validation split: 980 examples [00:00, 530376.51 examples/s]
-Generating test split: 370 examples [00:00, 289748.41 examples/s]
-DatasetDict({
-    train: Dataset({
-        features: ['formula', 'T', 'Cp'],
-        num_rows: 3214
-    })
-    validation: Dataset({
-        features: ['formula', 'T', 'Cp'],
-        num_rows: 980
-    })
-    test: Dataset({
-        features: ['formula', 'T', 'Cp'],
-        num_rows: 370
-    })
-})
-```
-
-> 💡 La actividad de crear y publicar un dataset (el del Titanic) la haremos en la **sesión 36**, dedicada a la librería `datasets`.
 
 ---
 
