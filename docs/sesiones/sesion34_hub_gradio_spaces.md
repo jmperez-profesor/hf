@@ -105,6 +105,7 @@ Si ahora vamos nuestro perfil, podremos ver cómo se ha creado el espacio. Si pu
 Sustituye el contenido del fichero `app.py` por:
 
 ```python
+import spaces                      # 1º: antes que transformers
 import gradio as gr
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
@@ -112,6 +113,8 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 modelo = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-es")
 tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-es")
 
+# @spaces.GPU indica a ZeroGPU que esta función ejecuta la inferencia
+@spaces.GPU
 def traducir(texto):
     # return_tensors="pt" convierte el texto en tensores de PyTorch (números),
     # porque un modelo no entiende letras, solo números.
@@ -132,7 +135,7 @@ demo = gr.Interface(
 demo.launch()
 ```
 
-> ℹ️ Usamos **transformers v5**, que eliminó la tarea `translation`; por eso cargamos el modelo con `AutoModelForSeq2SeqLM` + `AutoTokenizer`. Añade un `requirements.txt` con `transformers`, `torch` y `sentencepiece` (necesario para `opus-mt-en-es`).
+> ℹ️ Usamos **transformers v5** (eliminó la tarea `translation`, por eso `AutoModelForSeq2SeqLM`) y **ZeroGPU** (por eso `import spaces` al principio y `@spaces.GPU` en la función). Añade un `requirements.txt` con `transformers`, `torch` y `sentencepiece`.
 
 !!! info "Versión 4 (solo como referencia)"
     Con `transformers` v4 bastaba con un `pipeline`:
@@ -152,8 +155,32 @@ demo.launch()
 ### Actividad 1 · Paso 3: Publica y prueba
 
 1. Haz **Commit** del `app.py` (el Space se reconstruye automáticamente).
+
+**¿Funciona?** Si ahora volvemos a la pestaña de la aplicación veremos que ha fallado:
+
+![Propiedades de nuestro Space](../assets/images/34/08hf-space-stable-app-py-failed.png)
+
+**¿El motivo?** Claramente no hemos instalado ninguna de las librerías que necesita nuestro ejemplo. Por defecto, los *Spaces* ya tienen instaladas las librerías `huggingface_hub` para gestionar los repositorios y ficheros del Hub, `requests` para realizar llamadas a APIs externas, `datasets` para cargar y mostrar datos (la veremos en una próxima sesión) y `gradio`, el SDK seleccionado.
+
+Para instalar otras dependencias, debemos añadir a la raíz un archivo nombrado `requirements.txt` , con `transformers`, `torch` y `sentencepiece` (necesario para `opus-mt-en-es`): 
+
+`requirements.txt`
+
+```text
+transformers
+torch
+sentencepiece
+```
+
+Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y, al cabo de unos minutos (no utiliza GPU), veremos el resultado:
+
+
+
 2. Cuando termine, escribe una frase en inglés y verás la traducción.
 3. ¡Ya tienes tu Space público! Cualquiera con la URL puede usarlo.
+
+
+
 
 ### Apuntes · Probar en local
 
@@ -191,6 +218,7 @@ Para ello, desde la pestaña *Files*, añadimos un nuevo fichero con el código 
 `stable-app.py`
 
 ```python
+import spaces                      
 import gradio as gr
 from diffusers import DiffusionPipeline
 import torch
@@ -198,10 +226,13 @@ import torch
 # Se carga UNA sola vez, cuando el Space arranca (no en cada llamada)
 pipe = DiffusionPipeline.from_pretrained(
     "sd-legacy/stable-diffusion-v1-5",
-    # float32 = precisión estándar; corre en CPU (más lento, pero sin GPU)
-    torch_dtype=torch.float32,
+    # float16 = mitad de precisión, más rápido en GPU (ZeroGPU)
+    torch_dtype=torch.float16,
 )
+pipe.to("cuda")
 
+# @spaces.GPU indica a ZeroGPU que esta función usa la GPU
+@spaces.GPU
 def stable(prompt):
     # pipe(prompt) genera la imagen; .images[0] es la primera (y única) imagen
     return pipe(prompt).images[0]
@@ -210,7 +241,7 @@ demo = gr.Interface(fn=stable, inputs="text", outputs="image")
 demo.launch()
 ```
 
-> 💡 **Versión educativa (CPU)**: aquí usamos la versión simple, sin GPU. Si tu Space usa **ZeroGPU** (GPU gratis), añade `import spaces` al principio y `@spaces.GPU` en la función `stable`; el resto queda igual.
+> 💡 **ZeroGPU** (GPU gratis, por defecto en muchos Spaces): hay que importar `spaces` al principio y marcar la función con `@spaces.GPU`. El modelo se carga a nivel de módulo con `.to("cuda")` (ZeroGPU activa un modo de emulación CUDA que lo permite).
 
 Para indicarle al *Space* que este fichero es la nueva aplicación, editamos el fichero `README.md` que contiene la configuración del espacio (título, colores del banner, descripción y el nombre del *script* que lanza la aplicación):
 
@@ -241,24 +272,25 @@ Si ahora volvemos a la pestaña de la aplicación veremos que ha fallado:
 
 **¿El motivo?** Claramente no hemos instalado ninguna de las librerías que necesita nuestro ejemplo. Por defecto, los *Spaces* ya tienen instaladas las librerías `huggingface_hub` para gestionar los repositorios y ficheros del Hub, `requests` para realizar llamadas a APIs externas, `datasets` para cargar y mostrar datos (la veremos en una próxima sesión) y `gradio`, el SDK seleccionado.
 
-Para instalar otras dependencias, añadiremos a la raíz un archivo nombrado `requirements.txt`:
+Para instalar otras dependencias, editaremis el fichero `requirements.txt` añadiendo `diffusers` y `accelerate`:
 
 `requirements.txt`
 
 ```text
-diffusers
-torch
 transformers
+torch
+sentencepiece
+diffusers
 accelerate
 ```
 
-Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y, al cabo de unos minutos (no utiliza GPU), veremos el resultado:
+Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y, gracias a ZeroGPU, ver el resultado en pocos segundos:
 
 ![Space con Stable Diffusion](../assets/images/34/aitor_01hf-space-stable.png)
 
 ### Actividad 1 · Tu toque personal (completa la actividad)
 
-Para que el Space sea **tuyo** (y no una copia del profesor), elige al menos una de estas mejoras:
+Para que el Space sea **tuyo** (y no una copia del profesor), añade las siguientes mejoras:
 
 - Cambia el **par de idiomas** (p. ej. ES → EN, u otro modelo de `Helsinki-NLP`).
 - Añade **ejemplos** propios a la interfaz.
