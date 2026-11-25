@@ -203,7 +203,7 @@ Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras el
 
 ## Modelos
 
-> 🎯 **Actividad obligatoria** (RAPIA.3 / CEPIA.3b, CEPIA.3c). Todo este apartado lo haremos **conjuntamente**: crea un modelo, configura tu clave SSH y sube los archivos del modelo de perros/gatos, **pegando una captura de cada paso** en un documento. Al final, de forma **individual**, harás la inferencia con Python usando un `pipeline`.
+> 🎯 **Actividad 4** (RAPIA.3 / CEPIA.3b, CEPIA.3c / obligatoria). Todo este apartado lo haremos **conjuntamente**: crea un modelo, configura tu clave SSH y sube los archivos del modelo de perros/gatos, **pegando una captura de cada paso** en un documento. Al final, de forma **individual**, harás la inferencia con Python usando un `pipeline`.
 
 *Hugging Face* ofrece multitud de modelos que podemos probar y utilizar en nuestras aplicaciones. Además, si queremos, podemos utilizar alguna técnica de transferencia de conocimiento para crear nuestros propios modelos adaptados a nuestras necesidades.
 
