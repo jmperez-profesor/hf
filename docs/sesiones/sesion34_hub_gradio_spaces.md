@@ -39,7 +39,7 @@ El uso básico de los espacios es **gratuito**, pero si necesitamos emplear GPU 
 
 Para familiarizarnos con ellos, vamos a crear nuestro espacio que utilizaremos a lo largo del bloque. Para ello, dentro de la pestaña [*Spaces*](https://huggingface.co/spaces), creamos uno nuevo (*New Space*), y vemos como primero indicamos un nombre, una licencia, el SDK que utilizaremos para el prototipado, el hardware empleado y la visibilidad del mismo:
 
-![Creando un Space](../assets/images/34/aitor_01hf-create-space.png)
+![Creando un Space](../assets/images/34/03hf-create-space-all.png)
 
 En nuestro caso, vamos a coger la instancia gratuita y elegiremos un proyecto *Gradio* con una plantilla en blanco (*blank*). 
 
