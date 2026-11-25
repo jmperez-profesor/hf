@@ -15,7 +15,7 @@ duracion: 120 min
 
 Mediante los espacios podemos construir y desplegar modelos de IA, así como aplicaciones de demostración para probarlos. Los Spaces son repositorios Git que alojan el código de aplicaciones para demostraciones de ML (aprendizaje automático). 
 
-Podemos crear *demos* de forma rápida, con una pocas líneas de *Python*, con la librería [Gradio](https://www.gradio.app/) o imágenes de Docker y utilizar controles multimodales que facilitan el testeo de los modelos.
+Podemos crear *demos* de forma rápida, con unas pocas líneas de *Python*, con la librería [Gradio](https://www.gradio.app/) o imágenes de Docker y utilizar controles multimodales que facilitan el testeo de los modelos.
 
 Por ejemplo, si vamos a los espacios, podemos ordenarlos por los que tienen más *likes*, y entrar a [MusicGen](https://huggingface.co/spaces/facebook/MusicGen) y ver los diferentes controles para introducir texto, subir un archivo, así como posteriormente reproducir un audio o un vídeo:
 
@@ -158,7 +158,7 @@ demo.launch()
 
 **¿Funciona?** Si ahora volvemos a la pestaña de la aplicación veremos que ha fallado:
 
-![Error en el ejemplo de app.py tranductor de nuestro Space](../assets/images/34/08hf-space-stable-app-py-failed.png)
+![Error en el ejemplo de app.py traductor de nuestro Space](../assets/images/34/08hf-space-stable-app-py-failed.png)
 
 **¿El motivo?** Claramente no hemos instalado ninguna de las librerías que necesita nuestro ejemplo. Por defecto, los *Spaces* ya tienen instaladas las librerías `huggingface_hub` para gestionar los repositorios y ficheros del Hub, `requests` para realizar llamadas a APIs externas, `datasets` para cargar y mostrar datos (la veremos en una próxima sesión) y `gradio`, el SDK seleccionado.
 
@@ -172,7 +172,7 @@ torch
 sentencepiece
 ```
 
-Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y, al cabo de unos minutos (no utiliza GPU), veremos el resultado:
+Tras hacer el *commit* del `requirements.txt`, el Space se reconstruye y la traducción ya funciona:
 
 ![Ejemplo app.py traductor](../assets/images/34/09hf-space-stable-app-py.png)
 
@@ -216,7 +216,7 @@ Para ello, desde la pestaña *Files*, añadimos un nuevo fichero con el código 
 `stable-app.py`
 
 ```python
-import spaces                      
+import spaces                      # 1º: antes que torch/diffusers
 import gradio as gr
 from diffusers import DiffusionPipeline
 import torch
@@ -270,7 +270,7 @@ Si ahora volvemos a la pestaña de la aplicación veremos que ha fallado:
 
 **¿El motivo?** Claramente no hemos instalado ninguna de las librerías que necesita nuestro ejemplo. Por defecto, los *Spaces* ya tienen instaladas las librerías `huggingface_hub` para gestionar los repositorios y ficheros del Hub, `requests` para realizar llamadas a APIs externas, `datasets` para cargar y mostrar datos (la veremos en una próxima sesión) y `gradio`, el SDK seleccionado.
 
-Para instalar otras dependencias, editaremis el fichero `requirements.txt` añadiendo `diffusers` y `accelerate`:
+Para instalar otras dependencias, editaremos el fichero `requirements.txt` añadiendo `diffusers` y `accelerate`:
 
 `requirements.txt`
 
@@ -403,7 +403,7 @@ Y habilitamos Git-LFS:
 git lfs install
 ```
 
-Si nuestros ficheros van a superar los 5GB, también deberemos habitarlos en *Hugging Face*:
+Si nuestros ficheros van a superar los 5GB, también deberemos habilitarlos en *Hugging Face*:
 
 ```bash
 huggingface-cli lfs-enable-largefiles .
@@ -423,9 +423,9 @@ Si ahora vamos a la página web, veremos cómo ya aparecen los mismos archivos y
 
 ### Model Card
 
-La [tarjeta del modelo](https://huggingface.co/docs/hub/model-cards) aporta información muy útil, como es la categoría de este, así como librerías, *datasets*, idiomas o los resultados obtenidos en la fase evaluación del modelo.
+La [tarjeta del modelo](https://huggingface.co/docs/hub/model-cards) aporta información muy útil, como es la categoría de este, así como librerías, *datasets*, idiomas o los resultados obtenidos en la fase de evaluación del modelo.
 
-Si nos fijamos en la tarjeta del modelo de que hemos [escogido anteriormente](https://huggingface.co/omarques/autotrain-dogs-and-cats-1527055142), podemos ver toda la información mostrada, con las diferentes etiquetas (*Image Classification*, *Pytorch*, etc...), así como las estadísticas y el bloque para probar el modelo directamente:
+Si nos fijamos en la tarjeta del modelo que hemos [escogido anteriormente](https://huggingface.co/omarques/autotrain-dogs-and-cats-1527055142), podemos ver toda la información mostrada, con las diferentes etiquetas (*Image Classification*, *Pytorch*, etc...), así como las estadísticas y el bloque para probar el modelo directamente:
 
 ![Etiquetas en un modelo](../assets/images/34/aitor_01hf-model-dogcats-tags.png)
 
@@ -441,7 +441,7 @@ datasets:
 - omarques/autotrain-data-dogs-and-cats
 ```
 
-De manera, que ahora nuestro modelo tendrá la siguiente apariencia:
+De manera que ahora nuestro modelo tendrá la siguiente apariencia:
 
 ![Etiquetado del modelo](../assets/images/34/aitor_01hf-model-tags.png)
 
