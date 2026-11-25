@@ -43,7 +43,7 @@ Para familiarizarnos con ellos, vamos a crear nuestro espacio que utilizaremos a
 
 En nuestro caso, vamos a coger la instancia gratuita y elegiremos un proyecto *Gradio* con una plantilla en blanco (*blank*). 
 
-Como se puede observar, podemos elegir entre diferentes plantillas: HTML5 estáticas, Gradio, Docker o Static para alojar tu espacio.
+Como se puede observar, podemos elegir entre diferentes plantillas: HTML5 estáticas, Gradio, Docker o Static para alojar nuestro espacio.
 
 **Plantillas estáticas HTML5**
 ![Creando un Space](../assets/images/34/03hf-create-space-select-sdk-static.png)
@@ -54,7 +54,7 @@ Como se puede observar, podemos elegir entre diferentes plantillas: HTML5 estát
 
 > 💡 **ZeroGPU** es la alternativa gratuita con GPU: en vez de una GPU dedicada (de pago), te deja usar una **GPU compartida de forma dinámica**, asignada solo mientras tu código la necesita. Exige escribir la inferencia como *functions* con `@spaces.GPU` (librería `spaces`) y está pensada para **demos con inferencia puntual**, no para entrenamientos largos.
 
-> 💡 **Store Bucket (Cubo de almacenamiento)** Podemos usar un *buclet* (cubo de almacenamiento) para datos persistentes. Podemos montar cubos adicionales desde la configuración de nuestro Space.
+> 💡 **Store Bucket (Cubo de almacenamiento)** Podemos usar un *Bucket* (cubo de almacenamiento) para datos persistentes. Podemos montar cubos adicionales desde la configuración de nuestro Space.
 
 Finalmente, seleccionamos que queremos hacer nuestro espacio en abierto, para que sea accesible por cualquiera.
 
@@ -92,11 +92,11 @@ demo = gr.Interface(
 
 demo.launch(share=True) 
 ```
-Posteriormente realizamos un *commit* desde el interfaz web:
+Posteriormente realizamos un *commit* desde la interfaz web:
 
 ![Commit desde la interfaz web](../assets/images/34/06hf-space-committed-app-py.png)
 
-Si ahora vamos nuestro perfil, podremos ver cómo se ha creado el espacio. Si pulsamos en **App** aparecerá la aplicación:
+Si ahora vamos a nuestro perfil, podremos ver cómo se ha creado el espacio. Si pulsamos en **App** aparecerá la aplicación:
 
 ![Probando nuestro space](../assets/images/34/07hf-hello-response.png)
 
@@ -176,12 +176,9 @@ Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras el
 
 ![Ejemplo app.py traductor](../assets/images/34/09hf-space-stable-app-py.png)
 
-
 **2.-** Cuando termine, escribe una frase en inglés y verás la traducción.
+
 **3.-** ¡Ya tienes tu Space público! Cualquiera con la URL puede usarlo.
-
-
-
 
 ### Apuntes · Probar en local
 
@@ -334,11 +331,11 @@ Le ponemos el nombre **`iabd_model`** y la licencia `cc-by-nc-4.0`:
 
 ![New model](../assets/images/34/11hf-new-model.png)
 
-Tras ponerle un nombre y una licencia, accederemos a su panel donde tenemos por una parte una *card* que hace de página de inicio, la pestaña con los ficheros y versiones que hace de repositorio, así como la posibilidad de interactuar con la comunidad y las preferencias.
+Tras ponerle un nombre y una licencia, accederemos a su panel donde tenemos por una parte una **Model Card** que hace de página de inicio, la pestaña con los ficheros y versiones que hace de repositorio, así como la posibilidad de interactuar con la comunidad y las preferencias.
 
 ![Modelo en blanco](../assets/images/34/12hf-create-model.png)
 
-Vamos a ir a la pestaña de *Files and versions* y añadimos un archivo desde el interfaz web (`+Add file`), por ejemplo, lo nombramos `authors.txt` y ponemos nuestro nombre en el contenido:
+Vamos a ir a la pestaña de *`Files and versions`* y añadimos un archivo desde el interfaz web (`+Add file`), por ejemplo, lo nombramos `authors.txt` y ponemos nuestro nombre en el contenido:
 
 ![Añadimos un archivo al modelo](../assets/images/34/aitor_01hf-model-initial-commit.png)
 
