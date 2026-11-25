@@ -9,71 +9,6 @@ duracion: 120 min
 
 > Contenido reproducido con la autorización de **Aitor Medrano** (I.E.S. Severo Ochoa), de sus apuntes [Hugging Face](https://aitor-medrano.github.io/iabd/hf/hf.html) (CC BY-NC-SA 4.0). Texto, imágenes y enlaces copiados tal cual.
 
-## Proyecto de la sesión · Crea un Space de traducción
-
-> 🎯 **Actividad 1** (RAMIA.1 / CEMIA.1d, CEMIA.1e / 2p). Vamos a construir, paso a paso, un **Space de Gradio que traduce** (reutilizando el traductor de la sesión anterior), primero en Hugging Face y luego en local. Al final, lo completas con tu toque personal.
-
-### Paso 1 · Crea el Space
-
-1. Ve a tu perfil de Hugging Face → pestaña **Spaces** → **Create new Space**.
-2. Configúralo: **nombre** (p. ej. `mi-traductor`), **licencia**, **SDK = Gradio**, **plantilla = Blank**, **hardware = CPU (gratis)** y **visibilidad = Público**.
-3. Pulsa **Create Space**.
-
-### Paso 2 · Escribe el `app.py`
-
-Sustituye el contenido del fichero `app.py` por:
-
-```python
-import gradio as gr
-from transformers import pipeline
-
-traductor = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
-
-def traducir(texto):
-    return traductor(texto)[0]["translation_text"]
-
-demo = gr.Interface(
-    fn=traducir,
-    inputs=gr.Textbox(label="Inglés", placeholder="Escribe aquí..."),
-    outputs="text",
-    title="Traductor EN → ES",
-    examples=["I like to play basketball"],
-)
-demo.launch()
-```
-
-> ⚠️ En `transformers` v5 la tarea `translation` se eliminó. Si usas v5, cambia el `pipeline` por `AutoModelForSeq2SeqLM` (ver [Migración v4 → v5](../recursos/migracion_v5.md)).
-
-### Paso 3 · Publica y prueba
-
-1. Haz **Commit** del `app.py` (el Space se reconstruye automáticamente).
-2. Cuando termine, escribe una frase en inglés y verás la traducción.
-3. ¡Ya tienes tu Space público! Cualquiera con la URL puede usarlo.
-
-### Paso 4 · También en local
-
-Prueba el mismo `app.py` en tu ordenador:
-
-```bash
-pip install gradio transformers
-python3 app.py
-```
-
-Se abre en `http://127.0.0.1:7860`.
-
-### Tu toque personal (completa la actividad)
-
-Para que el Space sea **tuyo** (y no una copia del profesor), elige al menos una de estas mejoras:
-
-- Cambia el **par de idiomas** (p. ej. ES → EN, u otro modelo de `Helsinki-NLP`).
-- Añade **ejemplos** propios a la interfaz.
-- Cambia el **título, descripción o tema** del Space.
-- Añade un `requirements.txt` con las dependencias y una **descripción** en el README.
-
-**Entregable:** la URL de tu Space + una captura de la app funcionando (en HF y en local).
-
----
-
 ## Spaces
 
 Mediante los espacios podemos construir y desplegar modelos de IA, así como aplicaciones de demostración para probarlos.
@@ -90,7 +25,9 @@ En este bloque, y en concreto en la próxima sesión nos vamos a centrar en *Gra
 
 El uso básico de los espacios es gratuito, pero si necesitamos emplear GPU puede ser que necesitemos pagar por su uso.
 
-### Hola Spaces
+> 🎯 **Actividad 1** (RAMIA.1 / CEMIA.1d, CEMIA.1e / 2p). Vamos a construir, paso a paso, un **Space de Gradio que traduce** (reutilizando el traductor de la sesión anterior), primero en Hugging Face y luego en local. Los pasos guiados están marcados abajo; antes de cada uno tienes los apuntes que necesitas.
+
+### Apuntes · Crear un Space
 
 Para familiarizarnos con ellos, vamos a crear nuestro espacio que utilizaremos a lo largo del bloque. Para ello, dentro de la pestaña *Spaces*, creamos uno nuevo (*Create new Space*), y vemos como primero indicamos un nombre, una licencia, el SDK que utilizaremos para el prototipado, el hardware empleado y la visibilidad del mismo:
 
@@ -124,7 +61,44 @@ Si ahora vamos nuestro perfil, podremos ver cómo se ha creado el espacio, y si 
 
 ![Probando nuestro space](../assets/images/aitor_02hello-gradio-response.png)
 
-#### Probando en local
+### Actividad 1 · Paso 1: Crea el Space
+
+1. Ve a tu perfil de Hugging Face → pestaña **Spaces** → **Create new Space**.
+2. Configúralo: **nombre** (p. ej. `mi-traductor`), **licencia**, **SDK = Gradio**, **plantilla = Blank**, **hardware = CPU (gratis)** y **visibilidad = Público**.
+3. Pulsa **Create Space**.
+
+### Actividad 1 · Paso 2: Escribe el `app.py`
+
+Sustituye el contenido del fichero `app.py` por:
+
+```python
+import gradio as gr
+from transformers import pipeline
+
+traductor = pipeline("translation", model="Helsinki-NLP/opus-mt-en-es")
+
+def traducir(texto):
+    return traductor(texto)[0]["translation_text"]
+
+demo = gr.Interface(
+    fn=traducir,
+    inputs=gr.Textbox(label="Inglés", placeholder="Escribe aquí..."),
+    outputs="text",
+    title="Traductor EN → ES",
+    examples=["I like to play basketball"],
+)
+demo.launch()
+```
+
+> ⚠️ En `transformers` v5 la tarea `translation` se eliminó. Si usas v5, cambia el `pipeline` por `AutoModelForSeq2SeqLM` (ver [Migración v4 → v5](../recursos/migracion_v5.md)).
+
+### Actividad 1 · Paso 3: Publica y prueba
+
+1. Haz **Commit** del `app.py` (el Space se reconstruye automáticamente).
+2. Cuando termine, escribe una frase en inglés y verás la traducción.
+3. ¡Ya tienes tu Space público! Cualquiera con la URL puede usarlo.
+
+### Apuntes · Probar en local
 
 Para probar *Gradio* en local, el primer paso será instalar la librería:
 
@@ -140,7 +114,18 @@ gradio app.py
 
 ¿Te aparece una dirección local y otra remota? ¿Dónde se está ejecutando el código de la URL remota?
 
-### Hola Spaces 2.0
+### Actividad 1 · Paso 4: También en local
+
+Prueba el `app.py` de tu traductor en tu ordenador:
+
+```bash
+pip install gradio transformers
+python3 app.py
+```
+
+Se abre en `http://127.0.0.1:7860`.
+
+### Apuntes · Configuración y dependencias
 
 Vamos a reutilizar el ejemplo inicial de generar una imagen desde *Stable Difussion* para generar un prototipo que nos permita escribir el *prompt* y visualizar el resultado.
 
@@ -200,6 +185,17 @@ accelerate
 Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras ello, ya podemos introducir nuestro *prompt* y tras más de 17 minutos (no utiliza GPU) podremos ver el resultado:
 
 ![Space con Stable Diffusion](../assets/images/aitor_01hf-space-stable.png)
+
+### Actividad 1 · Tu toque personal (completa la actividad)
+
+Para que el Space sea **tuyo** (y no una copia del profesor), elige al menos una de estas mejoras:
+
+- Cambia el **par de idiomas** (p. ej. ES → EN, u otro modelo de `Helsinki-NLP`).
+- Añade **ejemplos** propios a la interfaz.
+- Cambia el **título, descripción o tema** del Space.
+- Añade un `requirements.txt` con las dependencias y una **descripción** en el README.
+
+**Entregable:** la URL de tu Space + una captura de la app funcionando (en HF y en local).
 
 ## Modelos
 
