@@ -29,6 +29,10 @@ El uso básico de los espacios es **gratuito**, pero si necesitamos emplear GPU 
 
 > 🎯 **Actividad 1** (RAMIA.1 / CEMIA.1d, CEMIA.1e / 2p). Vamos a construir, paso a paso, un **Space de Gradio que traduce** (reutilizando el traductor de la sesión anterior), primero en Hugging Face y luego en local. Los pasos guiados están marcados abajo; antes de cada uno tienes los apuntes que necesitas.
 
+> 🆘 **Plan B · Hazlo en Colab.** Si no puedes crear el Space (cuenta reciente o ya con 2 Spaces ZeroGPU), ejecuta el mismo traductor en **Google Colab**: sin instalar nada, y con `demo.launch(share=True)` obtienes una URL pública temporal para el entregable.
+>
+> [Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion34_traductor.ipynb){ .md-button }
+
 ### Actividad 1 · Paso 1: Crea el Space
 
 1. Ve a tu perfil de Hugging Face → pestaña **Spaces** → **Create new Space**.

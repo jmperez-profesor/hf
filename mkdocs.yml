@@ -98,6 +98,7 @@ nav:
           - "Guía de clase": sesiones/sesion29_31_introduccion.md
       - "S34 · Hub: Spaces y Modelos":
           - "Guía de clase": sesiones/sesion34_hub_gradio_spaces.md
+          - "Notebook (plan B · Colab)": sesiones/sesion34_traductor.ipynb
       - "S36 · La librería Datasets":
           - "Guía de clase": sesiones/sesion36_datasets.md
           - "Notebook": sesiones/sesion36_datasets.ipynb
