@@ -27,16 +27,22 @@ Más adelante nos centraremos en *Gradio* para la creación del interfaz de usua
 
 El uso básico de los espacios es **gratuito**, pero si necesitamos emplear GPU puede ser que necesitemos pagar por su uso.
 
-> 🎯 **Actividad 1** (RAMIA.1 / CEMIA.1d, CEMIA.1e / 2p). Vamos a construir, paso a paso, un **Space de Gradio que traduce** (reutilizando el traductor de la sesión anterior), primero en Hugging Face y luego en local. Los pasos guiados están marcados abajo; antes de cada uno tienes los apuntes que necesitas.
-
-> 🆘 **Plan B · Hazlo en Colab.** Si no puedes crear el Space (cuenta reciente o ya con 2 Spaces ZeroGPU), ejecuta el mismo traductor en **Google Colab**: sin instalar nada, y con `demo.launch(share=True)` obtienes una URL pública temporal para el entregable.
+> 🎯 **Actividad 1** (RAMIA.1 / CEMIA.1d, CEMIA.1e / 2p). Vamos a construir, paso a paso, un **traductor con Gradio** (reutilizando el modelo de la sesión anterior) y a publicarlo. Las cuentas gratuitas de Hugging Face ya no permiten crear Spaces en CPU, así que elige **una de estas tres vías** (todas sirven para entregar):
+>
+> - 🟢 **Colab (base):** ejecuta el notebook y `demo.launch(share=True)` te da una URL pública temporal.
+> - 🔵 **Local:** `python3 app.py` abre `http://127.0.0.1:7860` (sin URL pública).
+> - 🟣 **Space ZeroGPU (bonus):** el despliegue "de verdad" en HF (cuenta verificada +30 días y <2 Spaces).
 >
 > [Abrir en Colab](https://colab.research.google.com/github/jmperez-profesor/hf/blob/main/docs/sesiones/sesion34_traductor.ipynb){ .md-button }
+>
+> **Entregable:** la URL de tu app funcionando (Colab o Space) + capturas (en la web y en local).
 
-### Actividad 1 · Paso 1: Crea el Space
+### Actividad 1 · Paso 1: Crea el Space (solo vía ZeroGPU)
+
+> ⚠️ Las cuentas gratuitas **solo** pueden crear Spaces con hardware **ZeroGPU** (no CPU). Si tu cuenta no cumple los requisitos (verificada +30 días, <2 Spaces), salta directamente a la **vía Colab** (botón arriba).
 
 1. Ve a tu perfil de Hugging Face → pestaña **Spaces** → **Create new Space**.
-2. Configúralo: **nombre** (p. ej. `iabd`), **licencia**, **SDK = Gradio**, **plantilla = Blank**, **hardware = CPU (gratis)** y **visibilidad = Público**.
+2. Configúralo: **nombre** (p. ej. `iabd`), **licencia**, **SDK = Gradio**, **plantilla = Blank**, **hardware = ZeroGPU** y **visibilidad = Público**.
 3. Pulsa **Create Space**.
 
 ### Apuntes · Crear un Space
@@ -117,8 +123,6 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 modelo = AutoModelForSeq2SeqLM.from_pretrained("Helsinki-NLP/opus-mt-en-es")
 tokenizer = AutoTokenizer.from_pretrained("Helsinki-NLP/opus-mt-en-es")
 
-# @spaces.GPU indica a ZeroGPU que esta función ejecuta la inferencia
-@spaces.GPU
 def traducir(texto):
     # return_tensors="pt" convierte el texto en tensores de PyTorch (números),
     # porque un modelo no entiende letras, solo números.
@@ -139,7 +143,9 @@ demo = gr.Interface(
 demo.launch()
 ```
 
-> ℹ️ Usamos **transformers v5** (eliminó la tarea `translation`, por eso `AutoModelForSeq2SeqLM`) y **ZeroGPU** (por eso `import spaces` al principio y `@spaces.GPU` en la función). 
+> ℹ️ Usamos **transformers v5** (eliminó la tarea `translation`, por eso `AutoModelForSeq2SeqLM`) y **ZeroGPU** (por eso `import spaces` al principio). Como el traductor es pequeño y corre en **CPU**, no hace falta `@spaces.GPU`.
+
+> 💡 **Si vas por Colab:** quita `import spaces` y pon `demo.launch(share=True)` para obtener la URL pública (el notebook ya lo hace por ti).
 
 !!! info "Versión 4 (solo como referencia)"
     Con `transformers` v4 bastaba con un `pipeline`:
@@ -292,14 +298,14 @@ Tras hacer el *commit* del archivo, el espacio volverá a construirse. Y tras el
 
 ### Actividad 1 · Tu toque personal (completa la actividad)
 
-Para que el Space sea **tuyo** (y no una copia del profesor), añade las siguientes mejoras:
+Para que tu app sea **tuya** (y no una copia del profesor), añade las siguientes mejoras:
 
 - Cambia el **par de idiomas** (p. ej. ES → EN, u otro modelo de `Helsinki-NLP`).
 - Añade **ejemplos** propios a la interfaz.
 - Cambia el **título, descripción o tema** del Space.
 - Añade un `requirements.txt` con las dependencias y una **descripción** en el README.
 
-**Entregable:** la URL de tu Space + una captura de la app funcionando (en HF y en local).
+**Entregable:** la URL de tu app funcionando (Colab o Space) + capturas (en la web y en local).
 
 ## Modelos
 
